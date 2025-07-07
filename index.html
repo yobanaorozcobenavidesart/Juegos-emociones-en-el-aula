@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emocionario Ilustrado y Juegos</title>
 
-  <!-- Fuente estilo cibernético -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Tipografía elegante y legible -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Estilos base encabezado -->
   <style>
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #121212;
-      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000000; /* Fondo negro puro */
+      color: #ffffff; /* Texto blanco puro */
+      padding: 20px;
     }
 
     header {
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      background: linear-gradient(to right, #0a0a0a, #111111);
       padding: 20px;
       box-shadow: 0 0 20px #ffcc00;
     }
@@ -46,214 +46,247 @@
       font-size: 2.5em;
       color: #ffcc00;
       margin: 0;
-      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+      text-shadow: 0 0 10px #ffcc00;
     }
 
     h2 {
-      font-size: 1.2em;
-      color: #ccc;
-      margin: 5px 0 0 0;
-      text-shadow: 0 0 5px #555;
+      font-size: 1.5em;
+      color: #eeeeee;
+      margin: 10px 0 20px 0;
+      text-shadow: 0 0 5px #333;
     }
-    
-  </style>
-</head>
-<body>
 
-  <header>
-    <div class="header-content">
-      <img src="https://i.postimg.cc/NfcBdfV4/418b1c0f-8d2a-463f-9cb1-271bd0abfd0e-1.png" alt="Logo Emocionario" class="logo" />
-      <div class="title-container">
-        <h1>Emocionario Ilustrado y Juegos</h1>
-        <h2>Arte y emociones para fortalecer vínculos escolares</h2>
-      </div>
-    </div>
-  </header>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emocionario Ilustrado - Juegos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #000;
-      color: #fff;
-      margin: 0;
-      padding: 20px;
-    }
-    h1, h2 {
+    .menu {
       text-align: center;
-      color: #ffcc00;
-    }
-    section {
-      margin: 40px auto;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #111;
-      box-shadow: 0 4px 8px rgba(255,255,255,0.1);
-      max-width: 1000px;
-    }
-    .emocionario {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
       margin-top: 30px;
     }
-    .emocion {
-      background: #222;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(255,255,255,0.1);
-      text-align: center;
-    }
-    .color-box {
-      width: 100%;
-      height: 30px;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-    .mensaje {
-      font-style: italic;
-      color: #ccc;
-      margin-top: 10px;
-    }
-    .opciones {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .opcion {
-      padding: 10px;
-      border: 1px solid #ffcc00;
+
+    .menu button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      font-weight: bold;
       border-radius: 8px;
       cursor: pointer;
-      background-color: #333;
       transition: background-color 0.3s;
-      color: #fff;
+      font-family: 'Poppins', sans-serif;
     }
+
+    .menu button:hover {
+      background-color: #ffd633;
+    }
+
+        .opcion {
+      font-size: 1.3rem;
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      border: 1px solid #555;
+      background-color: #222;
+    }
+    #opciones2 .opcion {
+  font-size: 1rem;
+  padding: 8px 12px;
+  margin: 4px;
+}
+
+
     .opcion:hover {
-      background-color: #555;
+      background-color: #444;
     }
-    .resultado {
+
+    .Alegría:hover     { background-color: #FFD700; color: #000; }
+    .Tristeza:hover    { background-color: #2F5D9F; color: #fff; }
+    .Enojo:hover       { background-color: #FF1A1A; color: #fff; }
+    .Ansiedad:hover    { background-color: #888888; color: #fff; }
+    .Miedo:hover       { background-color: #222222; color: #fff; }
+    .Calma:hover       { background-color: #66FF99; color: #000; }
+    .Confusión:hover   { background-color: #A020F0; color: #fff; }
+    .Amor:hover        { background-color: #FFB6C1; color: #000; }
+    .Frustración:hover { background-color: #FF7518; color: #fff; }
+    .Esperanza:hover   { background-color: #32CD32; color: #fff; }
+    .Orgullo:hover     { background-color: #87CEFA; color: #000; }
+    .Entusiasmo:hover  { background-color: #FF69B4; color: #fff; }
+
+    .resultado, #graficaDificultad {
       margin-top: 20px;
       font-weight: bold;
       text-align: center;
       color: #ffcc00;
     }
     
+    
   </style>
 </head>
 <body>
+
+<header>
+  <div class="header-content">
+   <img src="https://i.postimg.cc/NfcBdfV4/418b1c0f-8d2a-463f-9cb1-271bd0abfd0e-1.png" alt="Logo Emocionario" class="logo" style="max-width: 200px; width: 100%; height: auto;" />
+
+    <div class="title-container">
+    <h1 style="font-size: 2em;">Emocionario</h1>
+<h2 style="font-size: 1.2em; font-weight: normal;">Cada emoción es una historia y cada juego es una aventura.</h2>
+
+    </div>
+  </div>
+</header>
+<h3>📜 Instrucciones</h3>
+<p style="text-align: left;">
+  Haz clic en cada uno de los botones para explorar los juegos y actividades disponibles.<br><br>
+  Cada botón te llevará a una experiencia diferente:<br>
+  Gestionar emociones<br>
+  Crear tu propio cuento o guion<br>
+  Jugar con el arte<br>
+  Desafíos creativos y más<br><br>
+  ¡Explora, crea, aprende y diviértete en cada rincón de esta aventura!
+</p>
+
+
   
+<style>
+  button {
+    background-color: #ffcc00;
+    border: none;
+    color: #000;
+    padding: 12px 20px;
+    margin: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  }
 
- <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Emociones en el Aula</title>
+  button:hover {
+    transform: scale(1.05);
+    background-color: #e6b800;
+  }
+
+  button:active {
+    transform: scale(0.95);
+    background-color: #cc9900;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .opcion {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.opcion:hover {
+  transform: scale(1.2);
+}
+
+</style>
+
+<!-- Tus botones con animación -->
+<button onclick="mostrar('emocionario')">Emocionario Ilustrado</button>
+<button onclick="mostrar('juego1')">¿Qué emoción estás sintiendo?</button>
+<button onclick="mostrar('juego2')">Reto Emocional</button>
+<button onclick="mostrar('ruleta')">Ruleta Teatral</button>
+<button onclick="mostrar('guion')">Guion Emocional</button>
+<button onclick="mostrar('cuento')">Emoji Cuento</button>
+  <button onclick="mostrar('juegoPoema')">Emoji Poema</button>
+
+  
   <style>
-    body {
-      background-color: #000000;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+  }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
+  .emocionario {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
 
+  .emocion {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+  }
+
+  .emocion:hover {
+    transform: scale(1.05);
+  }
+
+  .color-box {
+    width: 100%;
+    height: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 12px 4px currentColor;
+  }
+
+  .emocion h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .emocion p {
+    font-size: 1em;
+    margin: 6px 0;
+  }
+
+  .emocion p strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 3px;
+  }
+
+  .emocion p.mensaje {
+    font-style: italic;
+    color: #ccc;
+    margin-top: 10px;
+  }
+
+  .emocion:nth-child(1) .color-box { background-color: #FFD700; color: #FFD700; }
+  .emocion:nth-child(2) .color-box { background-color: #2F5D9F; color: #2F5D9F; }
+  .emocion:nth-child(3) .color-box { background-color: #FF1A1A; color: #FF1A1A; }
+  .emocion:nth-child(4) .color-box { background-color: #888888; color: #888888; }
+  .emocion:nth-child(5) .color-box { background-color: #222222; color: #666666; }
+  .emocion:nth-child(6) .color-box { background-color: #66FF99; color: #66FF99; }
+  .emocion:nth-child(7) .color-box { background-color: #A020F0; color: #A020F0; }
+  .emocion:nth-child(8) .color-box { background-color: #FFB6C1; color: #FFB6C1; }
+  .emocion:nth-child(9) .color-box { background-color: #FF7518; color: #FF7518; }
+  .emocion:nth-child(10) .color-box { background-color: #32CD32; color: #32CD32; }
+  .emocion:nth-child(11) .color-box { background-color: #87CEFA; color: #87CEFA; }
+  .emocion:nth-child(12) .color-box { background-color: #FF69B4; color: #FF69B4; }
+
+  @media (max-width: 768px) {
     .emocionario {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
 
-    .emocion {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      transition: transform 0.3s;
+  @media (max-width: 480px) {
+    .emocionario {
+      grid-template-columns: 1fr;
     }
+  }
+</style>
 
-    .emocion:hover {
-      transform: scale(1.05);
-    }
+<section id="emocionario" style="display: none;">
 
-    .color-box {
-      width: 100%;
-      height: 20px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      box-shadow: 0 0 12px 4px currentColor;
-    }
-
-    .emocion h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
-    .emocion p {
-      font-size: 1em;
-      margin: 6px 0;
-    }
-
-    .emocion p strong {
-      display: block;
-      font-size: 1.1em;
-      margin-bottom: 3px;
-    }
-
-    .emocion p.mensaje {
-      font-style: italic;
-      color: #ccc;
-      margin-top: 10px;
-    }
-
-    /* Emoji grande */
-    .emocion p strong + text,
-    .emocion p strong + span,
-    .emocion p strong + br + span {
-      font-size: 2em;
-    }
-
-    /* Personalizamos cada color más vivo */
-    .emocion:nth-child(1) .color-box { background-color: #FFD700; color: #FFD700; }
-    .emocion:nth-child(2) .color-box { background-color: #2F5D9F; color: #2F5D9F; }
-    .emocion:nth-child(3) .color-box { background-color: #FF1A1A; color: #FF1A1A; }
-    .emocion:nth-child(4) .color-box { background-color: #888888; color: #888888; }
-    .emocion:nth-child(5) .color-box { background-color: #222222; color: #666666; }
-    .emocion:nth-child(6) .color-box { background-color: #66FF99; color: #66FF99; }
-    .emocion:nth-child(7) .color-box { background-color: #A020F0; color: #A020F0; }
-    .emocion:nth-child(8) .color-box { background-color: #FFB6C1; color: #FFB6C1; }
-    .emocion:nth-child(9) .color-box { background-color: #FF7518; color: #FF7518; }
-    .emocion:nth-child(10) .color-box { background-color: #32CD32; color: #32CD32; }
-    .emocion:nth-child(11) .color-box { background-color: #87CEFA; color: #87CEFA; }
-    .emocion:nth-child(12) .color-box { background-color: #FF69B4; color: #FF69B4; }
-
-    @media (max-width: 768px) {
-      .emocionario {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .emocionario {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<section>
   <h2>Ilustraciones de emociones</h2>
   <div class="emocionario">
     <div class="emocion">
@@ -343,119 +376,129 @@
   </div>
 </section>
 
-</body>
-</html>
+
+<div id="juego1" style="display:none;">
+  <h2 id="pregunta"></h2>
+  <div id="opciones" style="margin: 20px 0;"></div>
+  <div id="resultado" style="margin-bottom: 20px;"></div>
+
+  <!-- Canvas de dibujo -->
+  <div id="zonaDibujo" style="margin-top: 30px;">
+  <p>🎨 DIBUJA</p>
+
+  <!-- Selector de color -->
+  <label for="colorSeleccionado">Selecciona un color:</label>
+  <input type="color" id="colorSeleccionado" value="#000000" style="width: 60px; height: 30px; border: none; margin-bottom: 10px;" />
+
+  <!-- Canvas para dibujar -->
+  <br>
+  <canvas id="canvas" width="500" height="400" style="border:2px solid #000; background:#fff;"></canvas><br>
+
+  <!-- Botón para limpiar -->
+  <button onclick="limpiarCanvas()">🧽 Limpiar</button>
+</div>
+
+</div>
 
 
-
- <style>
-  .opcion {
-    font-size: 3rem; /* Emojis grandes pero no exagerados */
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    user-select: none;
-  }
-
-  /* Colores según tus indicaciones */
-  .Alegría:hover { background-color: #FFD700; color: #fff; }     /* Dorado */
-  .Tristeza:hover { background-color: #2F5D9F; color: #fff; }    /* Azul */
-  .Enojo:hover { background-color: #FF1A1A; color: #fff; }       /* Rojo fuerte */
-  .Ansiedad:hover { background-color: #888888; color: #fff; }    /* Gris */
-  .Miedo:hover { background-color: #222222; color: #fff; }       /* Gris oscuro */
-  .Calma:hover { background-color: #66FF99; color: #000; }       /* Verde claro */
-  .Confusión:hover { background-color: #A020F0; color: #fff; }   /* Morado */
-  .Amor:hover { background-color: #FFB6C1; color: #000; }        /* Rosa claro */
-  .Frustración:hover { background-color: #FF7518; color: #fff; } /* Naranja */
-  .Esperanza:hover { background-color: #32CD32; color: #fff; }   /* Verde brillante */
-  .Orgullo:hover { background-color: #87CEFA; color: #000; }     /* Celeste */
-  .Entusiasmo:hover { background-color: #FF69B4; color: #fff; }  /* Rosa fuerte */
-
-  #graficaDificultad {
-    margin-top: 20px;
-    font-weight: bold;
-  }
-</style>
-
-<!-- Juego 1 -->
-<section>
-  <h2>Juego 1: ¿Qué emoción estás sintiendo?</h2>
-  <div class="pregunta" id="pregunta">¿Cuál de estas imágenes representa mejor cómo te sientes hoy?</div>
-  <div class="opciones" id="opciones"></div>
-  <div class="resultado" id="resultado"></div>
-</section>
-
-<!-- Juego 2 -->
-<section>
-  <h2>Juego 2: Adivina la Emoción</h2>
-  <div class="descripcion" id="descripcion"></div>
-  <div class="opciones" id="opciones2"></div>
+<section id="juego2" style="display: none;">
+  <h2>Sube de Nivel</h2>
+  <div id="descripcion"></div>
+  <div id="opciones2"></div>
   <div class="resultado" id="resultado2"></div>
   <div id="graficaDificultad"></div>
-</section>
+</section>  
+  
 
 <script>
-  // Juego 1 con 12 emociones y emojis representativos
-  const preguntasJuego1 = [
-    {
-      pregunta: "¿Cuál de estas imágenes representa mejor cómo te sientes hoy?",
-      opciones: [
-        { texto: "😀", emocion: "Alegría" },
-        { texto: "😢", emocion: "Tristeza" },
-        { texto: "😡", emocion: "Enojo" },
-        { texto: "😰", emocion: "Ansiedad" },
-        { texto: "😨", emocion: "Miedo" },
-        { texto: "😌", emocion: "Calma" },
-        { texto: "😕", emocion: "Confusión" },
-        { texto: "😍", emocion: "Amor" },
-        { texto: "😤", emocion: "Frustración" },
-        { texto: "🌟", emocion: "Esperanza" },
-        { texto: "😎", emocion: "Orgullo" },
-        { texto: "🤩", emocion: "Entusiasmo" }
-      ]
-    }
-  ];
-
-  function mostrarPregunta1() {
-    const preguntaElem = document.getElementById('pregunta');
-    const opcionesElem = document.getElementById('opciones');
-    const resultadoElem = document.getElementById('resultado');
-    resultadoElem.textContent = "";
-
-    const datos = preguntasJuego1[0];
-    preguntaElem.textContent = datos.pregunta;
-    opcionesElem.innerHTML = "";
-
-    datos.opciones.forEach(opcion => {
-      const btn = document.createElement('div');
-      btn.className = 'opcion ' + opcion.emocion;
-      btn.textContent = opcion.texto;
-      btn.title = opcion.emocion;
-      btn.onclick = () => resultadoElem.textContent = `¡Parece que estás sintiendo: ${opcion.emocion}!`;
-      opcionesElem.appendChild(btn);
-    });
+  // Juego 1: emociones con dibujo
+ // Juego 1
+const preguntasJuego1 = [
+  {
+    pregunta: "Elige tu emoción y dibuja el porqué",
+    opciones: [
+      { texto: "😀", emocion: "Alegría" },
+      { texto: "😢", emocion: "Tristeza" },
+      { texto: "😡", emocion: "Enojo" },
+      { texto: "😰", emocion: "Ansiedad" },
+      { texto: "😨", emocion: "Miedo" },
+      { texto: "😌", emocion: "Calma" },
+      { texto: "😕", emocion: "Confusión" },
+      { texto: "😍", emocion: "Amor" },
+      { texto: "😤", emocion: "Frustración" },
+      { texto: "🌟", emocion: "Esperanza" },
+      { texto: "😎", emocion: "Orgullo" },
+      { texto: "🤩", emocion: "Entusiasmo" }
+    ]
   }
+];
 
-  // Juego 2 con 12 emociones y dificultad creciente
+function mostrarPregunta1() {
+  const datos = preguntasJuego1[0];
+  document.getElementById('pregunta').textContent = datos.pregunta;
+  const opcionesElem = document.getElementById('opciones');
+  const resultadoElem = document.getElementById('resultado');
+  opcionesElem.innerHTML = "";
+  resultadoElem.textContent = "";
+  document.getElementById('zonaDibujo').style.display = "block"; // siempre mostrar el canvas
+
+  datos.opciones.forEach(opcion => {
+    const btn = document.createElement('div');
+    btn.className = 'opcion ' + opcion.emocion; // ← para aplicar estilo por emoción
+    btn.textContent = opcion.texto;
+    btn.title = opcion.emocion;
+    btn.onclick = () => {
+      resultadoElem.innerHTML = `¡Parece que estás sintiendo: <strong>${opcion.emocion}</strong>!`;
+    };
+    opcionesElem.appendChild(btn);
+  });
+
+  activarDibujo(); // activar siempre
+}
+
+function activarDibujo() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const colorPicker = document.getElementById('colorSeleccionado');
+  let dibujando = false;
+
+  canvas.onmousedown = () => dibujando = true;
+  canvas.onmouseup = () => dibujando = false;
+  canvas.onmouseout = () => dibujando = false;
+
+  canvas.onmousemove = function(e) {
+    if (dibujando) {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      ctx.fillStyle = colorPicker.value; // usa el color seleccionado
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2); // punto más grande
+      ctx.fill();
+    }
+  };
+}
+
+
+function limpiarCanvas() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
+  // Juego 2: sube de nivel
   const preguntasJuego2 = [
-    // Nivel 1 - Fácil
     { descripcion: "Siento una energía luminosa dentro de mí, como si todo fuera posible.", opciones: ["Alegría", "Tristeza", "Enojo"], correcta: "Alegría", dificultad: 1 },
     { descripcion: "Tengo ganas de llorar, siento un vacío y mucha nostalgia.", opciones: ["Enojo", "Tristeza", "Amor"], correcta: "Tristeza", dificultad: 1 },
     { descripcion: "Todo me molesta, siento que estoy a punto de explotar.", opciones: ["Ansiedad", "Alegría", "Enojo"], correcta: "Enojo", dificultad: 1 },
     { descripcion: "Estoy preocupado por lo que podría pasar, me cuesta respirar tranquilo.", opciones: ["Ansiedad", "Calma", "Esperanza"], correcta: "Ansiedad", dificultad: 1 },
     { descripcion: "Me siento en paz, respiro profundo y todo está bien.", opciones: ["Miedo", "Calma", "Frustración"], correcta: "Calma", dificultad: 1 },
-
-    // Nivel 2 - Medio
     { descripcion: "Mi corazón se acelera y siento un temor intenso ante lo desconocido.", opciones: ["Miedo", "Amor", "Diversión"], correcta: "Miedo", dificultad: 2 },
     { descripcion: "Me frustro porque las cosas no salen como quiero, pero sigo intentando.", opciones: ["Frustración", "Calma", "Confianza"], correcta: "Frustración", dificultad: 2 },
     { descripcion: "Tengo esperanza de que algo bueno está por venir.", opciones: ["Esperanza", "Tristeza", "Enojo"], correcta: "Esperanza", dificultad: 2 },
     { descripcion: "Confío en mí mismo y en mis habilidades para superar retos.", opciones: ["Confianza", "Ansiedad", "Sorpresa"], correcta: "Confianza", dificultad: 2 },
     { descripcion: "Me sorprendo y no sé qué hacer, siento que todo cambia rápido.", opciones: ["Sorpresa", "Alegría", "Miedo"], correcta: "Sorpresa", dificultad: 2 },
-
-    // Nivel 3 - Difícil
     { descripcion: "Me siento atraído profundamente por alguien, con cariño y ternura.", opciones: ["Amor", "Calma", "Ansiedad"], correcta: "Amor", dificultad: 3 },
     { descripcion: "Busco diversión y alegría para olvidar preocupaciones.", opciones: ["Diversión", "Tristeza", "Miedo"], correcta: "Diversión", dificultad: 3 },
     { descripcion: "Siento ansiedad pero trato de mantener la calma con respiraciones profundas.", opciones: ["Ansiedad", "Calma", "Frustración"], correcta: "Ansiedad", dificultad: 3 },
@@ -472,30 +515,24 @@
 
   function mostrarPregunta2() {
     const datos = preguntasJuego2[preguntaActual];
-    const descripcionElem = document.getElementById('descripcion');
+    document.getElementById('descripcion').textContent = datos.descripcion;
     const opcionesElem = document.getElementById('opciones2');
     const resultadoElem = document.getElementById('resultado2');
     const graficaElem = document.getElementById('graficaDificultad');
-    resultadoElem.textContent = "";
-
-    descripcionElem.textContent = datos.descripcion;
     opcionesElem.innerHTML = "";
+    resultadoElem.textContent = "";
 
     datos.opciones.forEach(opcion => {
       const btn = document.createElement('div');
       btn.className = 'opcion ' + opcion;
       btn.textContent = opcion;
-      btn.title = opcion;
       btn.onclick = () => verificarRespuesta(opcion);
       opcionesElem.appendChild(btn);
     });
 
-    let nivelTexto = "";
-    if (datos.dificultad === 1) nivelTexto = "Nivel: Fácil ⭐";
-    else if (datos.dificultad === 2) nivelTexto = "Nivel: Medio ⭐⭐";
-    else nivelTexto = "Nivel: Difícil ⭐⭐⭐";
-
-    graficaElem.textContent = nivelTexto;
+    graficaElem.textContent = datos.dificultad === 1 ? "Nivel: Fácil ⭐" :
+                              datos.dificultad === 2 ? "Nivel: Medio ⭐⭐" :
+                              "Nivel: Difícil ⭐⭐⭐";
   }
 
   function verificarRespuesta(respuesta) {
@@ -521,1039 +558,1048 @@
     }
   }
 
+  // Funcionalidad de botones que abren y cierran secciones
+  let seccionAbierta = null;
+
+  function mostrar(id) {
+    const seccion = document.getElementById(id);
+
+    if (seccionAbierta === id) {
+      seccion.style.display = 'none';
+      seccionAbierta = null;
+    } else {
+      const secciones = ['juego1', 'juego2', 'ruleta', 'guion', 'cuento', 'emocionario'];
+      secciones.forEach(sec => {
+        const el = document.getElementById(sec);
+        if (el) el.style.display = 'none';
+      });
+
+      seccion.style.display = 'block';
+      seccionAbierta = id;
+    }
+  }
+
+  // Iniciar juegos
   mostrarPregunta1();
   mostrarPregunta2();
 </script>
 
 
-  
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ruleta de la Emociones y Juego Teatral</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+<title>Ruleta de las Emociones y Juego Teatral</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-    body {
-      margin: 0;
-      background: #000; /* Fondo negro */
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-      user-select: none;
-    }
+  body {
+    margin: 0;
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    user-select: none;
+  }
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-      color: #fff3e0;
-      text-shadow: 2px 2px 6px #d35400;
-      letter-spacing: 2px;
-    }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #fff3e0;
+    text-shadow: 2px 2px 6px #d35400;
+    letter-spacing: 2px;
+  }
 
-    .ruleta-container {
-      position: relative;
-      width: 320px;
-      height: 320px;
-      margin: 0 auto;
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 130, 0, 0.7);
-      overflow: hidden;
-      background: conic-gradient(
-        #ff6f00 0deg 30deg,
-        #ff8f00 30deg 60deg,
-        #ffa000 60deg 90deg,
-        #ffb300 90deg 120deg,
-        #ffc107 120deg 150deg,
-        #ffca28 150deg 180deg,
-        #ffd54f 180deg 210deg,
-        #ffea00 210deg 240deg,
-        #ffc107 240deg 270deg,
-        #ff8f00 270deg 300deg,
-        #ff6f00 300deg 330deg,
-        #e65100 330deg 360deg
-      );
-      transition: box-shadow 0.3s ease, background 2s ease;
-      cursor: pointer;
-    }
-    .ruleta-container:hover {
-      box-shadow: 0 0 40px rgba(255, 140, 0, 0.9);
-    }
+  .ruleta-container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 130, 0, 0.7);
+    overflow: hidden;
+    cursor: pointer;
+  }
 
-    /* Flecha superior */
-    .flecha {
-      position: absolute;
-      top: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0; 
-      height: 0; 
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-      border-bottom: 40px solid #ff6f00;
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
-      z-index: 10;
-    }
+  .ruleta-container:hover {
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.9);
+  }
 
-    /* Texto centrado dentro de la ruleta */
-    .centro-emoji {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3.5rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-      pointer-events: none;
-      user-select: none;
-      transition: color 2s ease;
-    }
+  .ruleta-giratoria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      #ff6f00 0deg 30deg,
+      #ff8f00 30deg 60deg,
+      #ffa000 60deg 90deg,
+      #ffb300 90deg 120deg,
+      #ffc107 120deg 150deg,
+      #ffca28 150deg 180deg,
+      #ffd54f 180deg 210deg,
+      #ffea00 210deg 240deg,
+      #ffc107 240deg 270deg,
+      #ff8f00 270deg 300deg,
+      #ff6f00 300deg 330deg,
+      #e65100 330deg 360deg
+    );
+    transition: transform 2.8s ease-out, background 0.5s ease;
+    z-index: 1;
+  }
 
-    /* Botón girar */
-    .boton-girar {
-      margin-top: 35px;
-      background: #ff6f00;
-      border: none;
-      padding: 15px 45px;
-      border-radius: 30px;
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 600;
-      box-shadow: 0 5px 15px rgba(255,111,0,0.6);
-      cursor: pointer;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-    }
-    .boton-girar:hover {
-      background: #ff9100;
-      box-shadow: 0 8px 20px rgba(255,145,0,0.8);
-    }
-    .boton-girar:active {
-      transform: scale(0.95);
-      box-shadow: 0 4px 10px rgba(255,111,0,0.5);
-    }
-  </style>
+  .flecha {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid #ff6f00;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+    z-index: 10;
+  }
+
+  .centro-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    transition: color 2s ease;
+  }
+
+  .boton-girar {
+    margin-top: 35px;
+    background: #ff6f00;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255,111,0,0.6);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+
+  .boton-girar:hover {
+    background: #ff9100;
+    box-shadow: 0 8px 20px rgba(255,145,0,0.8);
+  }
+
+  .boton-girar:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(255,111,0,0.5);
+  }
+</style>
 </head>
 <body>
-
-  <h1>🎡 Juego 3: Ruleta de la Emociones y expresión corporal  🎭</h1>
   
-  <div class="ruleta-container" id="ruleta">
+  <section id="ruleta" style="display: none;">
+  <h2>🎡 Juego 3: Ruleta de las Emociones y Expresión Corporal 🎭</h2>
+
+  <div class="ruleta-container">
     <div class="flecha"></div>
+    <div class="ruleta-giratoria" id="ruleta-giratoria"></div>
     <div class="centro-emoji" id="emoji-centro">🎭</div>
   </div>
 
   <button class="boton-girar" id="btn-girar">Girar la Ruleta</button>
-
-  <script>
-  const emociones = [
-    { nombre: "Alegría", emoji: "😊", color: "#FFD700" },
-    { nombre: "Tristeza", emoji: "😢", color: "#2F5D9F" },
-    { nombre: "Enojo", emoji: "😡", color: "#FF1A1A" },
-    { nombre: "Ansiedad", emoji: "😰", color: "#888888" },
-    { nombre: "Miedo", emoji: "😱", color: "#222222" },
-    { nombre: "Calma", emoji: "😌", color: "#66FF99" },
-    { nombre: "Confusión", emoji: "😕", color: "#A020F0" },
-    { nombre: "Amor", emoji: "😍", color: "#FFB6C1" },
-    { nombre: "Frustración", emoji: "😤", color: "#FF7518" },
-    { nombre: "Esperanza", emoji: "🌱", color: "#32CD32" },
-    { nombre: "Orgullo", emoji: "🦁", color: "#87CEFA" },
-    { nombre: "Entusiasmo", emoji: "🎉", color: "#FF69B4" }
-  ];
-
-  const ruleta = document.getElementById('ruleta');
-  const btnGirar = document.getElementById('btn-girar');
-  const emojiCentro = document.getElementById('emoji-centro');
-
-  let girando = false;
-  let rotacionActual = 0;
-
-  btnGirar.addEventListener('click', () => {
-    if (girando) return;
-    girando = true;
-
-    const vueltas = Math.floor(Math.random() * 3) + 6;
-    const gradosPorSegmento = 360 / emociones.length;
-    const anguloExtra = Math.floor(Math.random() * 360);
-    const anguloFinal = 360 * vueltas + anguloExtra;
-
-    rotacionActual += anguloFinal;
-
-    ruleta.style.transition = 'transform 2.8s ease-out';
-    ruleta.style.transform = `rotate(${rotacionActual}deg)`;
-
-    // Animación rápida durante el giro
-    let i = 0;
-    const animacionDinamica = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * emociones.length);
-      const emocionRandom = emociones[randomIndex];
-      emojiCentro.textContent = emocionRandom.emoji;
-      emojiCentro.style.color = emocionRandom.color;
-      ruleta.style.background = emocionRandom.color;
-      i++;
-    }, 90);
-
-    setTimeout(() => {
-      clearInterval(animacionDinamica);
-
-      const anguloReal = (rotacionActual % 360 + 360) % 360; // Siempre positivo
-      const anguloCorregido = (360 - anguloReal + gradosPorSegmento / 2) % 360;
-      const indiceEmocion = Math.floor(anguloCorregido / gradosPorSegmento);
-      const emocionElegida = emociones[indiceEmocion];
-
-      emojiCentro.textContent = emocionElegida.emoji;
-      emojiCentro.style.color = emocionElegida.color;
-      ruleta.style.background = emocionElegida.color;
-
-      girando = false;
-    }, 2900);
-  });
-  </script>
-</body>
-</html>
-
-
-<p style="line-height: 2;">.</p>
-<p style="line-height: 2;">.</p>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>🎨 Tu Teatro, Tus Reglas, Tu Guion</title>
-<style>
-  body {
-    background-color: #000;
-    color: #eee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
-  }
-  h1, h2 {
-    color: #eee;
-  }
-  label {
-    display: block;
-    margin-top: 12px;
-  }
-  input[type=text], input[type=number], textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    background-color: #222;
-    color: #eee;
-  }
-  textarea {
-    resize: vertical;
-  }
-  button {
-    margin-top: 20px;
-    background-color: #00cc66;
-    color: black;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #009944;
-  }
-  .personaje-block {
-    background-color: #111;
-    margin-top: 15px;
-    padding: 15px;
-    border-radius: 10px;
-  }
-  .personaje-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .color-preview {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid #555;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .flex-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .flex-column {
-    flex: 1;
-    min-width: 120px;
-  }
-  #botonesCompartir {
-    margin-top: 10px;
-  }
-  #botonesCompartir button {
-    background-color: #007bff;
-    color: white;
-    margin-right: 10px;
-  }
-  #botonesCompartir button:hover {
-    background-color: #0056b3;
-  }
-  #previewImgs {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  #previewImgs img {
-    max-width: 120px;
-    max-height: 120px;
-    border-radius: 10px;
-    border: 2px solid #00cc66;
-  }
-  #guionOutput {
-    background:#111; 
-    padding:20px; 
-    border-radius:10px; 
-    max-height: 400px; 
-    overflow-y: auto; 
-    white-space: pre-wrap;
-    margin-top: 20px;
-  }
-  #guionContent {
-    margin-top: 20px;
-  }
-</style>
-</head>
-<body>
-
-<h1>Actúa lo que Piensas, Escribe lo que Sientes</h1>
-
-<form id="guionForm">
-
-  <label for="autor">Autor (es):</label>
-  <input type="text" id="autor" placeholder="Tu nombre" required />
-
-  <label for="titulo">Título del Guion:</label>
-  <input type="text" id="titulo" placeholder="Nombre de la obra" required />
-
-  <label for="numActos">Número de actos:</label>
-  <input type="number" id="numActos" min="1" max="10" value="1" required />
-
-  <label for="numEscenas">Número de escenas por acto:</label>
-  <input type="number" id="numEscenas" min="1" max="20" value="1" required />
-
-  <label for="materiales">Materiales necesarios para la escena:</label>
-  <textarea id="materiales" rows="2" placeholder="Describe materiales..." ></textarea>
-  
-   <label for="imagenes">Sube hasta 5 imágenes de  Materiales necesarios para la escena elaboraos en material reciclable :</label>
-  <input type="file" id="imagenes" accept="image/*" multiple />
-
-  <label for="acotaciones">Acotaciones / Paréntesis (ejemplo: (nervioso, susurrando)):</label>
-  <textarea id="acotaciones" rows="2" placeholder="Opcional"></textarea>
-
-
-  <div id="previewImgs"></div>
-
-  <h2>Personajes</h2>
-  <div id="personajesContainer">
-    <div class="personaje-block">
-      <div class="personaje-header">
-        <label>Nombre del personaje:</label>
-        <button type="button" onclick="eliminarPersonaje(this)" style="background:#900;color:#eee;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">Eliminar</button>
-      </div>
-      <input type="text" class="nombrePersonaje" placeholder="Ejemplo: Juan" required />
-
-      <div class="flex-row">
-        <div class="flex-column">
-          <label>Emoción (Emoji):</label>
-          <select class="emojiPersonaje" required>
-            <option value="">Selecciona emoción</option>
-            <option value="😀">Feliz 😀</option>
-            <option value="😢">Triste 😢</option>
-            <option value="😠">Enojado 😠</option>
-            <option value="😨">Asustado 😨</option>
-            <option value="😮">Sorprendido 😮</option>
-            <option value="😐">Neutral 😐</option>
-            <option value="🤔">Pensativo 🤔</option>
-            <option value="😌">Calmado 😌</option>
-          </select>
-        </div>
-        <div class="flex-column">
-          <label>Color del personaje:</label>
-          <input type="color" class="colorPersonaje" value="#00cc66" />
-        </div>
-      </div>
-
-      <label>Descripción de la escena y Diálogo:</label>
-      <textarea class="dialogoPersonaje" rows="3" placeholder="Ejemplo: No puedo creer que esto pase..." required></textarea>
-    </div>
-  </div>
-
-  <button type="button" onclick="agregarPersonaje()">+ Agregar otro personaje</button>
-  <button type="button" onclick="generarGuion()">Generar Guion</button>
-  <button type="button" onclick="compartirWhatsApp()">📲 Enviar por WhatsApp</button>
-  <button type="button" onclick="compartirCorreo()">📧 Enviar por Correo Electrónico</button>
-  <button type="button" onclick="imprimirGuion()">🖨️ Imprimir</button>
-  <button type="button" onclick="descargarGuionWord()">📄 Descargar como Word</button>
-  <button type="button" onclick="descargarGuionPDF()">📑 Descargar como PDF</button>
-</form>
-
-<div id="botonesCompartir" style="display:none;">
-  <button onclick="compartirWhatsApp()">Compartir por WhatsApp</button>
-  <button onclick="compartirCorreo()">Compartir por Correo Electrónico</button>
-</div>
-
-<h2>Guion generado:</h2>
-<pre id="guionOutput"></pre>
-<div id="guionContent" style="display:none;"></div>
-
-<!-- jsPDF desde CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- docx.js desde CDN -->
-<script src="https://cdn.jsdelivr.net/npm/docx@7.0.2/build/index.umd.js"></script>
+</section>
 
 <script>
-  // Almacenará las imágenes cargadas en base64
-  let imagenesBase64 = [];
+const emociones = [
+  { nombre: "Alegría", emoji: "😊", color: "#FFD700" },
+  { nombre: "Tristeza", emoji: "😢", color: "#2F5D9F" },
+  { nombre: "Enojo", emoji: "😡", color: "#FF1A1A" },
+  { nombre: "Ansiedad", emoji: "😰", color: "#888888" },
+  { nombre: "Miedo", emoji: "😱", color: "#222222" },
+  { nombre: "Calma", emoji: "😌", color: "#66FF99" },
+  { nombre: "Confusión", emoji: "😕", color: "#A020F0" },
+  { nombre: "Amor", emoji: "😍", color: "#FFB6C1" },
+  { nombre: "Frustración", emoji: "😤", color: "#FF7518" },
+  { nombre: "Esperanza", emoji: "🌱", color: "#32CD32" },
+  { nombre: "Orgullo", emoji: "🦁", color: "#87CEFA" },
+  { nombre: "Entusiasmo", emoji: "🎉", color: "#FF69B4" }
+];
 
-  // Manejo de input file para imágenes
-  document.getElementById('imagenes').addEventListener('change', function(e) {
-    const files = Array.from(e.target.files).slice(0, 5); // máximo 5
-    imagenesBase64 = []; // reset
+const ruleta = document.getElementById('ruleta-giratoria');
+const btnGirar = document.getElementById('btn-girar');
+const emojiCentro = document.getElementById('emoji-centro');
 
-    const previewDiv = document.getElementById('previewImgs');
-    previewDiv.innerHTML = '';
+let girando = false;
+let rotacionActual = 0;
 
-    if (files.length === 0) return;
+btnGirar.addEventListener('click', () => {
+  if (girando) return;
+  girando = true;
 
-    files.forEach(file => {
-      const reader = new FileReader();
-      reader.onload = function(ev) {
-        const base64 = ev.target.result;
-        imagenesBase64.push(base64);
+  const vueltas = Math.floor(Math.random() * 3) + 6;
+  const gradosPorSegmento = 360 / emociones.length;
+  const anguloExtra = Math.floor(Math.random() * 360);
+  const anguloFinal = 360 * vueltas + anguloExtra;
 
-        // Mostrar preview
+  rotacionActual += anguloFinal;
+
+  ruleta.style.transform = `rotate(${rotacionActual}deg)`;
+
+  // Animación de emojis aleatorios durante el giro
+  const animacionDinamica = setInterval(() => {
+    const randomIndex = Math.floor(Math.random() * emociones.length);
+    const emocionRandom = emociones[randomIndex];
+    emojiCentro.textContent = emocionRandom.emoji;
+    emojiCentro.style.color = emocionRandom.color;
+  }, 90);
+
+  setTimeout(() => {
+    clearInterval(animacionDinamica);
+
+    const anguloReal = (rotacionActual % 360 + 360) % 360;
+    const anguloCorregido = (360 - anguloReal + gradosPorSegmento / 2) % 360;
+    const indiceEmocion = Math.floor(anguloCorregido / gradosPorSegmento);
+    const emocionElegida = emociones[indiceEmocion];
+
+    emojiCentro.textContent = emocionElegida.emoji;
+    emojiCentro.style.color = emocionElegida.color;
+
+    // CAMBIAR el fondo de la ruleta al color de la emoción
+    ruleta.style.background = emocionElegida.color;
+
+    girando = false;
+  }, 2900);
+});
+</script>
+
+
+
+<section id="guion" style="display: none;">
+  <style>
+    #guion {
+      background-color: #000;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+    #guion h1, #guion h2 {
+      color: #eee;
+    }
+    #guion label {
+      display: block;
+      margin-top: 12px;
+    }
+    #guion input[type=text],
+    #guion input[type=number],
+    #guion textarea,
+    #guion select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      background-color: #222;
+      color: #eee;
+    }
+    #guion textarea {
+      resize: vertical;
+    }
+    #guion button {
+      margin-top: 20px;
+      background-color: #00cc66;
+      color: black;
+      border: none;
+      padding: 12px 20px;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    #guion button:hover {
+      background-color: #009944;
+    }
+    .personaje-block {
+      background-color: #111;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .personaje-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .flex-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .flex-column {
+      flex: 1;
+      min-width: 120px;
+    }
+    #previewImgs img, #guionImgs img {
+      max-width: 120px;
+      max-height: 120px;
+      margin: 10px;
+      border-radius: 10px;
+      border: 2px solid #00cc66;
+    }
+    #guionOutput {
+      background:#111;
+      padding:20px;
+      border-radius:10px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+    
+    
+  </style>
+
+  <h2>Escribe tu propio guion y actua</h2>
+  <form id="guionForm">
+    
+    <label for="autor">Autor (es):</label>
+    <input type="text" id="autor" placeholder="Tu nombre" required />
+
+    <label for="titulo">Título del Guion:</label>
+    <input type="text" id="titulo" placeholder="Nombre de la obra" required />
+
+    <label for="numActos">Número de actos:</label>
+    <input type="number" id="numActos" min="1" max="10" value="1" required />
+
+    <label for="numEscenas">Número de escenas por acto:</label>
+    <input type="number" id="numEscenas" min="1" max="20" value="1" required />
+
+    <label for="materiales">Materiales necesarios para la escena:</label>
+    <textarea id="materiales" rows="2" placeholder="Describe materiales..."></textarea>
+
+    <label for="imagenes">Sube hasta 5 imágenes de materiales reciclados:</label>
+    <input type="file" id="imagenes" accept="image/*" multiple />
+
+    <div id="previewImgs"></div>
+
+    <label for="acotaciones">Acotaciones / Paréntesis:</label>
+    <textarea id="acotaciones" rows="2" placeholder="Ejemplo: (nervioso, susurrando)"></textarea>
+
+    <h2>Personajes</h2>
+    <div id="personajesContainer">
+      <div class="personaje-block">
+        <div class="personaje-header">
+          <label>Nombre del personaje:</label>
+          <button type="button" onclick="eliminarPersonaje(this)">Eliminar</button>
+        </div>
+        <input type="text" class="nombrePersonaje" required />
+        <div class="flex-row">
+          <div class="flex-column">
+            <label>Emoción:</label>
+            <select class="emojiPersonaje" required>
+              <option value="">Selecciona emoción</option>
+              <option value="😀">Feliz 😀</option>
+              <option value="😢">Triste 😢</option>
+              <option value="😠">Enojado 😠</option>
+              <option value="😨">Asustado 😨</option>
+              <option value="😮">Sorprendido 😮</option>
+              <option value="😐">Neutral 😐</option>
+              <option value="🤔">Pensativo 🤔</option>
+              <option value="😌">Calmado 😌</option>
+            </select>
+          </div>
+          <div class="flex-column">
+            <label>Color:</label>
+            <input type="color" class="colorPersonaje" value="#00cc66" />
+          </div>
+        </div>
+        <label>Descripción de la escena y diálogo:</label>
+        <textarea class="dialogoPersonaje" rows="3" required></textarea>
+      </div>
+    </div>
+
+    <button type="button" onclick="agregarPersonaje()">+ Agregar personaje</button>
+    <button type="button" onclick="generarGuion()">🎭 Generar Guion</button>
+    <button type="button" onclick="compartirWhatsApp()">📲 WhatsApp</button>
+    <button type="button" onclick="imprimirGuion()">🖨️ Imprimir</button>
+    <button type="button" onclick="descargarGuionPDF()">📑 PDF</button>
+  </form>
+
+  <h2>Guion generado:</h2>
+  <pre id="guionOutput"></pre>
+  <div id="guionImgs" style="display: flex; flex-wrap: wrap;"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    let imagenesBase64 = [];
+
+    document.getElementById('imagenes').addEventListener('change', function(e) {
+      const files = Array.from(e.target.files).slice(0, 5);
+      imagenesBase64 = [];
+      const preview = document.getElementById('previewImgs');
+      preview.innerHTML = '';
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          imagenesBase64.push(ev.target.result);
+          const img = document.createElement('img');
+          img.src = ev.target.result;
+          preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    function agregarPersonaje() {
+      const container = document.getElementById('personajesContainer');
+      const div = document.createElement('div');
+      div.className = 'personaje-block';
+      div.innerHTML = `
+        <div class="personaje-header">
+          <label>Nombre del personaje:</label>
+          <button type="button" onclick="eliminarPersonaje(this)">Eliminar</button>
+        </div>
+        <input type="text" class="nombrePersonaje" required />
+        <div class="flex-row">
+          <div class="flex-column">
+            <label>Emoción:</label>
+            <select class="emojiPersonaje" required>
+              <option value="">Selecciona emoción</option>
+              <option value="😀">Feliz 😀</option>
+              <option value="😢">Triste 😢</option>
+              <option value="😠">Enojado 😠</option>
+              <option value="😨">Asustado 😨</option>
+              <option value="😮">Sorprendido 😮</option>
+              <option value="😐">Neutral 😐</option>
+              <option value="🤔">Pensativo 🤔</option>
+              <option value="😌">Calmado 😌</option>
+            </select>
+          </div>
+          <div class="flex-column">
+            <label>Color:</label>
+            <input type="color" class="colorPersonaje" value="#00cc66" />
+          </div>
+        </div>
+        <label>Descripción de la escena y diálogo:</label>
+        <textarea class="dialogoPersonaje" rows="3" required></textarea>
+      `;
+      container.appendChild(div);
+    }
+
+    function eliminarPersonaje(btn) {
+      btn.closest('.personaje-block').remove();
+    }
+
+    function generarGuion() {
+      const autor = document.getElementById('autor').value;
+      const titulo = document.getElementById('titulo').value;
+      const actos = +document.getElementById('numActos').value;
+      const escenas = +document.getElementById('numEscenas').value;
+      const materiales = document.getElementById('materiales').value;
+      const acotaciones = document.getElementById('acotaciones').value;
+
+      const nombres = document.querySelectorAll('.nombrePersonaje');
+      const emociones = document.querySelectorAll('.emojiPersonaje');
+      const colores = document.querySelectorAll('.colorPersonaje');
+      const dialogos = document.querySelectorAll('.dialogoPersonaje');
+
+      let texto = `Autor: ${autor}\nTítulo: ${titulo}\nNúmero de actos: ${actos}\nNúmero de escenas por acto: ${escenas}\n\nMateriales: ${materiales}\n\nAcotaciones: ${acotaciones}\n\n`;
+
+      for (let a = 1; a <= actos; a++) {
+        texto += `--- Acto ${a} ---\n`;
+        for (let e = 1; e <= escenas; e++) {
+          texto += `  Escena ${e}:\n`;
+          for (let i = 0; i < nombres.length; i++) {
+            texto += `    [${nombres[i].value} ${emociones[i].value} - ${colores[i].value}]: ${dialogos[i].value}\n`;
+          }
+          texto += `\n`;
+        }
+      }
+
+      document.getElementById('guionOutput').textContent = texto;
+
+      const imgContainer = document.getElementById('guionImgs');
+      imgContainer.innerHTML = '';
+      imagenesBase64.forEach(src => {
         const img = document.createElement('img');
-        img.src = base64;
-        previewDiv.appendChild(img);
+        img.src = src;
+        imgContainer.appendChild(img);
+      });
+    }
+
+    function compartirWhatsApp() {
+      const texto = encodeURIComponent(document.getElementById('guionOutput').textContent);
+      window.open(`https://wa.me/?text=${texto}`, '_blank');
+    }
+
+    function imprimirGuion() {
+      const texto = document.getElementById('guionOutput').textContent;
+      const win = window.open('', '', 'width=900,height=700');
+      win.document.write(`<pre>${texto}</pre>`);
+      imagenesBase64.forEach(img => {
+        win.document.write(`<img src="${img}" style="max-width:300px;margin:10px;" />`);
+      });
+      win.document.close();
+      win.print();
+    }
+
+    async function descargarGuionPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const texto = document.getElementById('guionOutput').textContent.split('\n');
+      let y = 10;
+      for (let i = 0; i < texto.length; i++) {
+        doc.text(texto[i], 10, y);
+        y += 7;
+        if (y > 270) {
+          doc.addPage();
+          y = 10;
+        }
+      }
+      for (const b64 of imagenesBase64) {
+        if (y > 200) {
+          doc.addPage();
+          y = 10;
+        }
+        doc.addImage(b64, 'PNG', 10, y, 60, 60);
+        y += 65;
+      }
+      doc.save('Guion.pdf');
+    }
+  </script>
+</section>
+
+<section id="cuento" style="display:none;">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emoji Cuento</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 1.1em;
+      border-radius: 5px;
+      border: none;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 120px;
+    }
+    button {
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      padding: 12px 20px;
+      margin: 10px 5px 0 0;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e6b800;
+    }
+    #emojiArea {
+      text-align: center;
+      margin: 15px 0;
+      font-size: 7em;
+      color: #FF4500;
+    }
+    #preview {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+    #preview img {
+      display: block;
+      max-width: 150px;
+      margin: 0 auto 10px auto;
+      border-radius: 8px;
+    }
+    #previewTitle, #previewAuthor, #previewEmoji {
+      text-align: center;
+    }
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        font-family: serif !important;
+      }
+      #preview {
+        display: block !important;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 20px !important;
+      }
+      body > *:not(#preview) {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <h2>EmojiCuento: ¡Juega, Dibuja y Escribe!</h2>
+  <button id="startEmojiGame">Tu cuento empieza aquí! Dale clic</button>
+<!-- Área para el emoji seleccionado -->
+<div id="emojiArea" style="font-size: 5em; text-align: center; margin: 15px 0; border: 2px dashed #ffcc00; padding: 10px; border-radius: 12px; background-color: #111; min-height: 70px;">
+  <span style="opacity: 0.4; font-size: 0.5em;"> ¡Prepara tu imaginación, algo mágico está por llegar!</span>
+</div>
+
+
+
+  <label for="title">Título del cuento:</label>
+  <input type="text" id="title" placeholder="Escribe el título aquí" />
+
+  <label for="author">Autor:</label>
+  <input type="text" id="author" placeholder="Tu nombre" />
+
+  <label for="imageInput">¡Dibuja tu imagen favorita para el cuento y súbela aquí!</label>
+  <input type="file" id="imageInput" accept="image/*" />
+  <img id="previewUploadImage" src="" style="display:none; max-width: 150px; margin: 10px 0; border-radius: 8px;" />
+
+  <label for="startStory">Inicio del cuento:</label>
+  <textarea id="startStory" placeholder="Escribe el inicio del cuento..."></textarea>
+
+  <label for="middleStory">Nudo (parte media):</label>
+  <textarea id="middleStory" placeholder="Escribe el nudo del cuento..."></textarea>
+
+  <label for="endStory">Desenlace (final):</label>
+  <textarea id="endStory" placeholder="Escribe el desenlace del cuento..."></textarea>
+
+  <button id="generateStory">Generar Cuento</button>
+  <button id="downloadPDF">Descargar PDF</button>
+  <button id="printStory">Imprimir</button>
+
+  <div id="preview" style="display:none;">
+    <div id="previewEmoji"></div>
+    <h2 id="previewTitle"></h2>
+    <h4 id="previewAuthor"></h4>
+    <img id="previewImage" src="" alt="Imagen del cuento" />
+    <p id="previewStory"></p>
+    
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const emojiArea = document.getElementById('emojiArea');
+    const emojis = [...'⚡️🌈🐉🦄🚀👑🌟🐱🐶🌻🍎🎈🏰👻🧙‍♂️🦸‍♀️🤖🍀🎉🍕🎵💎🔥🌙☀️🌊🐬🐢🦋🍓🌺🍩🎃📚✈️⏰🕊️🍉🥑🎁🍄🚴‍♂️🛸📸🎬🧩🌹🌵🍰🦁'];
+
+    let emojiInterval;
+    let selectedEmoji = '';
+
+    document.getElementById('startEmojiGame').addEventListener('click', () => {
+      emojiArea.textContent = '';
+      let count = 0;
+      emojiInterval = setInterval(() => {
+        selectedEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+        emojiArea.textContent = selectedEmoji;
+        count++;
+        if (count > 20) {
+          clearInterval(emojiInterval);
+        }
+      }, 100);
+    });
+
+    let selectedImageDataUrl = '';
+
+    document.getElementById('imageInput').addEventListener('change', function() {
+      const file = this.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        selectedImageDataUrl = e.target.result;
+        document.getElementById('previewImage').src = selectedImageDataUrl;
+        document.getElementById('previewUploadImage').src = selectedImageDataUrl;
+        document.getElementById('previewUploadImage').style.display = 'block';
       };
       reader.readAsDataURL(file);
     });
-  });
 
-  function agregarPersonaje() {
-    const container = document.getElementById('personajesContainer');
-    const block = document.createElement('div');
-    block.className = 'personaje-block';
+    document.getElementById('generateStory').addEventListener('click', () => {
+      const title = document.getElementById('title').value.trim();
+      const author = document.getElementById('author').value.trim();
+      const start = document.getElementById('startStory').value.trim();
+      const middle = document.getElementById('middleStory').value.trim();
+      const end = document.getElementById('endStory').value.trim();
 
-    block.innerHTML = `
-      <div class="personaje-header">
-        <label>Nombre del personaje:</label>
-        <button type="button" onclick="eliminarPersonaje(this)" style="background:#900;color:#eee;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">Eliminar</button>
-      </div>
-      <input type="text" class="nombrePersonaje" placeholder="Ejemplo: Juan" required />
-      <div class="flex-row">
-        <div class="flex-column">
-          <label>Emoción (Emoji):</label>
-          <select class="emojiPersonaje" required>
-            <option value="">Selecciona emoción</option>
-            <option value="😀">Feliz 😀</option>
-            <option value="😢">Triste 😢</option>
-            <option value="😠">Enojado 😠</option>
-            <option value="😨">Asustado 😨</option>
-            <option value="😮">Sorprendido 😮</option>
-            <option value="😐">Neutral 😐</option>
-            <option value="🤔">Pensativo 🤔</option>
-            <option value="😌">Calmado 😌</option>
-          </select>
-        </div>
-        <div class="flex-column">
-          <label>Color del personaje:</label>
-          <input type="color" class="colorPersonaje" value="#00cc66" />
-        </div>
-      </div>
-      <label>Descripción de la escena y Diálogo:</label>
-      <textarea class="dialogoPersonaje" rows="3" placeholder="Ejemplo: No puedo creer que esto pase..." required></textarea>
-    `;
-    container.appendChild(block);
-  }
-
-  function eliminarPersonaje(btn) {
-    const block = btn.closest('.personaje-block');
-    if (block) block.remove();
-  }
-
-  function generarGuion() {
-    // Obtener datos generales
-    const autor = document.getElementById('autor').value.trim();
-    const titulo = document.getElementById('titulo').value.trim();
-    const numActos = parseInt(document.getElementById('numActos').value);
-    const numEscenas = parseInt(document.getElementById('numEscenas').value);
-    const materiales = document.getElementById('materiales').value.trim();
-    const acotaciones = document.getElementById('acotaciones').value.trim();
-
-    if (!autor || !titulo || isNaN(numActos) || isNaN(numEscenas)) {
-      alert('Por favor, completa los campos obligatorios.');
-      return;
-    }
-
-    // Obtener personajes y diálogos
-    const personajes = [];
-    const nombres = document.querySelectorAll('.nombrePersonaje');
-    const emojis = document.querySelectorAll('.emojiPersonaje');
-    const colores = document.querySelectorAll('.colorPersonaje');
-    const dialogos = document.querySelectorAll('.dialogoPersonaje');
-
-    for (let i = 0; i < nombres.length; i++) {
-      const n = nombres[i].value.trim();
-      const e = emojis[i].value;
-      const c = colores[i].value;
-      const d = dialogos[i].value.trim();
-
-      if (!n || !e || !d) {
-        alert(`Completa todos los campos para el personaje #${i+1}`);
+      if (!title || !author || !start || !middle || !end) {
+        alert('Por favor completa todas las partes del cuento antes de generar.');
         return;
       }
 
-      personajes.push({ nombre: n, emocion: e, color: c, dialogo: d });
-    }
+      document.getElementById('previewEmoji').textContent = selectedEmoji;
+      document.getElementById('previewTitle').textContent = title;
+      document.getElementById('previewAuthor').textContent = "Por: " + author;
+      document.getElementById('previewStory').innerHTML = `<strong>Inicio:</strong> ${start}<br><br><strong>Nudo:</strong> ${middle}<br><br><strong>Desenlace:</strong> ${end}`;
 
-    // Crear guion textual
-    let texto = `Autor: ${autor}\nTítulo: ${titulo}\n\n`;
-
-    texto += `Materiales para la escena: ${materiales || 'No especificados'}\n`;
-    texto += `Acotaciones: ${acotaciones || 'Ninguna'}\n\n`;
-
-    for (let acto = 1; acto <= numActos; acto++) {
-      texto += `--- Acto ${acto} ---\n`;
-      for (let escena = 1; escena <= numEscenas; escena++) {
-        texto += `  Escena ${escena}:\n`;
-
-        personajes.forEach(p => {
-          texto += `    [${p.nombre} ${p.emocion} - ${p.color}]: ${p.dialogo}\n`;
-        });
-        texto += `\n`;
+      if(selectedImageDataUrl){
+        document.getElementById('previewImage').style.display = 'block';
+      } else {
+        document.getElementById('previewImage').style.display = 'none';
       }
-    }
 
-    // Mostrar en pantalla
-    document.getElementById('guionOutput').textContent = texto;
-
-    // Mostrar botones de compartir
-    document.getElementById('botonesCompartir').style.display = 'block';
-  }
-
-  // Compartir por WhatsApp
-  function compartirWhatsApp() {
-    const texto = encodeURIComponent(document.getElementById('guionOutput').textContent);
-    if (!texto) {
-      alert('Genera el guion primero.');
-      return;
-    }
-    const url = `https://wa.me/?text=${texto}`;
-    window.open(url, '_blank');
-  }
-
-  // Compartir por correo electrónico
-  function compartirCorreo() {
-    const asunto = encodeURIComponent('Guion: ' + document.getElementById('titulo').value.trim());
-    const cuerpo = encodeURIComponent(document.getElementById('guionOutput').textContent);
-    if (!cuerpo) {
-      alert('Genera el guion primero.');
-      return;
-    }
-    window.location.href = `mailto:?subject=${asunto}&body=${cuerpo}`;
-  }
-
-  // Imprimir el guion junto con imágenes
-  function imprimirGuion() {
-    const texto = document.getElementById('guionOutput').textContent;
-    if (!texto) {
-      alert('Genera el guion primero.');
-      return;
-    }
-    const win = window.open('', '', 'width=900,height=700');
-    win.document.write(`<pre style="white-space: pre-wrap; font-family: monospace; background:#111; color:#eee; padding:20px;">${texto}</pre>`);
-
-    // Insertar imágenes en impresión
-    imagenesBase64.forEach(b64 => {
-      win.document.write(`<img src="${b64}" style="max-width:300px; margin:10px; border-radius:10px;" />`);
+      document.getElementById('preview').style.display = 'block';
+      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
     });
 
-    win.document.close();
-    win.focus();
-    win.print();
-    win.close();
-  }
+    document.getElementById('downloadPDF').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
 
-  // Descargar Word con texto + imágenes
-  async function descargarGuionWord() {
-    const { Document, Packer, Paragraph, TextRun, Media } = window.docx;
+      const title = document.getElementById('title').value.trim();
+      const author = document.getElementById('author').value.trim();
+      const start = document.getElementById('startStory').value.trim();
+      const middle = document.getElementById('middleStory').value.trim();
+      const end = document.getElementById('endStory').value.trim();
 
-    const texto = document.getElementById('guionOutput').textContent;
-    if (!texto) {
-      alert('Genera el guion primero.');
-      return;
-    }
+      if (!title || !author || !start || !middle || !end) {
+        alert('Por favor completa todas las partes del cuento antes de descargar.');
+        return;
+      }
 
-    const doc = new Document({
-      sections: [{
-        children: []
-      }]
+      doc.setFillColor(255,255,255);
+      doc.rect(0, 0, 210, 297, 'F');
+
+      doc.setFontSize(30);
+      doc.setTextColor(255, 69, 0);
+      doc.text(selectedEmoji, 105, 30, null, null, 'center');
+
+      doc.setFontSize(22);
+      doc.setTextColor(0,0,0);
+      doc.text(title, 105, 45, null, null, 'center');
+
+      if(selectedImageDataUrl){
+        const img = new Image();
+        img.src = selectedImageDataUrl;
+        img.onload = function() {
+          doc.addImage(img, 'JPEG', 75, 50, 60, 40);
+          addTextAndSave();
+        }
+      } else {
+        addTextAndSave();
+      }
+
+      function addTextAndSave() {
+        doc.setFontSize(16);
+        doc.text(`Por: ${author}`, 105, 95, null, null, 'center');
+
+        doc.setFontSize(14);
+        const splitStart = doc.splitTextToSize('Inicio: ' + start, 180);
+        const splitMiddle = doc.splitTextToSize('Nudo: ' + middle, 180);
+        const splitEnd = doc.splitTextToSize('Desenlace: ' + end, 180);
+
+        doc.text(splitStart, 15, 110);
+        doc.text(splitMiddle, 15, 130 + splitStart.length * 7);
+        doc.text(splitEnd, 15, 150 + (splitStart.length + splitMiddle.length) * 7);
+
+        doc.save(`${title}.pdf`);
+      }
     });
 
-    // Añadir texto por líneas
-    const lineas = texto.split('\n');
-    lineas.forEach(line => {
-      doc.sections[0].children.push(new Paragraph(line));
-    });
-
-    // Añadir imágenes (convertir base64 a array de bytes)
-    for (const b64 of imagenesBase64) {
-      const base64Data = b64.split(',')[1];
-      const imgBuffer = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
-
-      const image = Media.addImage(doc, imgBuffer);
-      doc.sections[0].children.push(new Paragraph(image));
-    }
-
-    const blob = await Packer.toBlob(doc);
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `Guion_${document.getElementById('titulo').value.trim() || 'obra'}.docx`;
-    a.click();
-    URL.revokeObjectURL(url);
+    document.getElementById('printStory').addEventListener('click', () => {
+  const preview = document.getElementById('preview');
+  if (preview.style.display === 'none') {
+    alert('Primero genera el cuento para imprimirlo.');
+    return;
   }
 
-  // Descargar PDF con texto + imágenes
-  async function descargarGuionPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+  const printWindow = window.open('', '_blank');
+  const htmlContent = `
+    <html>
+      <head>
+        <title>Imprimir Cuento</title>
+        <style>
+          body { font-family: 'Comic Sans MS', cursive, sans-serif; color: #000; padding: 20px; }
+          img { max-width: 150px; display: block; margin: 0 auto 10px auto; }
+          h2, h4 { text-align: center; }
+          p { font-size: 16px; line-height: 1.6; }
+        </style>
+      </head>
+      <body>
+        ${preview.innerHTML}
+        <script>window.onload = function() { window.print(); }<\/script>
+      </body>
+    </html>
+  `;
+  printWindow.document.open();
+  printWindow.document.write(htmlContent);
+  printWindow.document.close();
+});
 
-    const texto = document.getElementById('guionOutput').textContent;
-    if (!texto) {
-      alert('Genera el guion primero.');
-      return;
-    }
-
-    const lineas = texto.split('\n');
-    let y = 10;
-    const lineHeight = 7;
-    const pageHeight = doc.internal.pageSize.height;
-
-    doc.setTextColor(0, 0, 0);
-    doc.setFontSize(12);
-    for (let i = 0; i < lineas.length; i++) {
-      if (y + lineHeight > pageHeight - 20) {
-        doc.addPage();
-        y = 10;
-      }
-      doc.text(lineas[i], 10, y);
-      y += lineHeight;
-    }
-
-    // Añadir imágenes debajo del texto
-    for (const b64 of imagenesBase64) {
-      if (y + 60 > pageHeight - 20) {
-        doc.addPage();
-        y = 10;
-      }
-      // Insertar imagen
-      // jsPDF acepta formato base64 con "JPEG" o "PNG"
-      // Asumimos PNG (la mayoría)
-      doc.addImage(b64, 'PNG', 10, y, 60, 60);
-      y += 65;
-    }
-
-    const fileName = `Guion_${document.getElementById('titulo').value.trim() || 'obra'}.pdf`;
-    doc.save(fileName);
-  }
-</script>
-
-</body>
-</html>
-
-
-</body>
-</html>
-
+  </script>
+</section>
   
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Emogi Cuento</title>
+  <!-- Ajustes responsivos generales -->
 <style>
+  /* Asegura que todo se adapte al tamaño del dispositivo */
+  html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
   body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    color: #ffcc00;
-    margin-bottom: 10px;
-  }
-  label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-  }
-  input[type="text"], textarea {
-    width: 100%;
-    padding: 8px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    border: none;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  textarea {
-    height: 120px;
-  }
-  #story {
-    height: 200px;
-  }
-  button {
-    background-color: #ffcc00;
-    border: none;
-    color: #000;
-    padding: 12px 20px;
-    margin: 10px 5px 0 0;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 8px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #e6b800;
-  }
-  #emojiArea {
-    text-align: center;
-    margin: 15px 0;
-    font-size: 10em;
-    min-height: 50px;
-  }
-  #emojiArea {
-    text-align: center;
-    margin: 15px 0;
-    font-size: 10em; /* para emojis grandes */
-    min-height: 50px;
-    color: #FF4500; /* ejemplo: color naranja rojizo para el emoji */
-  }
-  #emojiText {
-    font-size: 0.1em; /* mucho más pequeño que 10em */
-    color: black; /* color diferente para el texto */
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-  }
-  #preview {
-    background: #fff;
-    color: #000;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-  #preview img {
-    display: block;
     max-width: 100%;
-    margin: 0 auto 10px auto;
-    border-radius: 8px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
-  @media print {
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input, textarea, button, canvas {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Texto más legible en móviles */
+  @media screen and (max-width: 600px) {
     body {
-      background: #fff !important;
-      color: #000 !important;
-      font-family: serif !important;
+      font-size: 15px;
+      padding: 10px;
     }
-    #preview {
-      background: #fff !important;
-      color: #000 !important;
-      box-shadow: none !important;
-      max-width: 100% !important;
-      border-radius: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
+
+    #emojiArea {
+      font-size: 2.5em !important;
+      padding: 8px !important;
+      min-height: 60px !important;
     }
-    button, label, input, textarea, #emojiArea {
-      display: none !important;
+
+    button {
+      font-size: 1em !important;
+      padding: 10px !important;
+    }
+
+    input, textarea {
+      font-size: 1em;
     }
   }
 </style>
-</head>
-<body>
-
-<h1>📚EmojiCuento: ¡Juega, Dibuja y Escribe!✨</h1>
   
-  <button id="startEmojiGame">¡Juega con los emojis para inspirarte!</button>
-<div id="emojiArea"></div>
+  
+  
+  
+  
+<section id="juegoPoema" style="display: none; padding: 20px; color: #fff;">
+  <h2 style="text-align: center; color: #ffffff;">Crea Tu Emoji Poema </h2>
+  
+   <!-- Emoji aleatorio -->
+<div style="text-align: center; margin: 20px 0;">
+  <button onclick="generarEmoji()">Elegir Emoji</button>
+  <div id="emojiResultado" style="font-size: 4em; margin-top: 10px;"></div>
 
-<label for="title">Título del cuento:</label>
-<input type="text" id="title" placeholder="Escribe el título aquí" />
+  <div style="margin-bottom: 15px;">
+    <label for="tituloPoema"><strong>Título:</strong></label><br>
+    <input type="text" id="tituloPoema" placeholder="Título del poema" style="width: 100%; padding: 8px; border-radius: 8px; margin-top: 5px;">
+  </div>
 
-<label for="author">Autor:</label>
-<input type="text" id="author" placeholder="Tu nombre" />
-
-<label for="imageInput">¡Dibuja tu imagen favorita para el cuento y súbela aquí!</label>
-<input type="file" id="imageInput" accept="image/*" />
-
-<label for="startStory">Inicio del cuento:</label>
-<textarea id="startStory" placeholder="Escribe el inicio del cuento..."></textarea>
-
-<label for="middleStory">Nudo (parte media):</label>
-<textarea id="middleStory" placeholder="Escribe el nudo del cuento..."></textarea>
-
-<label for="endStory">Desenlace (final):</label>
-<textarea id="endStory" placeholder="Escribe el desenlace del cuento..."></textarea>
+  <div style="margin-bottom: 15px;">
+    <label for="autorPoema"><strong>Autor:</strong></label><br>
+    <input type="text" id="autorPoema" placeholder="Tu nombre o seudónimo" style="width: 100%; padding: 8px; border-radius: 8px; margin-top: 5px;">
+  </div>
 
 
-<button id="generateStory">Generar Cuento</button>
-<button id="downloadPDF">Descargar PDF</button>
-<button id="downloadWord">Descargar Word</button>
-<button id="sendEmail">Enviar por Email</button>
-<button id="sendWhatsApp">Enviar por WhatsApp</button>
-<button id="printStory">Imprimir</button>
+  <!-- Estrofas -->
+  <div id="estrofas">
+    <h3>Estrofa 1</h3>
+    <textarea placeholder="Verso 1" class="verso"></textarea>
+    <textarea placeholder="Verso 2" class="verso"></textarea>
+    <textarea placeholder="Verso 3" class="verso"></textarea>
+    <textarea placeholder="Verso 4" class="verso"></textarea>
 
-<div id="preview" style="display:none;">
-  <img id="previewImage" src="" alt="Imagen del cuento" />
-  <h2 id="previewTitle"></h2>
-  <h4 id="previewAuthor"></h4>
-  <p id="previewStory"></p>
-</div>
+    <h3>Estrofa 2</h3>
+    <textarea placeholder="Verso 1" class="verso"></textarea>
+    <textarea placeholder="Verso 2" class="verso"></textarea>
+    <textarea placeholder="Verso 3" class="verso"></textarea>
+    <textarea placeholder="Verso 4" class="verso"></textarea>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <h3>Estrofa 3</h3>
+    <textarea placeholder="Verso 1" class="verso"></textarea>
+    <textarea placeholder="Verso 2" class="verso"></textarea>
+    <textarea placeholder="Verso 3" class="verso"></textarea>
+    <textarea placeholder="Verso 4" class="verso"></textarea>
+  </div>
+
+  <!-- Ayudador de rimas -->
+  <div style="margin-top: 20px;">
+    <h3>🔍 Buscar palabras que rimen</h3>
+    <input type="text" id="palabraRima" placeholder="Escribe una palabra" style="padding: 8px; border-radius: 6px; width: 60%;">
+    <button onclick="buscarRimas()">Buscar Rimas</button>
+    <p id="resultadoRima" style="margin-top: 10px; font-style: italic;"></p>
+  </div>
+
+  <!-- Botones de acción -->
+  <div style="text-align: center; margin-top: 30px;">
+    <button onclick="verPoema()">📜 Ver Poema</button>
+    <button onclick="window.print()">🖨️ Imprimir</button>
+    <button onclick="descargarPDF()">📥 Descargar PDF</button>
+  </div>
+
+  <!-- Resultado -->
+  <div id="poemaResultado" style="margin-top: 30px; background: #111; padding: 20px; border-radius: 12px; display: none;"></div>
+</section>
+
+<style>
+  #juegoPoema textarea.verso {
+    display: block;
+    width: 100%;
+    height:2em;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    background: #222;
+    color: #fff;
+    border: 1px solid #555;
+  }
+</style>
+
 <script>
-  const emojiArea = document.getElementById('emojiArea');
-const emojis = [
-  '⚡️','🌈','🐉','🦄','🚀','👑','🌟','🐱','🐶','🌻',
-  '🍎','🎈','🏰','👻','🧙‍♂️','🦸‍♀️','🤖','🍀','🎉','🍕',
-  '🎵','💎','🔥','🌙','☀️','🌊','🐬','🐢','🦋','🍓',
-  '🌺','🍩','🎃','📚','✈️','⏰','🕊️','🍉','🥑','🎁',
-  '🍄','🚴‍♂️','🛸','📸','🎬','🧩','🌹','🌵','🍰','🦁'
-];
+  window.onload = function () {
+    const emojis = ["🌟", "🔥", "❄️", "💧", "🌈", "🌻", "🌙", "🎵", "🦋", "🧠", "❤️", "💫"];
 
-let emojiInterval;
-
-document.getElementById('startEmojiGame').addEventListener('click', () => {
-  emojiArea.textContent = '';
-  let count = 0;
-  emojiInterval = setInterval(() => {
-    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    emojiArea.textContent = randomEmoji;
-    count++;
-    if (count > 20) {
-      clearInterval(emojiInterval);
-      emojiArea.textContent += " ";
-    }
-  }, 100);
-});
-
-
-  let selectedImageDataUrl = '';
-
-  document.getElementById('imageInput').addEventListener('change', function() {
-    const file = this.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      selectedImageDataUrl = e.target.result;
-      document.getElementById('previewImage').src = selectedImageDataUrl;
-    };
-    reader.readAsDataURL(file);
-  });
-
-  document.getElementById('generateStory').addEventListener('click', () => {
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const start = document.getElementById('startStory').value.trim();
-    const middle = document.getElementById('middleStory').value.trim();
-    const end = document.getElementById('endStory').value.trim();
-
-    if (!title || !author || !start || !middle || !end) {
-      alert('Por favor completa todas las partes del cuento antes de generar.');
-      return;
-    }
-    
-    document.getElementById('previewTitle').textContent = title;
-    document.getElementById('previewAuthor').textContent = "Por: " + author;
-    document.getElementById('previewStory').innerHTML = `<strong>Inicio:</strong> ${start}<br><br><strong>Nudo:</strong> ${middle}<br><br><strong>Desenlace:</strong> ${end}`;
-
-    if(selectedImageDataUrl){
-      document.getElementById('previewImage').style.display = 'block';
-    } else {
-      document.getElementById('previewImage').style.display = 'none';
-    }
-
-    document.getElementById('preview').style.display = 'block';
-    window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-  });
-
-  // Descargar PDF
-  document.getElementById('downloadPDF').addEventListener('click', () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const start = document.getElementById('startStory').value.trim();
-    const middle = document.getElementById('middleStory').value.trim();
-    const end = document.getElementById('endStory').value.trim();
-
-    if (!title || !author || !start || !middle || !end) {
-      alert('Por favor completa todas las partes del cuento antes de descargar.');
-      return;
-    }
-
-    doc.setFillColor(255,255,255);
-    doc.rect(0, 0, 210, 297, 'F'); // fondo blanco para imprimir bien
-
-    doc.setFontSize(22);
-    doc.setTextColor(0,0,0);
-    doc.text(title, 105, 20, null, null, 'center');
-
-    if(selectedImageDataUrl){
-      const img = new Image();
-      img.src = selectedImageDataUrl;
-      img.onload = function() {
-        doc.addImage(img, 'JPEG', 55, 30, 100, 60);
-        addTextAndSave();
+    function generarEmoji() {
+      const emojiElemento = document.getElementById("emojiResultado");
+      if (!emojiElemento) {
+        alert("No se encontró el contenedor del emoji 😢");
+        return;
       }
-    } else {
-      addTextAndSave();
+
+      let vueltas = 0;
+
+      const intervalo = setInterval(() => {
+        const aleatorio = emojis[Math.floor(Math.random() * emojis.length)];
+        emojiElemento.textContent = aleatorio;
+        vueltas++;
+
+        if (vueltas > 20) {
+          clearInterval(intervalo);
+        }
+      }, 100);
     }
 
-    function addTextAndSave() {
-      doc.setFontSize(16);
-      doc.text(`Por: ${author}`, 105, 95, null, null, 'center');
+    window.generarEmoji = generarEmoji;
 
-      doc.setFontSize(14);
-      const splitStart = doc.splitTextToSize('Inicio: ' + start, 180);
-      const splitMiddle = doc.splitTextToSize('Nudo: ' + middle, 180);
-      const splitEnd = doc.splitTextToSize('Desenlace: ' + end, 180);
+    window.verPoema = function () {
+      const titulo = document.getElementById("tituloPoema").value;
+      const autor = document.getElementById("autorPoema").value;
+      const versos = document.querySelectorAll("#estrofas .verso");
+      const emoji = document.getElementById("emojiResultado").textContent;
 
-      doc.text(splitStart, 15, 110);
-      doc.text(splitMiddle, 15, 130 + splitStart.length * 7);
-      doc.text(splitEnd, 15, 150 + (splitStart.length + splitMiddle.length) * 7);
+      let html = `<h2>${titulo} ${emoji}</h2><p><em>Por ${autor}</em></p>`;
+      for (let i = 0; i < versos.length; i += 4) {
+        html += "<p>";
+        for (let j = 0; j < 4; j++) {
+          const verso = versos[i + j].value;
+          if (verso.trim()) {
+            html += `${verso}<br>`;
+          }
+        }
+        html += "</p>";
+      }
 
-      doc.save(`${title}.pdf`);
-    }
-  });
+      const resultado = document.getElementById("poemaResultado");
+      resultado.innerHTML = html;
+      resultado.style.display = "block";
+    };
 
-  // Descargar Word (docx)
-  document.getElementById('downloadWord').addEventListener('click', () => {
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const start = document.getElementById('startStory').value.trim();
-    const middle = document.getElementById('middleStory').value.trim();
-    const end = document.getElementById('endStory').value.trim();
+    window.buscarRimas = function () {
+      const palabra = document.getElementById("palabraRima").value.trim();
+      if (!palabra) return;
 
-    if (!title || !author || !start || !middle || !end) {
-      alert('Por favor completa todas las partes del cuento antes de descargar.');
-      return;
-    }
+      const posiblesRimas = ["luz", "cruz", "voz", "sol", "flor", "color", "amor", "valor", "sabor", "calor"];
+      const resultado = posiblesRimas.filter(p => p.endsWith(palabra.slice(-2)) || p.endsWith(palabra.slice(-3)));
 
-    let content = `
-      <html xmlns:o='urn:schemas-microsoft-com:office:office'
-            xmlns:w='urn:schemas-microsoft-com:office:word'
-            xmlns='http://www.w3.org/TR/REC-html40'>
-      <head><title>${title}</title></head><body style="font-family: Arial, sans-serif; color: black;">
-      <h1 style="text-align:center;">${title}</h1>
-      <h3 style="text-align:center;">Por: ${author}</h3>
-      ${selectedImageDataUrl ? `<div style="text-align:center;"><img src="${selectedImageDataUrl}" style="max-width:400px; margin-bottom:20px;"/></div>` : ''}
-      <p><strong>Inicio:</strong> ${start}</p>
-      <p><strong>Nudo:</strong> ${middle}</p>
-      <p><strong>Desenlace:</strong> ${end}</p>
-      </body></html>
-    `;
+      document.getElementById("resultadoRima").textContent = resultado.length > 0
+        ? "Palabras que riman: " + resultado.join(", ")
+        : "No se encontraron muchas coincidencias, intenta con otra palabra.";
+    };
 
-    let blob = new Blob(['\ufeff', content], {type: 'application/msword'});
-    let url = URL.createObjectURL(blob);
-    let a = document.createElement('a');
-    a.href = url;
-    a.download = `${title}.doc`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  });
-
-  // Enviar por email
-  document.getElementById('sendEmail').addEventListener('click', () => {
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const start = document.getElementById('startStory').value.trim();
-    const middle = document.getElementById('middleStory').value.trim();
-    const end = document.getElementById('endStory').value.trim();
-
-    if (!title || !author || !start || !middle || !end) {
-      alert('Por favor completa todas las partes del cuento antes de enviar.');
-      return;
-    }
-
-    let subject = encodeURIComponent(`Mi cuento: ${title}`);
-    let body = encodeURIComponent(`Título: ${title}\nAutor: ${author}\n\nInicio:\n${start}\n\nNudo:\n${middle}\n\nDesenlace:\n${end}`);
-    let mailtoLink = `mailto:?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-  });
-
-  // Enviar por WhatsApp (solo texto)
-  document.getElementById('sendWhatsApp').addEventListener('click', () => {
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const start = document.getElementById('startStory').value.trim();
-    const middle = document.getElementById('middleStory').value.trim();
-    const end = document.getElementById('endStory').value.trim();
-
-    if (!title || !author || !start || !middle || !end) {
-      alert('Por favor completa todas las partes del cuento antes de enviar por WhatsApp.');
-      return;
-    }
-    const message = `*${title}*\nAutor: ${author}\n\nInicio:\n${start}\n\nNudo:\n${middle}\n\nDesenlace:\n${end}`;
-    const url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(message);
-    window.open(url, '_blank');
-  });
-
-  // Imprimir
-  document.getElementById('printStory').addEventListener('click', () => {
-    if (document.getElementById('preview').style.display === 'none') {
-      alert('Primero genera el cuento para imprimirlo.');
-      return;
-    }
-    window.print();
-  });
+    window.descargarPDF = function () {
+      const contenido = document.getElementById("poemaResultado").innerText;
+      const blob = new Blob([contenido], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "mi_poema.txt";
+      link.click();
+    };
+  };
 </script>
 
-</body>
-</html>
 
+<style>
+  footer {
+    background-color: #111;
+    color: #ddd;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.6;
+    border-top: 2px solid #ff6f00;
+    margin-top: 40px;
+  }
 
+  footer strong {
+    color: #fff;
+  }
 
-    
+  footer em {
+    color: #ffa726;
+    font-style: normal;
+  }
+
+  footer a {
+    color: #4fc3f7;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <footer>
-  © 2024 Herramientas del Proyecto de Investigación: *Emociones en el Aula* – Propuesta educativa y cultural creada por Yobana Orozco Benavides, pedagoga y artista integral.  
-  Esta obra se comparte bajo la licencia Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0).  
-  Uso libre con fines educativos, prohibido su uso comercial.  
-  Bio: <a href="https://yobanaorozcoartista.bio.link/" target="_blank" rel="noopener">https://yobanaorozcoartista.bio.link</a>
+  © 2024 — Herramientas del Proyecto de Investigación: <strong>*Emociones en el Aula*</strong><br>
+  Propuesta educativa y cultural creada por <strong>Yobana Orozco Benavides</strong>, pedagoga y artista integral.<br><br>
+  Licencia: <em>Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)</em><br>
+  Uso libre con fines educativos — <strong>prohibido uso comercial</strong>.<br><br>
+  Más información: <a href="https://yobanaorozcoartista.bio.link/" target="_blank" rel="noopener">yobanaorozcoartista.bio.link</a>
 </footer>
-
-</body>
-</html>
-
 
