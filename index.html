@@ -238,6 +238,9 @@ h1, h2, h3 {
 <button onclick="mostrar('guion')">Guion Emocional</button>
 <button onclick="mostrar('cuento')">Emoji Cuento</button>
   <button onclick="mostrar('juegoPoema')">Emoji Poema</button>
+  <button onclick="mostrar('animacon-emocion')">Anima Con Emoción</button>
+ 
+</div>
 
   
   <style>
@@ -1239,16 +1242,13 @@ btnGirar.addEventListener('click', () => {
       margin: 0;
       padding: 20px;
     }
-    h1 {
-      text-align: center;
-      color: #ffcc00;
-      margin-bottom: 10px;
-    }
+
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
     }
+
     input[type="text"], textarea {
       width: 100%;
       padding: 8px;
@@ -1258,30 +1258,45 @@ btnGirar.addEventListener('click', () => {
       margin-top: 5px;
       box-sizing: border-box;
     }
+
     textarea {
       height: 120px;
     }
+
     button {
       background-color: #ffcc00;
       border: none;
       color: #000;
-      padding: 12px 20px;
-      margin: 10px 5px 0 0;
+      padding: 10px 15px;
+      margin: 10px 0;
       cursor: pointer;
       font-weight: bold;
       border-radius: 8px;
-      font-size: 1.1em;
+      font-size: 1em;
       transition: background-color 0.3s ease;
     }
+
     button:hover {
       background-color: #e6b800;
     }
-    #emojiArea {
-      text-align: center;
-      margin: 15px 0;
-      font-size: 7em;
-      color: #FF4500;
+
+    .emoji-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
     }
+
+    .emoji-box {
+      font-size: 2.2em;
+      border: 2px dashed #ffcc00;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background-color: #111;
+      min-width: 60px;
+      text-align: center;
+    }
+
     #preview {
       background: #fff;
       color: #000;
@@ -1291,47 +1306,21 @@ btnGirar.addEventListener('click', () => {
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      box-sizing: border-box;
     }
+
     #preview img {
       display: block;
       max-width: 150px;
       margin: 0 auto 10px auto;
       border-radius: 8px;
     }
+
     #previewTitle, #previewAuthor, #previewEmoji {
       text-align: center;
-    }
-    @media print {
-      body {
-        background: #fff !important;
-        color: #000 !important;
-        font-family: serif !important;
-      }
-      #preview {
-        display: block !important;
-        background: #fff !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        max-width: 100% !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        padding: 20px !important;
-      }
-      body > *:not(#preview) {
-        display: none !important;
-      }
     }
   </style>
 
   <h2>EmojiCuento: ¡Juega, Dibuja y Escribe!</h2>
-  <button id="startEmojiGame">Tu cuento empieza aquí! Dale clic</button>
-<!-- Área para el emoji seleccionado -->
-<div id="emojiArea" style="font-size: 5em; text-align: center; margin: 15px 0; border: 2px dashed #ffcc00; padding: 10px; border-radius: 12px; background-color: #111; min-height: 70px;">
-  <span style="opacity: 0.4; font-size: 0.5em;"> ¡Prepara tu imaginación, algo mágico está por llegar!</span>
-</div>
-
-
 
   <label for="title">Título del cuento:</label>
   <input type="text" id="title" placeholder="Escribe el título aquí" />
@@ -1343,17 +1332,31 @@ btnGirar.addEventListener('click', () => {
   <input type="file" id="imageInput" accept="image/*" />
   <img id="previewUploadImage" src="" style="display:none; max-width: 150px; margin: 10px 0; border-radius: 8px;" />
 
+  <!-- INICIO -->
   <label for="startStory">Inicio del cuento:</label>
+  <div class="emoji-section">
+    <button id="emojiStartBtn">🎲 Emoji del inicio</button>
+    <div id="emojiStart" class="emoji-box">✨</div>
+  </div>
   <textarea id="startStory" placeholder="Escribe el inicio del cuento..."></textarea>
 
+  <!-- NUDO -->
   <label for="middleStory">Nudo (parte media):</label>
+  <div class="emoji-section">
+    <button id="emojiMiddleBtn">🎲 Emoji del nudo</button>
+    <div id="emojiMiddle" class="emoji-box">⚔️</div>
+  </div>
   <textarea id="middleStory" placeholder="Escribe el nudo del cuento..."></textarea>
 
+  <!-- FINAL -->
   <label for="endStory">Desenlace (final):</label>
+  <div class="emoji-section">
+    <button id="emojiEndBtn">🎲 Emoji del final</button>
+    <div id="emojiEnd" class="emoji-box">🏆</div>
+  </div>
   <textarea id="endStory" placeholder="Escribe el desenlace del cuento..."></textarea>
 
   <button id="generateStory">Generar Cuento</button>
-  <button id="downloadPDF">Descargar PDF</button>
   <button id="printStory">Imprimir</button>
 
   <div id="preview" style="display:none;">
@@ -1362,37 +1365,32 @@ btnGirar.addEventListener('click', () => {
     <h4 id="previewAuthor"></h4>
     <img id="previewImage" src="" alt="Imagen del cuento" />
     <p id="previewStory"></p>
-    
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
-    const emojiArea = document.getElementById('emojiArea');
     const emojis = [...'⚡️🌈🐉🦄🚀👑🌟🐱🐶🌻🍎🎈🏰👻🧙‍♂️🦸‍♀️🤖🍀🎉🍕🎵💎🔥🌙☀️🌊🐬🐢🦋🍓🌺🍩🎃📚✈️⏰🕊️🍉🥑🎁🍄🚴‍♂️🛸📸🎬🧩🌹🌵🍰🦁'];
 
-    let emojiInterval;
-    let selectedEmoji = '';
-
-    document.getElementById('startEmojiGame').addEventListener('click', () => {
-      emojiArea.textContent = '';
+    function animarEmoji(id) {
       let count = 0;
-      emojiInterval = setInterval(() => {
-        selectedEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-        emojiArea.textContent = selectedEmoji;
+      const target = document.getElementById(id);
+      const interval = setInterval(() => {
+        target.textContent = emojis[Math.floor(Math.random() * emojis.length)];
         count++;
-        if (count > 20) {
-          clearInterval(emojiInterval);
-        }
+        if (count > 20) clearInterval(interval);
       }, 100);
-    });
+    }
+
+    document.getElementById('emojiStartBtn').onclick = () => animarEmoji('emojiStart');
+    document.getElementById('emojiMiddleBtn').onclick = () => animarEmoji('emojiMiddle');
+    document.getElementById('emojiEndBtn').onclick = () => animarEmoji('emojiEnd');
 
     let selectedImageDataUrl = '';
 
-    document.getElementById('imageInput').addEventListener('change', function() {
+    document.getElementById('imageInput').addEventListener('change', function () {
       const file = this.files[0];
       if (!file) return;
       const reader = new FileReader();
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         selectedImageDataUrl = e.target.result;
         document.getElementById('previewImage').src = selectedImageDataUrl;
         document.getElementById('previewUploadImage').src = selectedImageDataUrl;
@@ -1407,168 +1405,384 @@ btnGirar.addEventListener('click', () => {
       const start = document.getElementById('startStory').value.trim();
       const middle = document.getElementById('middleStory').value.trim();
       const end = document.getElementById('endStory').value.trim();
+      const emojiStart = document.getElementById('emojiStart').textContent;
+      const emojiMiddle = document.getElementById('emojiMiddle').textContent;
+      const emojiEnd = document.getElementById('emojiEnd').textContent;
 
       if (!title || !author || !start || !middle || !end) {
         alert('Por favor completa todas las partes del cuento antes de generar.');
         return;
       }
 
-      document.getElementById('previewEmoji').textContent = selectedEmoji;
+      document.getElementById('previewEmoji').innerHTML = `
+        <div><strong>Inicio:</strong> ${emojiStart}</div>
+        <div><strong>Nudo:</strong> ${emojiMiddle}</div>
+        <div><strong>Final:</strong> ${emojiEnd}</div>
+      `;
       document.getElementById('previewTitle').textContent = title;
       document.getElementById('previewAuthor').textContent = "Por: " + author;
       document.getElementById('previewStory').innerHTML = `<strong>Inicio:</strong> ${start}<br><br><strong>Nudo:</strong> ${middle}<br><br><strong>Desenlace:</strong> ${end}`;
 
-      if(selectedImageDataUrl){
+      if (selectedImageDataUrl) {
         document.getElementById('previewImage').style.display = 'block';
       } else {
         document.getElementById('previewImage').style.display = 'none';
       }
 
       document.getElementById('preview').style.display = 'block';
-      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-    });
-
-    document.getElementById('downloadPDF').addEventListener('click', () => {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-
-      const title = document.getElementById('title').value.trim();
-      const author = document.getElementById('author').value.trim();
-      const start = document.getElementById('startStory').value.trim();
-      const middle = document.getElementById('middleStory').value.trim();
-      const end = document.getElementById('endStory').value.trim();
-
-      if (!title || !author || !start || !middle || !end) {
-        alert('Por favor completa todas las partes del cuento antes de descargar.');
-        return;
-      }
-
-      doc.setFillColor(255,255,255);
-      doc.rect(0, 0, 210, 297, 'F');
-
-      doc.setFontSize(30);
-      doc.setTextColor(255, 69, 0);
-      doc.text(selectedEmoji, 105, 30, null, null, 'center');
-
-      doc.setFontSize(22);
-      doc.setTextColor(0,0,0);
-      doc.text(title, 105, 45, null, null, 'center');
-
-      if(selectedImageDataUrl){
-        const img = new Image();
-        img.src = selectedImageDataUrl;
-        img.onload = function() {
-          doc.addImage(img, 'JPEG', 75, 50, 60, 40);
-          addTextAndSave();
-        }
-      } else {
-        addTextAndSave();
-      }
-
-      function addTextAndSave() {
-        doc.setFontSize(16);
-        doc.text(`Por: ${author}`, 105, 95, null, null, 'center');
-
-        doc.setFontSize(14);
-        const splitStart = doc.splitTextToSize('Inicio: ' + start, 180);
-        const splitMiddle = doc.splitTextToSize('Nudo: ' + middle, 180);
-        const splitEnd = doc.splitTextToSize('Desenlace: ' + end, 180);
-
-        doc.text(splitStart, 15, 110);
-        doc.text(splitMiddle, 15, 130 + splitStart.length * 7);
-        doc.text(splitEnd, 15, 150 + (splitStart.length + splitMiddle.length) * 7);
-
-        doc.save(`${title}.pdf`);
-      }
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
 
     document.getElementById('printStory').addEventListener('click', () => {
-  const preview = document.getElementById('preview');
-  if (preview.style.display === 'none') {
-    alert('Primero genera el cuento para imprimirlo.');
-    return;
-  }
+      const preview = document.getElementById('preview');
+      if (preview.style.display === 'none') {
+        alert('Primero genera el cuento para imprimirlo.');
+        return;
+      }
 
-  const printWindow = window.open('', '_blank');
-  const htmlContent = `
-    <html>
-      <head>
-        <title>Imprimir Cuento</title>
-        <style>
-          body { font-family: 'Comic Sans MS', cursive, sans-serif; color: #000; padding: 20px; }
-          img { max-width: 150px; display: block; margin: 0 auto 10px auto; }
-          h2, h4 { text-align: center; }
-          p { font-size: 16px; line-height: 1.6; }
-        </style>
-      </head>
-      <body>
-        ${preview.innerHTML}
-        <script>window.onload = function() { window.print(); }<\/script>
-      </body>
-    </html>
-  `;
-  printWindow.document.open();
-  printWindow.document.write(htmlContent);
-  printWindow.document.close();
-});
-
+      const printWindow = window.open('', '_blank');
+      const htmlContent = `
+        <html>
+          <head>
+            <title>Imprimir Cuento</title>
+            <style>
+              body { font-family: 'Comic Sans MS', cursive, sans-serif; color: #000; padding: 20px; }
+              img { max-width: 150px; display: block; margin: 0 auto 10px auto; }
+              h2, h4, div { text-align: center; }
+              p { font-size: 16px; line-height: 1.6; }
+            </style>
+          </head>
+          <body>
+            ${preview.innerHTML}
+            <script>window.onload = function() { window.print(); }<\/script>
+          </body>
+        </html>
+      `;
+      printWindow.document.open();
+      printWindow.document.write(htmlContent);
+      printWindow.document.close();
+    });
   </script>
 </section>
   
-  <!-- Ajustes responsivos generales -->
-<style>
-  /* Asegura que todo se adapte al tamaño del dispositivo */
-  html {
-    box-sizing: border-box;
-    font-size: 16px;
-    scroll-behavior: smooth;
-  }
+<section id="animacon-emocion" style="display:none; padding: 20px; background: #111; color: #fff; font-family: 'Comic Sans MS', cursive;">
+  <h2 style="text-align:center; color:#ffcc00;">🎬 AnimaCon Emoción</h2>
+<p style="text-align:left; font-family: Georgia, serif; font-size: 16px; line-height: 1.4; padding: 10px;">
+  1. Usa las herramientas de dibujo para crear tu obra artística.<br>
+  2. Presiona el botón "Agregar fotograma" cada vez que quieras guardar una escena.<br>
+  3. Luego, haz clic en "Reproducir" para ver tu animación en movimiento.<br><br>
+  Exprésate, crea y anima tus emociones.
+</p>
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
 
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  input, textarea, button, canvas {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Texto más legible en móviles */
-  @media screen and (max-width: 600px) {
-    body {
-      font-size: 15px;
-      padding: 10px;
-    }
-
-    #emojiArea {
-      font-size: 2.5em !important;
-      padding: 8px !important;
-      min-height: 60px !important;
-    }
-
-    button {
-      font-size: 1em !important;
-      padding: 10px !important;
-    }
-
-    input, textarea {
-      font-size: 1em;
-    }
-  }
-</style>
+  <div style="text-align:center; margin-bottom: 15px;">
+    <button onclick="setTool('pencil')">✏️ Lápiz</button>
+    <button onclick="setTool('circle')">⭕ Círculo</button>
   
+    <button onclick="setTool('fill')">🎨 Relleno</button>
+    <button onclick="setTool('erase')">🧽 Borrar</button>
+    <button onclick="setTool('move')">🖱️ Seleccionar</button>
+    <button onclick="undo()">↩️ Deshacer</button>
+    <button onclick="redo()">↪️ Rehacer</button>
+    <button onclick="clearCanvas()">♻️ Reiniciar</button>
+    <button onclick="saveFrame()">🎞️ Agregar fotograma</button>
+    <button onclick="playAnimation()">▶️ Reproducir</button>
+    <button onclick="pauseAnimation()">⏸️ Pausar</button>
+  
+    <input type="color" id="colorPicker" value="#000000">
+    <input type="range" id="brushSize" min="1" max="20" value="3">
+  </div>
+
+
+    <canvas id="drawCanvas" width="600" height="400" style="border:2px solid #ffcc00; background:#fff; display:block; margin:auto;"></canvas>
+
+  <div id="animationPreview" style="margin-top: 20px; text-align: center;">
+    <h3 style="color: #ffcc00;">🎞️ Ver Animación</h3>
+    <canvas id="animationCanvas" width="600" height="400" style="border:2px dashed #ccc; background:#fff;"></canvas>
+  </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/whammy@0.0.2/whammy.min.js"></script>
+
+  <script>
+    const canvas = document.getElementById('drawCanvas');
+    const ctx = canvas.getContext('2d');
+    const frames = [];
+    let tool = 'pencil';
+    let fillMode = false;
+    let drawing = false;
+    let startX, startY;
+    let brushColor = "#000000";
+    let brushSize = 3;
+    let objects = [];
+    let selectedObject = null;
+    let isDragging = false;
+    let undoStack = [];
+    let redoStack = [];
+    let animationInterval;
+
+    document.getElementById('colorPicker').oninput = e => brushColor = e.target.value;
+    document.getElementById('brushSize').oninput = e => brushSize = parseInt(e.target.value);
+
+    function toggleFill() {
+      fillMode = !fillMode;
+      const btn = document.getElementById('fillBtn');
+      btn.style.backgroundColor = fillMode ? '#ffcc00' : '';
+      btn.style.color = fillMode ? '#000' : '';
+      btn.textContent = fillMode ? '🎨 Rellenar: ON' : '🎨 Rellenar';
+    }
+
+    function setTool(t) {
+      tool = t;
+      selectedObject = null;
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      objects = [];
+    }
+
+    function saveFrame() {
+      frames.push(canvas.toDataURL());
+      alert("¡Cuadro guardado!");
+    }
+
+    function playAnimation() {
+      if (frames.length === 0) return alert("Agrega cuadros primero.");
+      const animCtx = document.getElementById('animationCanvas').getContext('2d');
+      let i = 0;
+      animationInterval = setInterval(() => {
+        const img = new Image();
+        img.src = frames[i];
+        img.onload = () => {
+          animCtx.clearRect(0, 0, 600, 400);
+          animCtx.drawImage(img, 0, 0, 600, 400);
+        };
+        i = (i + 1) % frames.length;
+      }, 400);
+    }
+
+    function pauseAnimation() {
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        animationInterval = null;
+      }
+    }
+
+    function downloadAnimation() {
+      if (frames.length === 0) return alert("No hay cuadros guardados.");
+
+      const autor = prompt("Ingresa tu nombre o seudónimo:");
+      if (!autor) return alert("Debes escribir un nombre.");
+      const titulo = prompt("Ingresa el título de la animación:");
+      if (!titulo) return alert("Debes escribir un título.");
+
+      const video = new Whammy.Video(5); // FPS = 5
+      let loaded = 0;
+
+      frames.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          video.add(img);
+          loaded++;
+          if (loaded === frames.length) {
+            const output = video.compile();
+            const url = URL.createObjectURL(output);
+            const a = document.createElement("a");
+            a.href = url;
+            const nombreArchivo = `Animacion_${autor.replace(/\s+/g, "_")}_${titulo.replace(/\s+/g, "_")}.webm`;
+            a.download = nombreArchivo;
+            a.click();
+            URL.revokeObjectURL(url);
+          }
+        };
+        img.onerror = () => alert("Error al cargar un cuadro.");
+      });
+    }
+
+    function undo() {
+      if (objects.length === 0) return;
+      redoStack.push(objects.pop());
+      redrawAll();
+    }
+
+    function redo() {
+      if (redoStack.length === 0) return;
+      objects.push(redoStack.pop());
+      redrawAll();
+    }
+
+    function redrawAll() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      objects.forEach(obj => {
+        ctx.beginPath();
+        ctx.strokeStyle = obj.color;
+        ctx.lineWidth = obj.size;
+        ctx.fillStyle = obj.fill ? obj.color : 'transparent';
+        if (obj.type === 'circle') {
+          ctx.arc(obj.x, obj.y, obj.r, 0, Math.PI * 2);
+          if (obj.fill) ctx.fill();
+          ctx.stroke();
+        } else if (obj.type === 'line') {
+          ctx.moveTo(obj.x1, obj.y1);
+          ctx.lineTo(obj.x2, obj.y2);
+          ctx.stroke();
+        }
+        ctx.closePath();
+      });
+    }
+
+    // Eventos para dibujo, rellenado, mover, etc.
+    function getPixelColor(x, y) {
+      const data = ctx.getImageData(x, y, 1, 1).data;
+      return [data[0], data[1], data[2], data[3]];
+    }
+
+    function floodFill(x, y, targetColor, fillColor) {
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const pixels = imgData.data;
+      const stack = [[x, y]];
+      const index = (x, y) => (y * canvas.width + x) * 4;
+      function matchColor(i) {
+        return (
+          pixels[i] === targetColor[0] &&
+          pixels[i + 1] === targetColor[1] &&
+          pixels[i + 2] === targetColor[2] &&
+          pixels[i + 3] === targetColor[3]
+        );
+      }
+      while (stack.length) {
+        const [cx, cy] = stack.pop();
+        const i = index(cx, cy);
+        if (!matchColor(i)) continue;
+        pixels[i] = fillColor[0];
+        pixels[i + 1] = fillColor[1];
+        pixels[i + 2] = fillColor[2];
+        pixels[i + 3] = 255;
+        if (cx > 0) stack.push([cx - 1, cy]);
+        if (cx < canvas.width - 1) stack.push([cx + 1, cy]);
+        if (cy > 0) stack.push([cx, cy - 1]);
+        if (cy < canvas.height - 1) stack.push([cx, cy + 1]);
+      }
+      ctx.putImageData(imgData, 0, 0);
+    }
+
+    canvas.addEventListener("click", e => {
+      if (tool === "fill") {
+        const rect = canvas.getBoundingClientRect();
+        const x = Math.floor(e.clientX - rect.left);
+        const y = Math.floor(e.clientY - rect.top);
+        const target = getPixelColor(x, y);
+        const hex = brushColor.replace("#", "");
+        const fillColor = [
+          parseInt(hex.substring(0, 2), 16),
+          parseInt(hex.substring(2, 4), 16),
+          parseInt(hex.substring(4, 6), 16),
+          255
+        ];
+        if (target.toString() !== fillColor.toString()) {
+          floodFill(x, y, target, fillColor);
+        }
+      }
+    });
+
+    canvas.addEventListener('mousedown', e => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      startX = x;
+      startY = y;
+      drawing = true;
+      if (tool === 'move') {
+        selectedObject = objects.find(obj =>
+          obj.type === 'circle' &&
+          Math.hypot(obj.x - x, obj.y - y) <= obj.r
+        );
+        if (selectedObject) isDragging = true;
+      }
+      if (tool === 'pencil') {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+      }
+    });
+
+    canvas.addEventListener('mousemove', e => {
+      if (!drawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      if (tool === 'pencil') {
+        ctx.strokeStyle = brushColor;
+        ctx.lineWidth = brushSize;
+        ctx.lineCap = 'round';
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      }
+      if (tool === 'circle') {
+        redrawAll();
+        const r = Math.hypot(x - startX, y - startY);
+        ctx.beginPath();
+        ctx.lineWidth = brushSize;
+        ctx.strokeStyle = brushColor;
+        ctx.fillStyle = fillMode ? brushColor : 'transparent';
+        ctx.arc(startX, startY, r, 0, Math.PI * 2);
+        if (fillMode) ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+      }
+      if (tool === 'move' && isDragging && selectedObject) {
+        selectedObject.x = x;
+        selectedObject.y = y;
+        redrawAll();
+      }
+    });
+
+    canvas.addEventListener('mouseup', e => {
+      drawing = false;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      if (tool === 'circle') {
+        const r = Math.hypot(x - startX, y - startY);
+        objects.push({
+          type: 'circle',
+          x: startX,
+          y: startY,
+          r: r,
+          color: brushColor,
+          size: brushSize,
+          fill: fillMode
+        });
+        redrawAll();
+      }
+      if (tool === 'pencil') {
+        objects.push({
+          type: 'line',
+          x1: startX,
+          y1: startY,
+          x2: x,
+          y2: y,
+          color: brushColor,
+          size: brushSize
+        });
+        ctx.beginPath();
+      }
+      isDragging = false;
+    });
+
+    canvas.addEventListener('dblclick', () => {
+      isDragging = false;
+      selectedObject = null;
+    });
+    
+    
+  </script>
+</section>
+
+
+
+
+
   
   
   
@@ -1862,7 +2076,147 @@ btnGirar.addEventListener('click', () => {
       ventana.print();
     };
   };
+  
+  function toggleGameSection() {
+    const section = document.getElementById('animacon-emocion');
+    section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+    window.scrollTo({ top: section.offsetTop - 20, behavior: 'smooth' });
+  }
 </script>
+  
+  <script>
+let canvas = document.getElementById("animCanvas");
+let ctx = canvas.getContext("2d");
+
+let currentTool = 'drawLine';
+let isDrawing = false;
+let startX, startY;
+let objects = [];
+let selectedObject = null;
+let frames = [];
+
+canvas.addEventListener("mousedown", (e) => {
+  const x = e.offsetX;
+  const y = e.offsetY;
+  startX = x;
+  startY = y;
+
+  if (currentTool === 'select') {
+    selectedObject = objects.find(obj => isInside(obj, x, y));
+  } else {
+    isDrawing = true;
+  }
+});
+
+canvas.addEventListener("mouseup", (e) => {
+  if (!isDrawing) return;
+  isDrawing = false;
+  const endX = e.offsetX;
+  const endY = e.offsetY;
+
+  switch (currentTool) {
+    case 'drawLine':
+      objects.push({ type: 'line', x1: startX, y1: startY, x2: endX, y2: endY, color: '#000' });
+      break;
+    case 'drawCircle':
+      const radius = Math.hypot(endX - startX, endY - startY);
+      objects.push({ type: 'circle', x: startX, y: startY, r: radius, color: '#000' });
+      break;
+    case 'erase':
+      objects = objects.filter(obj => !isInside(obj, endX, endY));
+      break;
+    case 'paint':
+      const obj = objects.find(o => isInside(o, endX, endY));
+      if (obj) obj.color = getRandomColor();
+      break;
+  }
+  redraw();
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (currentTool === 'select' && selectedObject && e.buttons === 1) {
+    const dx = e.offsetX - startX;
+    const dy = e.offsetY - startY;
+    moveObject(selectedObject, dx, dy);
+    startX = e.offsetX;
+    startY = e.offsetY;
+    redraw();
+  }
+});
+
+function setTool(tool) {
+  currentTool = tool;
+}
+
+function isInside(obj, x, y) {
+  if (obj.type === 'line') {
+    const dist = Math.abs((obj.y2 - obj.y1) * x - (obj.x2 - obj.x1) * y + obj.x2 * obj.y1 - obj.y2 * obj.x1) /
+                 Math.hypot(obj.x2 - obj.x1, obj.y2 - obj.y1);
+    return dist < 10;
+  } else if (obj.type === 'circle') {
+    const dx = x - obj.x;
+    const dy = y - obj.y;
+    return dx * dx + dy * dy <= obj.r * obj.r;
+  }
+  return false;
+}
+
+function moveObject(obj, dx, dy) {
+  if (obj.type === 'line') {
+    obj.x1 += dx; obj.y1 += dy;
+    obj.x2 += dx; obj.y2 += dy;
+  } else if (obj.type === 'circle') {
+    obj.x += dx; obj.y += dy;
+  }
+}
+
+function redraw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let obj of objects) {
+    ctx.strokeStyle = obj.color || "#000";
+    ctx.fillStyle = obj.color || "#000";
+    if (obj.type === 'line') {
+      ctx.beginPath();
+      ctx.moveTo(obj.x1, obj.y1);
+      ctx.lineTo(obj.x2, obj.y2);
+      ctx.stroke();
+    } else if (obj.type === 'circle') {
+      ctx.beginPath();
+      ctx.arc(obj.x, obj.y, obj.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+}
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+function clearCanvas() {
+  objects = [];
+  frames = [];
+  redraw();
+}
+
+function addFrame() {
+  frames.push(JSON.parse(JSON.stringify(objects)));
+  alert(`Fotograma ${frames.length} guardado.`);
+}
+
+function playAnimation() {
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i >= frames.length) {
+      clearInterval(interval);
+      return;
+    }
+    objects = JSON.parse(JSON.stringify(frames[i]));
+    redraw();
+    i++;
+  }, 500);
+}
+</script>
+
 
 
 
@@ -1930,3 +2284,4 @@ btnGirar.addEventListener('click', () => {
     </noscript>
   </div>
 </footer>
+
