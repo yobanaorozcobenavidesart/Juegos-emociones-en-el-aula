@@ -169,7 +169,7 @@ h1, h2, h3 {
 </h3>
 
 <p style="font-family: 'Poppins', sans-serif; font-size: 1.05em; line-height: 1.8; text-align: justify; color: #f5f5f5; max-width: 800px; margin-left: auto; margin-right: auto;">
-  Explora cada sección haciendo clic en los botones del menú principal. Cada uno te llevará a una actividad distinta diseñada para desarrollar tu creatividad y expresión emocional:
+  Explora cada sección haciendo clic en los botones del menú principal. Cada uno se abrirá y cerrará al pulsarlo, te llevará a una actividad diferente pensada para desarrollar tu creatividad y expresión emocional.
 </p>
 
 <div style="font-family: 'Poppins', sans-serif; font-size: 1.05em; line-height: 0.7; color: #ffffff; max-width: 800px; margin: 20px auto;">
@@ -422,6 +422,17 @@ h1, h2, h3 {
   <!-- Canvas de dibujo -->
   <div id="zonaDibujo" style="margin-top: 30px;">
   <p>🎨 DIBUJA</p>
+    <div style="margin-top: 10px;">
+ 
+
+  <button onclick="modoBorrador()" style="margin-left: 10px; padding: 6px 12px;">
+    ✏️ Cambiar a Borrador / Lápiz
+  </button>
+
+  <button onclick="limpiarCanvas()" style="margin-left: 10px; padding: 6px 12px;">
+    🗑️ Limpiar Dibujo
+  </button>
+</div>
 
   <!-- Selector de color -->
   <label for="colorSeleccionado">Selecciona un color:</label>
@@ -473,6 +484,8 @@ const preguntasJuego1 = [
     ]
   }
 ];
+  
+  let modo = "lapiz"; // o "borrador"
 
 function mostrarPregunta1() {
   const datos = preguntasJuego1[0];
@@ -494,38 +507,75 @@ function mostrarPregunta1() {
     opcionesElem.appendChild(btn);
   });
 
-  activarDibujo(); // activar siempre
-}
+ activarDibujo();
+  }
 
-function activarDibujo() {
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');
-  const colorPicker = document.getElementById('colorSeleccionado');
-  let dibujando = false;
+  function activarDibujo() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const colorPicker = document.getElementById('colorSeleccionado');
+    let dibujando = false;
 
-  canvas.onmousedown = () => dibujando = true;
-  canvas.onmouseup = () => dibujando = false;
-  canvas.onmouseout = () => dibujando = false;
-
-  canvas.onmousemove = function(e) {
-    if (dibujando) {
+    const getPos = (e) => {
       const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      ctx.fillStyle = colorPicker.value; // usa el color seleccionado
+      if (e.touches) {
+        return {
+          x: e.touches[0].clientX - rect.left,
+          y: e.touches[0].clientY - rect.top
+        };
+      } else {
+        return {
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        };
+      }
+    };
+
+    const dibujar = (x, y) => {
       ctx.beginPath();
-      ctx.arc(x, y, 3, 0, Math.PI * 2); // punto más grande
+      ctx.fillStyle = modo === "lapiz" ? colorPicker.value : "#ffffff";
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
       ctx.fill();
-    }
-  };
-}
+    };
 
+    const comenzarDibujo = (e) => {
+      dibujando = true;
+      const { x, y } = getPos(e);
+      dibujar(x, y);
+    };
 
-function limpiarCanvas() {
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
+    const moverDibujo = (e) => {
+      if (!dibujando) return;
+      const { x, y } = getPos(e);
+      dibujar(x, y);
+    };
+
+    const terminarDibujo = () => {
+      dibujando = false;
+    };
+
+    // Ratón
+    canvas.onmousedown = comenzarDibujo;
+    canvas.onmousemove = moverDibujo;
+    canvas.onmouseup = terminarDibujo;
+    canvas.onmouseout = terminarDibujo;
+
+    // Táctil
+    canvas.ontouchstart = comenzarDibujo;
+    canvas.ontouchmove = moverDibujo;
+    canvas.ontouchend = terminarDibujo;
+  }
+
+  function limpiarCanvas() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function modoBorrador() {
+    modo = modo === "lapiz" ? "borrador" : "lapiz";
+    alert("Modo actual: " + (modo === "lapiz" ? "Lápiz" : "Borrador"));
+  }
 
 
   // Juego 2: sube de nivel
@@ -1852,6 +1902,15 @@ btnGirar.addEventListener('click', () => {
   footer a:hover {
     text-decoration: underline;
   }
+
+  .contador-visitas {
+    margin-top: 25px;
+  }
+
+  .contador-visitas img {
+    max-width: 100px;
+    opacity: 0.9;
+  }
 </style>
 
 <footer>
@@ -1860,4 +1919,14 @@ btnGirar.addEventListener('click', () => {
   Licencia: <em>Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)</em><br>
   Uso libre con fines educativos — <strong>prohibido uso comercial</strong>.<br><br>
   Más información: <a href="https://yobanaorozcoartista.bio.link/" target="_blank" rel="noopener">yobanaorozcoartista.bio.link</a>
+
+  <div class="contador-visitas">
+    <div id="sfcxkbjllp5nj44et8c3m1rxt76k9y2uqzx"></div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=xkbjllp5nj44et8c3m1rxt76k9y2uqzx&down=async" async></script>
+    <noscript>
+      <a href="https://www.freecounterstat.com" title="page view counter">
+        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=xkbjllp5nj44et8c3m1rxt76k9y2uqzx" border="0" title="page view counter" alt="page view counter">
+      </a>
+    </noscript>
+  </div>
 </footer>
