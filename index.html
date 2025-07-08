@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emocionario Ilustrado y Juegos</title>
 
-  <!-- Tipografía elegante y legible -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Tipografías elegante y legible -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #000000; /* Fondo negro puro */
-      color: #ffffff; /* Texto blanco puro */
-      padding: 20px;
+      background-color: #000000;
+      color: #ffffff;
+      padding: 0;
+    }
+    
+    body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+    .contenedor {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px 40px;
+      background-color: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.15);
     }
 
     header {
       background: linear-gradient(to right, #0a0a0a, #111111);
       padding: 20px;
       box-shadow: 0 0 20px #ffcc00;
+      border-radius: 10px;
+      margin-bottom: 30px;
     }
 
     .header-content {
@@ -43,6 +65,7 @@
     }
 
     h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 2.5em;
       color: #ffcc00;
       margin: 0;
@@ -50,6 +73,7 @@
     }
 
     h2 {
+      font-family: 'Playfair Display', serif;
       font-size: 1.5em;
       color: #eeeeee;
       margin: 10px 0 20px 0;
@@ -78,7 +102,7 @@
       background-color: #ffd633;
     }
 
-        .opcion {
+    .opcion {
       font-size: 1.3rem;
       margin: 5px;
       padding: 10px 15px;
@@ -90,12 +114,12 @@
       border: 1px solid #555;
       background-color: #222;
     }
-    #opciones2 .opcion {
-  font-size: 1rem;
-  padding: 8px 12px;
-  margin: 4px;
-}
 
+    #opciones2 .opcion {
+      font-size: 1rem;
+      padding: 8px 12px;
+      margin: 4px;
+    }
 
     .opcion:hover {
       background-color: #444;
@@ -114,39 +138,52 @@
     .Orgullo:hover     { background-color: #87CEFA; color: #000; }
     .Entusiasmo:hover  { background-color: #FF69B4; color: #fff; }
 
-    .resultado, #graficaDificultad {
+    .resultado,
+    #graficaDificultad {
       margin-top: 20px;
       font-weight: bold;
       text-align: center;
       color: #ffcc00;
     }
-    
-    
+
   </style>
 </head>
 <body>
-
+ 
 <header>
+  
   <div class="header-content">
    <img src="https://i.postimg.cc/NfcBdfV4/418b1c0f-8d2a-463f-9cb1-271bd0abfd0e-1.png" alt="Logo Emocionario" class="logo" style="max-width: 200px; width: 100%; height: auto;" />
 
     <div class="title-container">
     <h1 style="font-size: 2em;">Emocionario</h1>
 <h2 style="font-size: 1.2em; font-weight: normal;">Cada emoción es una historia y cada juego es una aventura.</h2>
+      
+      
 
     </div>
   </div>
 </header>
-<h3>📜 Instrucciones</h3>
-<p style="text-align: left;">
-  Haz clic en cada uno de los botones para explorar los juegos y actividades disponibles.<br><br>
-  Cada botón te llevará a una experiencia diferente:<br>
-  Gestionar emociones<br>
-  Crear tu propio cuento o guion<br>
-  Jugar con el arte<br>
-  Desafíos creativos y más<br><br>
+<h3 style="font-family: 'Poppins', sans-serif; font-size: 1.6em; color: #ffcc00; text-align: left; margin-top: 30px; margin-bottom: 10px;">
+  📜 Instrucciones
+</h3>
+
+<p style="font-family: 'Poppins', sans-serif; font-size: 1.05em; line-height: 1.8; text-align: justify; color: #f5f5f5; max-width: 800px; margin-left: auto; margin-right: auto;">
+  Explora cada sección haciendo clic en los botones del menú principal. Cada uno te llevará a una actividad distinta diseñada para desarrollar tu creatividad y expresión emocional:
+</p>
+
+<div style="font-family: 'Poppins', sans-serif; font-size: 1.05em; line-height: 0.7; color: #ffffff; max-width: 800px; margin: 20px auto;">
+  <p>🎭 Gestionar emociones</p>
+  <p>📖 Crear tu cuento o guion</p>
+  <p>🎨 Jugar con el arte</p>
+  <p>🧠 Desafíos creativos</p>
+</div>
+
+
+<p style="font-family: 'Poppins', sans-serif; font-size: 1.05em; text-align: center; color: #ffcc00; font-weight: 500;">
   ¡Explora, crea, aprende y diviértete en cada rincón de esta aventura!
 </p>
+
 
 
   
@@ -407,6 +444,10 @@
   <div id="opciones2"></div>
   <div class="resultado" id="resultado2"></div>
   <div id="graficaDificultad"></div>
+  <div id="termometro" style="margin-top: 20px; font-size: 24px;">
+  Emoción: <span id="emoji">😐</span> <span id="valorEmocion">50</span>/100
+</div>
+
 </section>  
   
 
@@ -488,28 +529,40 @@ function limpiarCanvas() {
 
 
   // Juego 2: sube de nivel
-  const preguntasJuego2 = [
-    { descripcion: "Siento una energía luminosa dentro de mí, como si todo fuera posible.", opciones: ["Alegría", "Tristeza", "Enojo"], correcta: "Alegría", dificultad: 1 },
+ const preguntasJuego2 = [
+   { descripcion: "Siento una energía luminosa dentro de mí, como si todo fuera posible.", opciones: ["Alegría", "Tristeza", "Enojo"], correcta: "Alegría", dificultad: 1 },
     { descripcion: "Tengo ganas de llorar, siento un vacío y mucha nostalgia.", opciones: ["Enojo", "Tristeza", "Amor"], correcta: "Tristeza", dificultad: 1 },
     { descripcion: "Todo me molesta, siento que estoy a punto de explotar.", opciones: ["Ansiedad", "Alegría", "Enojo"], correcta: "Enojo", dificultad: 1 },
     { descripcion: "Estoy preocupado por lo que podría pasar, me cuesta respirar tranquilo.", opciones: ["Ansiedad", "Calma", "Esperanza"], correcta: "Ansiedad", dificultad: 1 },
     { descripcion: "Me siento en paz, respiro profundo y todo está bien.", opciones: ["Miedo", "Calma", "Frustración"], correcta: "Calma", dificultad: 1 },
-    { descripcion: "Mi corazón se acelera y siento un temor intenso ante lo desconocido.", opciones: ["Miedo", "Amor", "Diversión"], correcta: "Miedo", dificultad: 2 },
-    { descripcion: "Me frustro porque las cosas no salen como quiero, pero sigo intentando.", opciones: ["Frustración", "Calma", "Confianza"], correcta: "Frustración", dificultad: 2 },
-    { descripcion: "Tengo esperanza de que algo bueno está por venir.", opciones: ["Esperanza", "Tristeza", "Enojo"], correcta: "Esperanza", dificultad: 2 },
-    { descripcion: "Confío en mí mismo y en mis habilidades para superar retos.", opciones: ["Confianza", "Ansiedad", "Sorpresa"], correcta: "Confianza", dificultad: 2 },
-    { descripcion: "Me sorprendo y no sé qué hacer, siento que todo cambia rápido.", opciones: ["Sorpresa", "Alegría", "Miedo"], correcta: "Sorpresa", dificultad: 2 },
-    { descripcion: "Me siento atraído profundamente por alguien, con cariño y ternura.", opciones: ["Amor", "Calma", "Ansiedad"], correcta: "Amor", dificultad: 3 },
-    { descripcion: "Busco diversión y alegría para olvidar preocupaciones.", opciones: ["Diversión", "Tristeza", "Miedo"], correcta: "Diversión", dificultad: 3 },
-    { descripcion: "Siento ansiedad pero trato de mantener la calma con respiraciones profundas.", opciones: ["Ansiedad", "Calma", "Frustración"], correcta: "Ansiedad", dificultad: 3 },
-    { descripcion: "La frustración me hace querer rendirme, pero sé que debo seguir.", opciones: ["Frustración", "Esperanza", "Alegría"], correcta: "Frustración", dificultad: 3 },
-    { descripcion: "Confío en los demás y me siento seguro con ellos.", opciones: ["Confianza", "Miedo", "Enojo"], correcta: "Confianza", dificultad: 3 },
-    { descripcion: "Estoy sorprendido por algo inesperado, no sé cómo reaccionar.", opciones: ["Sorpresa", "Calma", "Alegría"], correcta: "Sorpresa", dificultad: 3 },
-    { descripcion: "Me siento feliz y tranquilo al mismo tiempo.", opciones: ["Calma", "Alegría", "Ansiedad"], correcta: "Calma", dificultad: 3 },
-    { descripcion: "Estoy muy feliz, todo parece perfecto y brillante.", opciones: ["Alegría", "Miedo", "Frustración"], correcta: "Alegría", dificultad: 3 },
-    { descripcion: "Siento miedo pero trato de enfrentar lo que viene.", opciones: ["Miedo", "Confianza", "Tristeza"], correcta: "Miedo", dificultad: 3 },
-    { descripcion: "Busco disfrutar y divertirme con amigos y familia.", opciones: ["Diversión", "Ansiedad", "Enojo"], correcta: "Diversión", dificultad: 3 }
-  ];
+    { descripcion: "Mi corazón se acelera y siento un temor intenso ante lo desconocido.", opciones: ["Miedo", "Amor", "Diversión"], correcta: "Miedo", dificultad: 1 },
+    { descripcion: "Me frustro porque las cosas no salen como quiero, pero sigo intentando.", opciones: ["Frustración", "Calma", "Confianza"], correcta: "Frustración", dificultad: 1 },
+    { descripcion: "Tengo esperanza de que algo bueno está por venir.", opciones: ["Esperanza", "Tristeza", "Enojo"], correcta: "Esperanza", dificultad: 1 },
+    { descripcion: "Confío en mí mismo y en mis habilidades para superar retos.", opciones: ["Confianza", "Ansiedad", "Sorpresa"], correcta: "Confianza", dificultad: 1 },
+  
+   
+  { descripcion: "A pesar de la oscuridad del momento, siento un destello cálido que me impulsa a seguir avanzando.", opciones: ["Esperanza", "Tristeza", "Frustración"], correcta: "Esperanza", dificultad: 2 },
+  { descripcion: "Me invaden pensamientos catastróficos sin razón aparente, y mi cuerpo reacciona con una inquietud constante.", opciones: ["Ansiedad", "Miedo", "Sorpresa"], correcta: "Ansiedad", dificultad: 2 },
+  { descripcion: "Cada contratiempo parece un muro infranqueable, y la impotencia me nubla la razón.", opciones: ["Frustración", "Enojo", "Tristeza"], correcta: "Frustración", dificultad: 2 },
+  { descripcion: "Una corriente serena me envuelve, como si el mundo exterior estuviera en pausa.", opciones: ["Calma", "Indiferencia", "Esperanza"], correcta: "Calma", dificultad: 2 },
+  { descripcion: "No esperaba lo que ocurrió. Me paraliza la novedad y me obliga a reconfigurar todo lo que pensaba.", opciones: ["Sorpresa", "Miedo", "Ansiedad"], correcta: "Sorpresa", dificultad: 2 },
+  { descripcion: "Me siento pleno, como si la energía vital vibrara armónicamente dentro de mí.", opciones: ["Alegría", "Amor", "Confianza"], correcta: "Alegría", dificultad: 2 },
+  { descripcion: "Percibo una sensación de vacío, como si algo valioso se hubiese esfumado sin despedirse.", opciones: ["Tristeza", "Enojo", "Frustración"], correcta: "Tristeza", dificultad: 2 },
+  { descripcion: "La presencia del otro provoca en mí un deseo de cuidado, admiración y conexión profunda.", opciones: ["Amor", "Alegría", "Esperanza"], correcta: "Amor", dificultad: 2 },
+  { descripcion: "Aunque hay razones para dudar, elijo creer en mis capacidades y mantenerme firme.", opciones: ["Confianza", "Esperanza", "Alegría"], correcta: "Confianza", dificultad: 2 },
+  { descripcion: "Siento una mezcla de inquietud y adrenalina que me obliga a estar alerta.", opciones: ["Miedo", "Ansiedad", "Sorpresa"], correcta: "Miedo", dificultad: 2 },
+  { descripcion: "Las risas y juegos me desconectan de mis preocupaciones, como una medicina del alma.", opciones: ["Diversión", "Alegría", "Calma"], correcta: "Diversión", dificultad: 3 },
+  { descripcion: "Mi respiración se entrecorta, mis pensamientos se aceleran, y todo parece una amenaza invisible.", opciones: ["Ansiedad", "Miedo", "Frustración"], correcta: "Ansiedad", dificultad: 3 },
+  { descripcion: "Estoy rodeado de incertidumbre, pero hay una parte de mí que sigue creyendo en algo mejor.", opciones: ["Esperanza", "Calma", "Tristeza"], correcta: "Esperanza", dificultad: 3 },
+  { descripcion: "Las emociones se arremolinan en mi pecho, pero trato de encontrar equilibrio y respirar.", opciones: ["Calma", "Ansiedad", "Enojo"], correcta: "Calma", dificultad: 3 },
+  { descripcion: "Siento que cada pequeño logro refuerza mi convicción interna de que puedo lograr grandes cosas.", opciones: ["Confianza", "Alegría", "Frustración"], correcta: "Confianza", dificultad: 3 },
+  { descripcion: "Siento que todo se derrumba, pero aún con lágrimas reconozco que debo continuar avanzando.", opciones: ["Frustración", "Esperanza", "Tristeza"], correcta: "Frustración", dificultad: 3 },
+  { descripcion: "Me siento tan profundamente bien, que ni el ruido ni el caos me alteran.", opciones: ["Calma", "Alegría", "Indiferencia"], correcta: "Calma", dificultad: 3 },
+  { descripcion: "Algo inesperado ha cambiado mi rumbo, obligándome a repensar mis pasos.", opciones: ["Sorpresa", "Ansiedad", "Enojo"], correcta: "Sorpresa", dificultad: 3 },
+  { descripcion: "Siento que cada instante es valioso, que estoy en el lugar correcto y en el momento preciso.", opciones: ["Alegría", "Calma", "Amor"], correcta: "Alegría", dificultad: 3 },
+  { descripcion: "Me entrego al juego, a la risa y al gozo de compartir sin preocupación.", opciones: ["Diversión", "Amor", "Esperanza"], correcta: "Diversión", dificultad: 3 }
+];
+
 
   let preguntaActual = 0;
 
@@ -582,6 +635,60 @@ function limpiarCanvas() {
   // Iniciar juegos
   mostrarPregunta1();
   mostrarPregunta2();
+  
+  let nivelEmocion = 50; // Valor inicial
+
+  function actualizarTermometro() {
+    const emoji = document.getElementById("emoji");
+    const valor = document.getElementById("valorEmocion");
+
+    // Asegura que esté entre 0 y 100
+    nivelEmocion = Math.max(0, Math.min(100, nivelEmocion));
+    valor.textContent = nivelEmocion;
+
+    if (nivelEmocion >= 80) {
+      emoji.textContent = "😄";
+    } else if (nivelEmocion >= 60) {
+      emoji.textContent = "🙂";
+    } else if (nivelEmocion >= 40) {
+      emoji.textContent = "😐";
+    } else if (nivelEmocion >= 20) {
+      emoji.textContent = "😔";
+    } else {
+      emoji.textContent = "😢";
+    }
+  }
+
+  // Debes llamar a esta función desde verificarRespuesta
+  function verificarRespuesta(respuesta) {
+    const correcta = preguntasJuego2[preguntaActual].correcta;
+    const resultado = document.getElementById("resultado2");
+
+    if (respuesta === correcta) {
+      resultado.textContent = "¡Correcto! 🎉";
+      nivelEmocion += 1;
+      preguntaActual++;
+    } else {
+      resultado.textContent = "Inténtalo de nuevo. ❌";
+      nivelEmocion -= 1;
+    }
+
+    actualizarTermometro();
+
+    if (preguntaActual < preguntasJuego2.length) {
+      setTimeout(() => mostrarPregunta2(), 1000);
+    } else {
+      resultado.textContent = "¡Juego terminado! 🎊";
+      preguntaActual = 0;
+    }
+  }
+
+  // Llamar esta función al cargar
+  window.onload = () => {
+    mostrarPregunta2();
+    actualizarTermometro();
+  };
+  
 </script>
 
 
@@ -1465,21 +1572,20 @@ btnGirar.addEventListener('click', () => {
   </div>
 
   <!-- Botones de acción -->
-  <div style="text-align: center; margin-top: 30px;">
-    <button onclick="verPoema()">📜 Ver Poema</button>
-    <button onclick="window.print()">🖨️ Imprimir</button>
-    <button onclick="descargarPDF()">📥 Descargar PDF</button>
-  </div>
+<div style="text-align: center; margin-top: 30px;">
+  <button onclick="verPoema()">📜 Ver Poema</button>
+  <button onclick="printPoema()">🖨️ Imprimir</button>
+</div>
 
-  <!-- Resultado -->
-  <div id="poemaResultado" style="margin-top: 30px; background: #111; padding: 20px; border-radius: 12px; display: none;"></div>
+<!-- Resultado -->
+<div id="poemaResultado" style="margin-top: 30px; background: #111; padding: 20px; border-radius: 12px; display: none;"></div>
 </section>
 
 <style>
   #juegoPoema textarea.verso {
     display: block;
     width: 100%;
-    height:2em;
+    height: 2em;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
@@ -1489,7 +1595,12 @@ btnGirar.addEventListener('click', () => {
     color: #fff;
     border: 1px solid #555;
   }
+  
+  
 </style>
+
+<!-- LIBRERÍA PARA PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
   window.onload = function () {
@@ -1503,15 +1614,11 @@ btnGirar.addEventListener('click', () => {
       }
 
       let vueltas = 0;
-
       const intervalo = setInterval(() => {
         const aleatorio = emojis[Math.floor(Math.random() * emojis.length)];
         emojiElemento.textContent = aleatorio;
         vueltas++;
-
-        if (vueltas > 20) {
-          clearInterval(intervalo);
-        }
+        if (vueltas > 20) clearInterval(intervalo);
       }, 100);
     }
 
@@ -1544,50 +1651,202 @@ btnGirar.addEventListener('click', () => {
       const palabra = document.getElementById("palabraRima").value.trim();
       if (!palabra) return;
 
-      const posiblesRimas = ["luz", "cruz", "voz", "sol", "flor", "color", "amor", "valor", "sabor", "calor"];
-      const resultado = posiblesRimas.filter(p => p.endsWith(palabra.slice(-2)) || p.endsWith(palabra.slice(-3)));
+     const posiblesRimas = [
+  "amor", "valor", "calor", "dolor", "sabor", "honor", "temor",
+  "animal", "cristal", "corral", "final", "señal", "canal",
+  "canción", "pasión", "razón", "corazón", "emoción", "función",
+  "andar", "luchar", "cantar", "mirar", "jugar", "bailar",
+  "papel", "nivel", "hotel", "anhelo",
+  "fácil", "difícil", "útil", "frágil",
+  "vez", "niñez", "validez", "lucidez", "altivez",
+  "jardín", "berlín", "festín",
+  "poder", "mujer", "correr", "leer", "beber",
+  "vivir", "decidir", "subir", "escribir", "sentir",
+  "amistad", "bondad", "verdad", "lealtad",
+  "juventud", "actitud", "gratitud", "virtud",
+  "beber", "leer", "andar", "razón", "pasión",
+  "función", "nivel", "papel", "mujer", "jardín",
+  "bailar", "andar", "andar", "andar", "andar",
+  "subir", "vivir", "poder", "sentir", "decidir",
+  "temor", "dolor", "valor", "calor", "sabor",
+  "cantar", "mirar", "luchar", "jugar", "final",
+  "animal", "cristal", "canal", "corral",  "navidad", "soledad", "seguridad", "claridad", "oscuridad",
+  "universidad", "felicidad", "realidad", "necesidad", "capacidad",
+  "amistades", "lealtades", "voluntad", "autoridad", "ciudad",
+  "libertad", "actividad", "curiosidad", "tranquilidad", "electricidad",
+  "igualdad", "comunidad", "habilidad", "fragilidad", "intensidad",
+  "sensualidad", "eternidad", "modalidad", "originalidad", "popularidad",
+  "humanidad", "divinidad", "nacionalidad", "localidad", "temporalidad",
+  "personalidad", "civilidad", "movilidad", "hostilidad", "neutralidad",
+  "electricidad", "visibilidad", "sencillez", "altivez", "rigidez",
+  "madurez", "ligereza", "belleza", "tristeza", "naturaleza", "aula", "rosa", "casa", "vida", "risa",
+"magia", "lluvia", "calma", "fuerza", "brisa",
+"montaña", "luzca", "esperanza", "niña", "poesía",
+"alma", "cultura", "energía", "naturaleza", "espera", "nube", "arte", "verde", "cante", "gente",
+"noche", "leche", "puente", "mente", "fuente",
+"saludable", "alegre", "valiente", "presente", "inteligente",
+"triste", "corte", "frente", "suerte", "fuerte", "aquí", "así", "para ti", "sí", "allí",
+"frenesí", "país", "bambú", "ají", "jardí",
+"colibrí", "desistí", "viví", "percibí", "recibí",
+"decidí", "sonreí", "intuí", "sentí", "subí", "cielo", "verso", "abrazo", "tesoro", "rayo",
+"camino", "cuento", "pensamiento", "reto", "lento",
+"viento", "canto", "hermano", "horizonte", "universo",
+"deseo", "grito", "sueño", "silencio", "versículo", "tatu", "bambú", "menú", "tribú", "igú",
+"baúl", "gurú", "mamut", "ñandú", "coñacú",
+"atrapu", "kulu", "hamu", "inú", "tupacú",
+"tutú", "tabú", "kanú", "corruptú", "mapu", "puma", "león",  "águila", "abeja", "alce", "antílope", "araña",
+  "ardilla", "armadillo", "avestruz", "ballena", "búfalo",
+  "burro", "caballo", "cabra", "camaleón", "cangrejo",
+  "canguro", "caracol", "castor", "cebra", "chimpancé",
+  "cisne", "cocodrilo", "colibrí", "conejo", "cuervo",
+  "delfín", "dragón de komodo", "elefante", "erizo", "escorpión",
+  "faisán", "flamenco", "foca", "galápago", "gallo",
+  "gamba", "gato", "gaviota", "gavilán", "gecko",
+  "gorila", "grillo", "halcón", "hiena", "hipopótamo",
+  "hurón", "iguana", "jabirú", "jabalí", "jirafa",
+  "koala", "lagarto", "langosta", "lechuza", "león",
+  "lemur", "liebre", "lince", "lobo", "loro",
+  "macaco", "mamut", "mariposa", "medusa", "meerkat",
+  "mofeta", "mono", "mosca", "murciélago", "nutria",
+  "ocelote", "orangután", "orca", "ornitorrinco", "oso",
+  "ostión", "ostra", "oveja", "panda", "pantera",
+  "pájaro", "pato", "pavo", "pelícano", "perico",
+  "perro", "pez", "pingüino", "pulga", "pulpo",
+  "quetzal", "rana", "ratón", "reno", "rinoceronte",
+  "salamandra", "sapo", "serpiente", "tigre", "topo",
+  "tortuga", "tucán", "urraca", "vaca", "zorro", "aburrimiento", "admiración", "aflicción", "agradecimiento", "agitación",
+  "alivio", "ambivalencia", "angustia", "ansia", "apatía",
+  "aprecio", "arrepentimiento", "asco", "asombro", "autocompasión",
+  "autorrealización", "benevolencia", "bienestar", "bloqueo", "bochorno",
+  "celos", "compasión", "complacencia", "compromiso", "confusión",
+  "consternación", "contento", "culpa", "curiosidad", "decepción",
+  "deleite", "dependencia", "desaliento", "desasosiego", "desazón",
+  "desconfianza", "desesperanza", "desilusión", "desinterés", "desmotivación",
+  "desolación", "deseo", "desprecio", "dignidad", "duda",
+  "euforia", "éxtasis", "extrañeza", "exuberancia", "fastidio",
+  "felicidad", "fervor", "fidelidad", "firmeza", "fluidez",
+  "fobia", "fortaleza", "fracaso", "frialdad", "gozo",
+  "gratitud", "hastío", "honestidad", "humildad", "impaciencia",
+  "impotencia", "incomodidad", "incomprensión", "indecisión", "indignación",
+  "indiferencia", "injusticia", "inseguridad", "inspiración", "intimidad",
+  "intranquilidad", "ira", "júbilo", "liviandad", "melancolía",
+  "misericordia", "motivación", "nerviosismo", "nostalgia", "orgullo",
+  "osadía", "pánico", "pena", "perplejidad", "placer",
+  "preocupación", "rencor", "remordimiento", "reproche", "resignación",
+  "respeto", "resquemor", "satisfacción", "serenidad", "shock",
+  "soledad", "sorpresa", "sosiego", "templanza", "ternura",
+  "tensión", "timidez", "tranquilidad", "vulnerabilidad", "zozobra",  "Ágata", "Ámbar", "Ametrina", "Amatista", "Amazonita",
+  "Andalucita", "Apatita", "Aventurina", "Azurita", "Berilo",
+  "Calcedonia", "Cianita", "Crisocola", "Crisoprasa", "Cuarzo",
+  "Coral", "Cornalina", "Diamante", "Dumortierita", "Esmeralda",
+  "Espinela", "Fluorita", "Granate", "Hematita", "Howlita",
+  "Iolita", "Jade", "Jaspe", "Kunzita", "Labradorita",
+  "Lapislazuli", "Larimar", "Magnetita", "Malaquita", "Marcasita",
+  "Moldavita", "Moonstone", "Morganita", "Nefrita", "Obsidiana",
+  "Peridoto", "Perla", "Pirita", "Prehnita", "Rodonita",
+  "Rodocrosita", "Rubí", "Rutilo", "Selenita", "Serafinita",
+  "Sodalita", "Sugilita", "Tanzanita", "Topacio", "Torbernite",
+  "Turmalina", "Turquesa", "Unakita", "Zafiro", "Zircón",
+  "Zoisita", "Calcita", "Espodumena", "Clinohumita", "Heliodoro",
+  "Variscita", "Verdelita", "Sunstone", "Spinela", "Actinolita",
+  "Charoíta", "Epidota", "Danburita", "Axinita", "Ulexita",
+  "Thulita", "Axinita", "Olivino", "Anhidrita", "Jet",
+  "Idocrasa", "Bixbita", "Almandino", "Cristalita", "Crocoíta",
+  "Covellina", "Dioptasa", "Enstatita", "Flogopita", "Goshenita",
+  "Hauynita", "Lazulita", "Melanita", "Petalita", "Tugtupita", "Argentina", "Brasil", "Canadá", "Chile", "China",
+  "Colombia", "Cuba", "Ecuador", "Egipto", "España",
+  "Francia", "Grecia", "Guatemala", "Honduras", "India",
+  "Indonesia", "Irlanda", "Israel", "Italia", "Jamaica",
+  "Japón", "Kenia", "Líbano", "Malasia", "Marruecos",
+  "México", "Nigeria", "Noruega", "Panamá", "Paraguay",
+  "Perú", "Polonia", "Portugal", "Qatar", "Rumania",
+  "Rusia", "Senegal", "Singapur", "Somalia", "Suecia",
+  "Suiza", "Surinam", "Tailandia", "Túnez", "Turquía",
+  "Ucrania", "Uganda", "Uruguay", "Venezuela", "Vietnam",
+  "Yemen", "Zambia", "Zimbabue", "Bélgica", "Alemania",
+  "Corea", "Dinamarca", "Eslovaquia", "Eslovenia", "Finlandia",
+  "Gambia", "Ghana", "Islandia", "Kazajistán", "Lesoto",
+  "Letonia", "Liberia", "Lituania", "Malawi", "Malí",
+  "Malta", "Moldavia", "Mónaco", "Mongolia", "Mozambique",
+  "Nepal", "Nicaragua", "Omán", "Pakistán", "Ruanda",
+  "Serbia", "Siria", "Togo", "Tonga", "Yibuti",
+  "Brunéi", "Croacia", "Estonia", "Georgia", "Hungría",
+  "Kirguistán", "Laos", "Liechtenstein", "Luxemburgo", "Mauricio"
+];
+
+      const resultado = posiblesRimas.filter(p =>
+        p.endsWith(palabra.slice(-2)) || p.endsWith(palabra.slice(-3))
+      );
 
       document.getElementById("resultadoRima").textContent = resultado.length > 0
         ? "Palabras que riman: " + resultado.join(", ")
         : "No se encontraron muchas coincidencias, intenta con otra palabra.";
     };
 
-    window.descargarPDF = function () {
-      const contenido = document.getElementById("poemaResultado").innerText;
-      const blob = new Blob([contenido], { type: "text/plain;charset=utf-8" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "mi_poema.txt";
-      link.click();
+   
+
+    // ✅ IMPRIMIR FUNCIONAL
+    window.printPoema = function () {
+      const contenido = document.getElementById("poemaResultado").innerHTML;
+      if (!contenido.trim()) {
+        alert("Primero genera tu poema antes de imprimirlo.");
+        return;
+      }
+
+      const ventana = window.open('', '_blank');
+      ventana.document.write(`
+        <html>
+          <head>
+            <title>Imprimir Poema</title>
+            <style>
+              body { font-family: Arial, sans-serif; padding: 30px; color: #000; }
+              h2 { text-align: center; }
+              p { font-size: 16px; }
+            </style>
+          </head>
+          <body>${contenido}</body>
+        </html>
+      `);
+      ventana.document.close();
+      ventana.focus();
+      ventana.print();
     };
   };
 </script>
 
 
+
+<!-- Asegúrate de incluir esta línea en tu <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
   footer {
-    background-color: #111;
-    color: #ddd;
+    background-color: #000;
+    color: #ccc;
     padding: 30px 20px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.8;
     border-top: 2px solid #ff6f00;
     margin-top: 40px;
+    font-family: 'Playfair Display', serif;
   }
 
   footer strong {
     color: #fff;
+    font-weight: 700;
   }
 
   footer em {
     color: #ffa726;
     font-style: normal;
+    font-weight: 400;
   }
 
   footer a {
     color: #4fc3f7;
     text-decoration: none;
+    font-weight: 500;
   }
 
   footer a:hover {
@@ -1602,4 +1861,3 @@ btnGirar.addEventListener('click', () => {
   Uso libre con fines educativos — <strong>prohibido uso comercial</strong>.<br><br>
   Más información: <a href="https://yobanaorozcoartista.bio.link/" target="_blank" rel="noopener">yobanaorozcoartista.bio.link</a>
 </footer>
-
