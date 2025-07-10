@@ -231,16 +231,426 @@ h1, h2, h3 {
 </style>
 
 <!-- Tus botones con animación -->
-<button onclick="mostrar('emocionario')">Emocionario Ilustrado</button>
-<button onclick="mostrar('juego1')">¿Qué emoción estás sintiendo?</button>
-<button onclick="mostrar('juego2')">Reto Emocional</button>
-<button onclick="mostrar('ruleta')">Ruleta Teatral</button>
-<button onclick="mostrar('guion')">Guion Emocional</button>
+<button onclick="mostrar('emocionario')">Emocionario</button>
+<button onclick="mostrar('juego1')">¿Qué sientes?</button>
+<button onclick="mostrar('juego2')">EmoReto</button>
+<button onclick="mostrar('ruleta')">Gira y Actúa</button>
+<button onclick="mostrar('guion')">EmoGuion</button>
 <button onclick="mostrar('cuento')">Emoji Cuento</button>
   <button onclick="mostrar('juegoPoema')">Emoji Poema</button>
-  <button onclick="mostrar('animacon-emocion')">Anima Con Emoción</button>
+  <button onclick="mostrar('animacon-emocion')">EmoAnimación</button>
+   <button onclick="mostrar('diario-creativo')">Diario creativo</button>
  
 </div>
+  
+  
+<style>
+  body {
+    background: #111;
+    color: #fff;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  #canvas-container {
+    margin: auto;
+    width: 100%;
+    max-width: 850px;
+    background: #fff;
+    border: 2px solid #ffcc00;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none; /* Para dibujar con el dedo */
+  }
+
+  label, select, button {
+    margin: 4px;
+  }
+
+  button, select, input[type="color"], input[type="range"] {
+    font-size: 14px;
+    padding: 5px 8px;
+    background-color: #ffff00;
+    color: #111;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover, select:hover {
+    background-color: #e6b800;
+  }
+</style>
+
+
+</head>
+<body>
+  <section id="diario-creativo" style="padding: 20px; display: none;">
+    <h2 style="color: #ffcc00;">📖 Crea tu Diario Emocional</h2>
+    <p style="font-family: Georgia, serif; font-size: 15px; padding: 10px; line-height: 1.3; text-align: left;">
+  <strong>📝 Descripción:</strong><br>
+ Cada día trabajarás en una página distinta de tu diario emocional, expresando lo que sientes a través de dibujos, textos o imágenes.<br><br>
+
+  <strong>📌 Instrucciones:</strong><br>
+  1. Diseña tu <strong>Portada</strong> y <strong>Contraportada</strong>.<br>
+  2. Escribe y crea desde el <strong>Día 1</strong> hasta el <strong>Día 7</strong>.<br>
+  3. Agrega una <strong>Reflexión final</strong> sobre tu experiencia.<br>
+  4. Escribe una <strong>Carta de Agradecimiento</strong>.<br>
+  5. Finalmente, <strong>Imprime</strong> tu diario si lo deseas.<br><br>
+
+  <strong>📎 Botones principales:</strong><br>
+  📗 Portada – Comienza diseñando la portada de tu diario.<br>
+  📔 Contraportada – Diseña y agrega tus datos personales, un dibujo y mensaje especial.<br>
+  📝 Día 1 al Día 7 – Escribe y dibuja tus emociones de cada día.<br>
+  🤔 Reflexión – Piensa en lo que aprendiste durante el proceso.<br>
+  🙏 Agradecimientos – Escribe una carta de gratitud para ti.<br><br>
+
+  ✏️ Dibujo – Traza libremente con el lápiz.<br>
+  ⚫ Círculo / ⬛ Cuadro / 🔺 Triángulo – Sellos de formas básicas.<br>
+  🔤 Texto – Escribe frases, pensamientos o ideas.<br>
+  🖼️ Imagen – Sube fotos o ilustraciones.<br>
+  ✋ Mover – Ajusta la posición de los elementos.<br>
+  📏 Escalar – Cambia el tamaño de lo que agregaste.<br>
+  ↩️ Deshacer / ↪️ Rehacer – Corrige cambios.<br>
+  🗑️ Limpiar – Borra toda la página.<br>
+  🎨 Color – Selecciona el color del trazo o texto.<br>
+  📏 Grosor – Ajusta el grosor del lápiz.<br>
+  🔍 Zoom – Amplía o reduce el lienzo.<br>
+  🖨️ Imprimir – Guarda o imprime tu página como imagen.
+</p>
+
+    <div style="margin-bottom: 10px">
+      <button onclick="cambiarPagina('portada')">📗</button>
+      <button onclick="cambiarPagina('contraportada')">📔</button>
+      <button onclick="cambiarPagina('dia1')">📝1</button>
+      <button onclick="cambiarPagina('dia2')">📝2</button>
+      <button onclick="cambiarPagina('dia3')">📝3</button>
+      <button onclick="cambiarPagina('dia4')">📝4</button>
+      <button onclick="cambiarPagina('dia5')">📝5</button>
+      <button onclick="cambiarPagina('dia6')">📝6</button>
+      <button onclick="cambiarPagina('dia7')">📝7</button>
+      <button onclick="cambiarPagina('reflexion')">🤔</button>
+      <button onclick="cambiarPagina('agradecimientos')">🙏 </button>
+    </div>
+
+    <div>
+      <button onclick="setTool('pencil')">✏️</button>
+      <button onclick="setTool('circle')">⚫</button>
+      <button onclick="setTool('square')">⬛</button>
+      <button onclick="setTool('triangle')">🔺</button>
+      <button onclick="setTool('text')">🔤</button>
+      <button onclick="setTool('upload')">🖼️</button>
+      <button onclick="setTool('move')">✋</button>
+      <button onclick="setTool('resize')">📏</button>
+      <button onclick="undo()">↩️</button>
+      <button onclick="redo()">↪️</button>
+      <button onclick="clearCanvas()">🗑️</button>
+      <label style="color:#ffcc00; font-weight:bold;">Color: <input type="color" id="colorPicker" onchange="setColor(this.value)" /></label>
+      <label style="color:#ffcc00; font-weight:bold;">Grosor: <input type="range" id="grosor" min="1" max="10" value="2" onchange="setGrosor(this.value)" /></label>
+      <select id="zoomControl" onchange="controlZoom(this.value)">
+        <option value="1">🔍100%</option>
+        <option value="1.2">🔍+20%</option>
+        <option value="0.8">🔍-20%</option>
+      </select>
+      <button onclick="imprimirPagina()">🖨️</button>
+    </div>
+
+    <div id="canvas-container">
+      <canvas id="canvas" width="850" height="1100"></canvas>
+      <div id="piePagina" style="position:absolute; bottom:10px; left:0; right:0; text-align:center; font-family:'Georgia'; font-size:14px; color:#333;"></div>
+    </div>
+  </section>
+
+  <script>
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  let paginaActual = 'portada';
+  let tool = null;
+  let elements = [];
+  let history = [];
+  let redoHistory = [];
+  let activeElement = null;
+  let drawing = false;
+  let startX, startY;
+  let scale = 1;
+  let currentColor = '#000';
+  let lineWidth = 2;
+
+  window.onload = () => {
+    canvas.addEventListener('mousedown', onMouseDown);
+    canvas.addEventListener('mousemove', onMouseMove);
+    canvas.addEventListener('mouseup', onMouseUp);
+
+    canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', onTouchMove, { passive: false });
+    canvas.addEventListener('touchend', onTouchEnd);
+
+    drawPage();
+  };
+
+  window.addEventListener("resize", () => drawPage());
+
+  function cambiarPagina(pag) {
+    paginaActual = pag;
+    elements = [];
+    history = [];
+    redoHistory = [];
+    activeElement = null;
+    drawPage();
+  }
+
+  function setTool(t) {
+    tool = t;
+    activeElement = null;
+    canvas.style.cursor = (t === 'move') ? 'grab' : 'default';
+
+    if (t === 'upload') uploadImage();
+    else if (t === 'text') {
+      const result = promptTextWithStyle();
+      if (!result) return;
+      elements.push({
+        type: 'text',
+        x: startX || 100,
+        y: startY || 100,
+        text: result.text,
+        font: result.fuente,
+        size: result.tamano,
+        color: currentColor
+      });
+      history.push([...elements]);
+      drawPage();
+    }
+  }
+
+  function setColor(c) { currentColor = c; }
+  function setGrosor(g) { lineWidth = parseInt(g); }
+  function controlZoom(z) { scale = parseFloat(z); drawPage(); }
+
+  function undo() {
+    if (history.length) {
+      redoHistory.push(history.pop());
+      elements = history.length ? [...history[history.length - 1]] : [];
+      drawPage();
+    }
+  }
+
+  function redo() {
+    if (redoHistory.length) {
+      let rest = redoHistory.pop();
+      history.push(rest);
+      elements = [...rest];
+      drawPage();
+    }
+  }
+
+  function clearCanvas() {
+    elements = [];
+    history = [];
+    redoHistory = [];
+    drawPage();
+  }
+
+  function onMouseDown(e) {
+    const r = canvas.getBoundingClientRect();
+    startX = (e.clientX - r.left) / scale;
+    startY = (e.clientY - r.top) / scale;
+
+    if (tool === 'pencil') {
+      drawing = true;
+      elements.push({
+        type: 'pencil',
+        points: [{ x: startX, y: startY }],
+        color: currentColor,
+        width: lineWidth
+      });
+    } else if (["circle", "square", "triangle"].includes(tool)) {
+      elements.push({ type: 'shape', shape: tool, x: startX, y: startY, size: 50, color: currentColor });
+      history.push([...elements]);
+      drawPage();
+    } else if (['move', 'resize'].includes(tool)) {
+      activeElement = [...elements].reverse().find(el => {
+        if (el.type === 'shape') {
+          return startX >= el.x - el.size && startX <= el.x + el.size && startY >= el.y - el.size && startY <= el.y + el.size;
+        } else if (el.type === 'text') {
+          return startX >= el.x && startX <= el.x + 100 && startY >= el.y - 30 && startY <= el.y;
+        } else if (el.type === 'image') {
+          return startX >= el.x && startX <= el.x + el.w && startY >= el.y && startY <= el.y + el.h;
+        }
+      });
+    }
+  }
+
+  function onMouseMove(e) {
+    if (!drawing && !activeElement) return;
+    const r = canvas.getBoundingClientRect();
+    const x = (e.clientX - r.left) / scale;
+    const y = (e.clientY - r.top) / scale;
+
+    if (drawing) {
+      const p = elements[elements.length - 1];
+      p.points.push({ x, y });
+      drawPage();
+    } else if (activeElement) {
+      if (tool === 'move') {
+        let dx = x - startX;
+        let dy = y - startY;
+        activeElement.x += dx;
+        activeElement.y += dy;
+        startX = x;
+        startY = y;
+      } else if (tool === 'resize') {
+        if (activeElement.type === 'shape') activeElement.size += x - startX;
+        else if (activeElement.type === 'text') activeElement.size += (x - startX) / 5;
+        else {
+          activeElement.w += x - startX;
+          activeElement.h += y - startY;
+        }
+        startX = x;
+        startY = y;
+      }
+      drawPage();
+    }
+  }
+
+  function onMouseUp() {
+    if (drawing || activeElement) history.push([...elements]);
+    drawing = false;
+    activeElement = null;
+  }
+
+  function onTouchStart(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    onMouseDown({ clientX: touch.clientX, clientY: touch.clientY, preventDefault() {} });
+  }
+
+  function onTouchMove(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    onMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
+  }
+
+  function onTouchEnd(e) {
+    e.preventDefault();
+    onMouseUp();
+  }
+
+  function uploadImage() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = e => {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = evt => {
+        const img = new Image();
+        img.onload = () => {
+          elements.push({ type: 'image', img, x: 100, y: 150, w: 200, h: 200 });
+          history.push([...elements]);
+          drawPage();
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    };
+    input.click();
+  }
+
+  function promptTextWithStyle() {
+    const text = prompt("Escribe tu texto:");
+    if (!text) return null;
+
+    const font = prompt("Selecciona la fuente:\n1: Comic Sans MS\n2: Georgia\n3: Arial", "1");
+    const fuentes = ["Comic Sans MS", "Georgia", "Arial"];
+    const fuente = fuentes[parseInt(font) - 1] || "Comic Sans MS";
+
+    const size = prompt("Selecciona tamaño de texto (px):\n16, 20, 24, 30, 36, 40", "20");
+    const tamano = parseInt(size) || 20;
+
+    return { text, fuente, tamano };
+  }
+
+  function drawPage() {
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.setTransform(scale, 0, 0, scale, 0, 0);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#000';
+    ctx.font = '28px Georgia';
+    ctx.textAlign = 'center';
+    if (paginaActual.startsWith('dia')) {
+      ctx.fillText(paginaActual.replace('dia', 'Día '), canvas.width / 2, 60);
+      ctx.font = '16px Georgia';
+      ctx.textAlign = 'left';
+      ctx.fillText('Fecha: ' + new Date().toLocaleDateString(), 40, 100);
+      document.getElementById('piePagina').textContent = 'Página: ' + paginaActual.replace('dia', 'Día ');
+    } else {
+      let textos = {
+        'portada': 'Mi Diario Personal',
+        'contraportada': 'Mis datos personales:',
+        'agradecimientos': 'Carta de agradecimiento',
+        'reflexion': 'Reflexión sobre la semana'
+      };
+      ctx.font = '28px Comic Sans MS';
+      ctx.textAlign = 'center';
+      ctx.fillText(textos[paginaActual] || '', canvas.width / 2, 100);
+      document.getElementById('piePagina').textContent = 'Página: ' + paginaActual.charAt(0).toUpperCase() + paginaActual.slice(1);
+    }
+
+    for (let el of elements) {
+      ctx.save();
+      ctx.fillStyle = ctx.strokeStyle = el.color || '#000';
+      ctx.lineWidth = el.width || 2;
+      if (el.type === 'pencil') {
+        ctx.beginPath();
+        ctx.moveTo(el.points[0].x, el.points[0].y);
+        for (let p of el.points) ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+      } else if (el.type === 'shape') {
+        if (el.shape === 'circle') {
+          ctx.beginPath();
+          ctx.arc(el.x, el.y, el.size, 0, 2 * Math.PI);
+          ctx.fill();
+        } else if (el.shape === 'square') {
+          ctx.fillRect(el.x - el.size, el.y - el.size, el.size * 2, el.size * 2);
+        } else if (el.shape === 'triangle') {
+          ctx.beginPath();
+          ctx.moveTo(el.x, el.y - el.size);
+          ctx.lineTo(el.x - el.size, el.y + el.size);
+          ctx.lineTo(el.x + el.size, el.y + el.size);
+          ctx.closePath();
+          ctx.fill();
+        }
+      } else if (el.type === 'text') {
+        ctx.font = `${el.size || 20}px ${el.font || 'Comic Sans MS'}`;
+        ctx.fillText(el.text, el.x, el.y);
+      } else if (el.type === 'image') {
+        ctx.drawImage(el.img, el.x, el.y, el.w, el.h);
+      }
+      ctx.restore();
+    }
+  }
+
+  function imprimirPagina() {
+    const dataUrl = canvas.toDataURL();
+    const ventana = window.open('', '_blank');
+    ventana.document.write('<html><head><title>Imprimir</title></head><body style="margin:0">');
+    ventana.document.write('<img src="' + dataUrl + '" style="width:100%">');
+    ventana.document.write('</body></html>');
+    ventana.document.close();
+    ventana.print();
+  }
+  </script>
 
   
   <style>
@@ -1467,34 +1877,7 @@ btnGirar.addEventListener('click', () => {
   
   
   
-<section id="animacon-emocion" style="display:none; padding: 20px; background: #111; color: #fff; font-family: 'Comic Sans MS', cursive;">
-  <h2 style="text-align:center; color:#ffcc00;">🎬 AnimaCon Emoción</h2>
-<p style="text-align:left; font-family: Georgia, serif; font-size: 16px; line-height: 1.4; padding: 10px;">
-  1. Usa las herramientas de dibujo para crear tu obra artística.<br>
-  2. Presiona el botón "Agregar fotograma" cada vez que quieras guardar una escena.<br>
-  3. Luego, haz clic en "Reproducir" para ver tu animación en movimiento.<br><br>
-  Exprésate, crea y anima tus emociones.
-</p>
-
-
-  <div style="text-align:center; margin-bottom: 15px;">
-    <button onclick="setTool('pencil')">✏️ Lápiz y Borrador</button>
-    <button onclick="setTool('circle')">⭕ Círculo</button>
-    <button onclick="setTool('fill')">🎨 Relleno</button>
-    <button onclick="setTool('move')">🖱️ Seleccionar</button>
-    <button onclick="undo()">↩️ Deshacer</button>
-    <button onclick="redo()">↪️ Rehacer</button>
-    <button onclick="clearCanvas()">♻️ Reiniciar</button>
-    <button onclick="saveFrame()">🎞️ Agregar fotograma</button>
-    <button onclick="playAnimation()">▶️ Reproducir</button>
-    <button onclick="pauseAnimation()">⏸️ Pausar</button>
-  
-    <input type="color" id="colorPicker" value="#000000">
-    <input type="range" id="brushSize" min="1" max="20" value="3">
-  </div>
-
-
-   <style>
+<style>
   .canvas-container {
     width: 100%;
     max-width: 600px;
@@ -1507,300 +1890,308 @@ btnGirar.addEventListener('click', () => {
     background: #fff;
     border: 2px solid #ffcc00;
     display: block;
+    touch-action: none;
   }
 
   #animationCanvas {
     border-style: dashed;
     border-color: #ccc;
   }
+
+  button {
+    margin: 3px;
+  }
 </style>
 
-<div class="canvas-container">
-  <canvas id="drawCanvas" width="600" height="600"></canvas>
-</div>
+<section id="animacon-emocion" style="padding: 20px; background: #111; color: #fff; font-family: 'Comic Sans MS', cursive; display: none;">
+  <h2 style="text-align:center; color:#ffcc00;">🎬 Anima Con Emoción</h2>
+ <p style="text-align:left; font-family: Georgia, serif; font-size: 15px; line-height: 1.2; padding: 10px;">
+  <strong>📝 Instrucciones:</strong><br>
+  1. Usa las herramientas de dibujo para crear tu obra artística.<br>
+  2. Presiona el botón <strong>"Agregar fotograma"</strong> cada vez que quieras guardar una escena.<br>
+  3. Luego, haz clic en <strong>"Reproducir"</strong> para ver tu animación en movimiento.<br><br>
+  Exprésate, crea y anima tus emociones.<br><br>
 
-<div id="animationPreview" style="margin-top: 20px; text-align: center;">
-  <h3 style="color: #ffcc00;">🎞️ Ver Animación</h3>
-  <div class="canvas-container">
-    <canvas id="animationCanvas" width="600" height="600"></canvas>
+  <strong>Herramientas:</strong><br>
+  ✏️ <strong>Lápiz:</strong> Dibuja libremente a mano alzada.<br>
+  ➖ <strong>Línea:</strong> Traza líneas rectas entre dos puntos.<br>
+  ⚫ <strong>Círculo:</strong> Dibuja círculos o elipses desde un punto central.<br>
+  ⬛ <strong>Rectángulo:</strong> Crea formas cuadradas o rectangulares.<br>
+  🔺 <strong>Triángulo:</strong> Dibuja figuras triangulares simples.<br>
+  🔶 <strong>Rellenar:</strong> Pinta el interior de figuras cerradas con color.<br>
+  ✋ <strong>Seleccionar:</strong> Mueve figuras ya dibujadas.<br>
+  ↩️ <strong>Deshacer:</strong> Revierte la última acción.<br>
+  ↪️ <strong>Rehacer:</strong> Restaura la acción deshecha.<br>
+  🔄 <strong>Reiniciar:</strong> Limpia todo el lienzo.<br>
+  ➕🎞️ <strong>Agregar fotograma:</strong> Guarda el dibujo actual como parte de la animación.<br>
+  ▶️ <strong>Reproducir:</strong> Muestra los fotogramas en secuencia.<br>
+  ⏸️ <strong>Pausar:</strong> Detiene la animación.<br>
+  <strong>Color:</strong> Escoge el color del trazo o relleno.<br>
+  <strong>Tamaño:</strong> Ajusta el grosor del pincel.<br>
+</p>
+
+  
+
+  <div style="text-align:center; margin-bottom: 15px;">
+    <button onclick="setTool('pencil')">✏️</button>
+    <button onclick="setTool('line')">➖</button>
+    <button onclick="setTool('circle')">⚫</button>
+    <button onclick="setTool('rectangle')">⬛</button>
+    <button onclick="setTool('triangle')">🔺</button>
+    <button onclick="setTool('fill')">🔶</button>
+    <button onclick="setTool('move')">✋</button>
+    <button onclick="undo()">↩️</button>
+    <button onclick="redo()">↪️</button>
+    <button onclick="clearCanvas()">🔄</button>
+    <button onclick="saveFrame()">➕🎞️</button>
+    <button onclick="playAnimation()">▶️</button>
+    <button onclick="pauseAnimation()">⏸️</button>
+    <input type="color" id="colorPicker" value="#000000">
+    <input type="range" id="brushSize" min="1" max="20" value="3">
   </div>
-</div>
 
+  <div class="canvas-container">
+    <canvas id="drawCanvas" width="600" height="400"></canvas>
+  </div>
 
-  <script>
-    const canvas = document.getElementById('drawCanvas');
-    const ctx = canvas.getContext('2d');
-    const frames = [];
-    let tool = 'pencil';
-    let fillMode = false;
-    let drawing = false;
-    let startX, startY;
-    let brushColor = "#000000";
-    let brushSize = 3;
-    let objects = [];
-    let selectedObject = null;
-    let isDragging = false;
-    let undoStack = [];
-    let redoStack = [];
-    let animationInterval;
+  <div id="animationPreview" style="margin-top: 20px; text-align: center;">
+    <h3 style="color: #ffcc00;">🎞️ Ver Animación</h3>
+    <div class="canvas-container">
+      <canvas id="animationCanvas" width="600" height="400"></canvas>
+    </div>
+  </div>
+</section>
 
-    document.getElementById('colorPicker').oninput = e => brushColor = e.target.value;
-    document.getElementById('brushSize').oninput = e => brushSize = parseInt(e.target.value);
+<script>
+// Ajustes solicitados: se agregan herramientas de triángulo, rectángulo y relleno funcional para figuras cerradas, compatible con pantalla táctil
 
-    function toggleFill() {
-      fillMode = !fillMode;
-      const btn = document.getElementById('fillBtn');
-      btn.style.backgroundColor = fillMode ? '#ffcc00' : '';
-      btn.style.color = fillMode ? '#000' : '';
-      btn.textContent = fillMode ? '🎨 Rellenar: ON' : '🎨 Rellenar';
-    }
+const canvas = document.getElementById('drawCanvas');
+const ctx = canvas.getContext('2d');
+const frames = [];
+let tool = 'pencil';
+let fillMode = false;
+let drawing = false;
+let startX, startY;
+let brushColor = "#000000";
+let brushSize = 3;
+let objects = [];
+let path = [];
+let selectedObject = null;
+let isDragging = false;
+let undoStack = [];
+let redoStack = [];
+let animationInterval;
 
-    function setTool(t) {
-      tool = t;
-      selectedObject = null;
-    }
+document.getElementById('colorPicker').oninput = e => brushColor = e.target.value;
+document.getElementById('brushSize').oninput = e => brushSize = parseInt(e.target.value);
 
-    function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      objects = [];
-    }
-
-    function saveFrame() {
-      frames.push(canvas.toDataURL());
-      alert("¡Cuadro guardado!");
-    }
-
-    function playAnimation() {
-      if (frames.length === 0) return alert("Agrega cuadros primero.");
-      const animCtx = document.getElementById('animationCanvas').getContext('2d');
-      let i = 0;
-      animationInterval = setInterval(() => {
-        const img = new Image();
-        img.src = frames[i];
-        img.onload = () => {
-          animCtx.clearRect(0, 0, 600, 400);
-          animCtx.drawImage(img, 0, 0, 600, 400);
-        };
-        i = (i + 1) % frames.length;
-      }, 400);
-    }
-
-    function pauseAnimation() {
-      if (animationInterval) {
-        clearInterval(animationInterval);
-        animationInterval = null;
-      }
-    }
-
-    
-    function undo() {
-      if (objects.length === 0) return;
-      redoStack.push(objects.pop());
-      redrawAll();
-    }
-
-    function redo() {
-      if (redoStack.length === 0) return;
-      objects.push(redoStack.pop());
-      redrawAll();
-    }
-
-    function redrawAll() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      objects.forEach(obj => {
-        ctx.beginPath();
-        ctx.strokeStyle = obj.color;
-        ctx.lineWidth = obj.size;
-        ctx.fillStyle = obj.fill ? obj.color : 'transparent';
-        if (obj.type === 'circle') {
-          ctx.arc(obj.x, obj.y, obj.r, 0, Math.PI * 2);
-          if (obj.fill) ctx.fill();
-          ctx.stroke();
-        } else if (obj.type === 'line') {
-          ctx.moveTo(obj.x1, obj.y1);
-          ctx.lineTo(obj.x2, obj.y2);
-          ctx.stroke();
-        }
-        ctx.closePath();
-      });
-    }
-
-    // Eventos para dibujo, rellenado, mover, etc.
-    function getPixelColor(x, y) {
-      const data = ctx.getImageData(x, y, 1, 1).data;
-      return [data[0], data[1], data[2], data[3]];
-    }
-
-    function floodFill(x, y, targetColor, fillColor) {
-      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const pixels = imgData.data;
-      const stack = [[x, y]];
-      const index = (x, y) => (y * canvas.width + x) * 4;
-      function matchColor(i) {
-        return (
-          pixels[i] === targetColor[0] &&
-          pixels[i + 1] === targetColor[1] &&
-          pixels[i + 2] === targetColor[2] &&
-          pixels[i + 3] === targetColor[3]
-        );
-      }
-      while (stack.length) {
-        const [cx, cy] = stack.pop();
-        const i = index(cx, cy);
-        if (!matchColor(i)) continue;
-        pixels[i] = fillColor[0];
-        pixels[i + 1] = fillColor[1];
-        pixels[i + 2] = fillColor[2];
-        pixels[i + 3] = 255;
-        if (cx > 0) stack.push([cx - 1, cy]);
-        if (cx < canvas.width - 1) stack.push([cx + 1, cy]);
-        if (cy > 0) stack.push([cx, cy - 1]);
-        if (cy < canvas.height - 1) stack.push([cx, cy + 1]);
-      }
-      ctx.putImageData(imgData, 0, 0);
-    }
-
-    canvas.addEventListener("click", e => {
-      if (tool === "fill") {
-        const rect = canvas.getBoundingClientRect();
-        const x = Math.floor(e.clientX - rect.left);
-        const y = Math.floor(e.clientY - rect.top);
-        const target = getPixelColor(x, y);
-        const hex = brushColor.replace("#", "");
-        const fillColor = [
-          parseInt(hex.substring(0, 2), 16),
-          parseInt(hex.substring(2, 4), 16),
-          parseInt(hex.substring(4, 6), 16),
-          255
-        ];
-        if (target.toString() !== fillColor.toString()) {
-          floodFill(x, y, target, fillColor);
-        }
-      }
-    });
-
-    canvas.addEventListener('mousedown', e => {
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      startX = x;
-      startY = y;
-      drawing = true;
-      if (tool === 'move') {
-        selectedObject = objects.find(obj =>
-          obj.type === 'circle' &&
-          Math.hypot(obj.x - x, obj.y - y) <= obj.r
-        );
-        if (selectedObject) isDragging = true;
-      }
-      if (tool === 'pencil') {
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-      }
-    });
-
-    canvas.addEventListener('mousemove', e => {
-      if (!drawing) return;
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      if (tool === 'pencil') {
-        ctx.strokeStyle = brushColor;
-        ctx.lineWidth = brushSize;
-        ctx.lineCap = 'round';
-        ctx.lineTo(x, y);
-        ctx.stroke();
-      }
-      if (tool === 'circle') {
-        redrawAll();
-        const r = Math.hypot(x - startX, y - startY);
-        ctx.beginPath();
-        ctx.lineWidth = brushSize;
-        ctx.strokeStyle = brushColor;
-        ctx.fillStyle = fillMode ? brushColor : 'transparent';
-        ctx.arc(startX, startY, r, 0, Math.PI * 2);
-        if (fillMode) ctx.fill();
-        ctx.stroke();
-        ctx.closePath();
-      }
-      if (tool === 'move' && isDragging && selectedObject) {
-        selectedObject.x = x;
-        selectedObject.y = y;
-        redrawAll();
-      }
-    });
-
-    canvas.addEventListener('mouseup', e => {
-      drawing = false;
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      if (tool === 'circle') {
-        const r = Math.hypot(x - startX, y - startY);
-        objects.push({
-          type: 'circle',
-          x: startX,
-          y: startY,
-          r: r,
-          color: brushColor,
-          size: brushSize,
-          fill: fillMode
-        });
-        redrawAll();
-      }
-      
-      if (tool === 'pencil') {
-        objects.push({
-          type: 'line',
-          x1: startX,
-          y1: startY,
-          x2: x,
-          y2: y,
-          color: brushColor,
-          size: brushSize
-        });
-        ctx.beginPath();
-      }
-      isDragging = false;
-    });
-
-    canvas.addEventListener('dblclick', () => {
-      isDragging = false;
-      selectedObject = null;
-    });
-    
-    function getCanvasCoordinates(e) {
-  const rect = canvas.getBoundingClientRect();
-  let x, y;
-
-  if (e.touches && e.touches.length > 0) {
-    x = e.touches[0].clientX - rect.left;
-    y = e.touches[0].clientY - rect.top;
+function setTool(t) {
+  if (t === 'fill') {
+    fillMode = !fillMode;
   } else {
-    x = e.clientX - rect.left;
-    y = e.clientY - rect.top;
+    tool = t;
+    selectedObject = null;
   }
-
-  return { x, y };
 }
 
-// Eventos táctiles que simulan mouse
-['touchstart', 'touchmove', 'touchend'].forEach(eventName => {
-  canvas.addEventListener(eventName, e => {
-    const type = eventName.replace('touch', 'mouse');
-    const simulatedEvent = new MouseEvent(type, {
-      clientX: (e.touches[0] || e.changedTouches[0]).clientX,
-      clientY: (e.touches[0] || e.changedTouches[0]).clientY,
-      bubbles: true
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  objects = [];
+  undoStack = [];
+  redoStack = [];
+  path = [];
+}
+
+function saveFrame() {
+  redrawAll();
+  frames.push(canvas.toDataURL());
+  alert("¡Cuadro guardado!");
+}
+
+function playAnimation() {
+  if (frames.length === 0) return alert("Agrega cuadros primero.");
+  const animCtx = document.getElementById('animationCanvas').getContext('2d');
+  let i = 0;
+  animationInterval = setInterval(() => {
+    const img = new Image();
+    img.src = frames[i];
+    img.onload = () => {
+      animCtx.clearRect(0, 0, 600, 400);
+      animCtx.drawImage(img, 0, 0, 600, 400);
+    };
+    i = (i + 1) % frames.length;
+  }, 400);
+}
+
+function pauseAnimation() {
+  if (animationInterval) {
+    clearInterval(animationInterval);
+    animationInterval = null;
+  }
+}
+
+function undo() {
+  if (objects.length === 0) return;
+  redoStack.push(objects.pop());
+  redrawAll();
+}
+
+function redo() {
+  if (redoStack.length === 0) return;
+  objects.push(redoStack.pop());
+  redrawAll();
+}
+
+function redrawAll() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  objects.forEach(obj => {
+    ctx.beginPath();
+    ctx.strokeStyle = obj.color;
+    ctx.lineWidth = obj.size;
+    ctx.fillStyle = obj.fill ? obj.color : 'transparent';
+
+    if (obj.type === 'circle') {
+      ctx.arc(obj.x, obj.y, obj.r, 0, Math.PI * 2);
+      if (obj.fill) ctx.fill();
+      ctx.stroke();
+    } else if (obj.type === 'line') {
+      ctx.moveTo(obj.x1, obj.y1);
+      ctx.lineTo(obj.x2, obj.y2);
+      ctx.stroke();
+    } else if (obj.type === 'path') {
+      ctx.moveTo(obj.points[0].x, obj.points[0].y);
+      obj.points.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.stroke();
+    } else if (obj.type === 'rectangle') {
+      if (obj.fill) ctx.fillRect(obj.x, obj.y, obj.w, obj.h);
+      ctx.strokeRect(obj.x, obj.y, obj.w, obj.h);
+    } else if (obj.type === 'triangle') {
+      ctx.moveTo(obj.x1, obj.y1);
+      ctx.lineTo(obj.x2, obj.y2);
+      ctx.lineTo(obj.x3, obj.y3);
+      ctx.closePath();
+      if (obj.fill) ctx.fill();
+      ctx.stroke();
+    }
+
+    ctx.closePath();
+  });
+}
+
+function getEventCoords(e) {
+  const rect = canvas.getBoundingClientRect();
+  if (e.touches && e.touches[0]) {
+    return {
+      x: e.touches[0].clientX - rect.left,
+      y: e.touches[0].clientY - rect.top
+    };
+  }
+  return {
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top
+  };
+}
+
+function handleStart(e) {
+  e.preventDefault();
+  const { x, y } = getEventCoords(e);
+  startX = x;
+  startY = y;
+  drawing = true;
+  path = [{ x, y }];
+
+  if (tool === 'move') {
+    selectedObject = objects.find(obj => obj.type === 'circle' && Math.hypot(obj.x - x, obj.y - y) <= obj.r);
+    if (selectedObject) isDragging = true;
+  }
+}
+
+function handleMove(e) {
+  if (!drawing) return;
+  const { x, y } = getEventCoords(e);
+
+  redrawAll();
+  ctx.beginPath();
+  ctx.strokeStyle = brushColor;
+  ctx.lineWidth = brushSize;
+  ctx.fillStyle = fillMode ? brushColor : 'transparent';
+
+  if (tool === 'pencil') {
+    path.push({ x, y });
+    ctx.moveTo(path[0].x, path[0].y);
+    path.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.stroke();
+  } else if (tool === 'line') {
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  } else if (tool === 'circle') {
+    const r = Math.hypot(x - startX, y - startY);
+    ctx.arc(startX, startY, r, 0, Math.PI * 2);
+    if (fillMode) ctx.fill();
+    ctx.stroke();
+  } else if (tool === 'rectangle') {
+    const w = x - startX;
+    const h = y - startY;
+    if (fillMode) ctx.fillRect(startX, startY, w, h);
+    ctx.strokeRect(startX, startY, w, h);
+  } else if (tool === 'triangle') {
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(x, y);
+    ctx.lineTo(startX - (x - startX), y);
+    ctx.closePath();
+    if (fillMode) ctx.fill();
+    ctx.stroke();
+  }
+}
+
+function handleEnd(e) {
+  const { x, y } = getEventCoords(e);
+
+  if (tool === 'circle') {
+    const r = Math.hypot(x - startX, y - startY);
+    objects.push({ type: 'circle', x: startX, y: startY, r, color: brushColor, size: brushSize, fill: fillMode });
+  } else if (tool === 'line') {
+    objects.push({ type: 'line', x1: startX, y1: startY, x2: x, y2: y, color: brushColor, size: brushSize });
+  } else if (tool === 'pencil') {
+    objects.push({ type: 'path', points: path.slice(), color: brushColor, size: brushSize });
+  } else if (tool === 'rectangle') {
+    const w = x - startX;
+    const h = y - startY;
+    objects.push({ type: 'rectangle', x: startX, y: startY, w, h, color: brushColor, size: brushSize, fill: fillMode });
+  } else if (tool === 'triangle') {
+    objects.push({
+      type: 'triangle',
+      x1: startX,
+      y1: startY,
+      x2: x,
+      y2: y,
+      x3: startX - (x - startX),
+      y3: y,
+      color: brushColor,
+      size: brushSize,
+      fill: fillMode
     });
-    canvas.dispatchEvent(simulatedEvent);
-    e.preventDefault();
-  }, { passive: false });
-});
-    
+  }
+
+  path = [];
+  drawing = false;
+  isDragging = false;
+}
+
+canvas.addEventListener('mousedown', handleStart);
+canvas.addEventListener('mousemove', handleMove);
+canvas.addEventListener('mouseup', handleEnd);
+canvas.addEventListener('touchstart', handleStart, { passive: false });
+canvas.addEventListener('touchmove', handleMove, { passive: false });
+canvas.addEventListener('touchend', handleEnd, { passive: false });
   </script>
 </section>
 
+
+
+  
+  
 <section id="juegoPoema" style="display: none; padding: 20px; color: #fff;">
   <h2 style="text-align: center; color: #ffffff;">Crea Tu Emoji Poema </h2>
   
@@ -2230,7 +2621,6 @@ function playAnimation() {
   }, 500);
 }
 </script>
-
 
 
 
