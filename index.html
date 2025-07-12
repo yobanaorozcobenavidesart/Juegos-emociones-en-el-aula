@@ -239,6 +239,12 @@ h1, h2, h3 {
 <button onclick="mostrar('cuento')">Emoji Cuento</button>
   <button onclick="mostrar('juegoPoema')">Emoji Poema</button>
   <button onclick="mostrar('animacon-emocion')">EmoAnimación</button>
+<a href="https://diariodeemociones.netlify.app/" target="_blank">
+  <button>Diario Emocional</button>
+</a>
+
+
+
   
  
 </div>
@@ -488,7 +494,8 @@ const preguntasJuego1 = [
   }
 ];
   
-  let modo = "lapiz"; // o "borrador"
+let herramienta = "pincel"; // nuevo
+
 
 function mostrarPregunta1() {
   const datos = preguntasJuego1[0];
@@ -513,61 +520,62 @@ function mostrarPregunta1() {
  activarDibujo();
   }
 
-  function activarDibujo() {
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    const colorPicker = document.getElementById('colorSeleccionado');
-    let dibujando = false;
+ function activarDibujo() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const colorPicker = document.getElementById('colorSeleccionado');
+  let dibujando = false;
+  let prevX = 0;
+  let prevY = 0;
 
-    const getPos = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      if (e.touches) {
-        return {
-          x: e.touches[0].clientX - rect.left,
-          y: e.touches[0].clientY - rect.top
-        };
-      } else {
-        return {
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        };
-      }
+  const getPos = (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top
     };
+  };
 
-    const dibujar = (x, y) => {
-      ctx.beginPath();
-      ctx.fillStyle = modo === "lapiz" ? colorPicker.value : "#ffffff";
-      ctx.arc(x, y, 5, 0, Math.PI * 2);
-      ctx.fill();
-    };
+  const comenzarDibujo = (e) => {
+    dibujando = true;
+    const { x, y } = getPos(e);
+    prevX = x;
+    prevY = y;
+  };
 
-    const comenzarDibujo = (e) => {
-      dibujando = true;
-      const { x, y } = getPos(e);
-      dibujar(x, y);
-    };
+  const moverDibujo = (e) => {
+    if (!dibujando) return;
+    e.preventDefault();
+    const { x, y } = getPos(e);
+    ctx.beginPath();
+    ctx.strokeStyle = herramienta === "pincel" ? colorPicker.value : "#ffffff";
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    prevX = x;
+    prevY = y;
+  };
 
-    const moverDibujo = (e) => {
-      if (!dibujando) return;
-      const { x, y } = getPos(e);
-      dibujar(x, y);
-    };
+  const terminarDibujo = () => {
+    dibujando = false;
+  };
 
-    const terminarDibujo = () => {
-      dibujando = false;
-    };
+  // Ratón
+  canvas.onmousedown = comenzarDibujo;
+  canvas.onmousemove = moverDibujo;
+  canvas.onmouseup = terminarDibujo;
+  canvas.onmouseout = terminarDibujo;
 
-    // Ratón
-    canvas.onmousedown = comenzarDibujo;
-    canvas.onmousemove = moverDibujo;
-    canvas.onmouseup = terminarDibujo;
-    canvas.onmouseout = terminarDibujo;
+  // Táctil
+  canvas.ontouchstart = comenzarDibujo;
+  canvas.ontouchmove = moverDibujo;
+  canvas.ontouchend = terminarDibujo;
+}
 
-    // Táctil
-    canvas.ontouchstart = comenzarDibujo;
-    canvas.ontouchmove = moverDibujo;
-    canvas.ontouchend = terminarDibujo;
-  }
 
   function limpiarCanvas() {
     const canvas = document.getElementById('canvas');
@@ -576,9 +584,10 @@ function mostrarPregunta1() {
   }
 
   function modoBorrador() {
-    modo = modo === "lapiz" ? "borrador" : "lapiz";
-    alert("Modo actual: " + (modo === "lapiz" ? "Lápiz" : "Borrador"));
-  }
+  herramienta = herramienta === "pincel" ? "borrador" : "pincel";
+  alert("Herramienta actual: " + (herramienta === "pincel" ? "Pincel" : "Borrador"));
+}
+
 
 
   // Juego 2: sube de nivel
@@ -1553,8 +1562,6 @@ btnGirar.addEventListener('click', () => {
 </section>
 
 <script>
-// Ajustes solicitados: se agregan herramientas de triángulo, rectángulo y relleno funcional para figuras cerradas, compatible con pantalla táctil
-
 const canvas = document.getElementById('drawCanvas');
 const ctx = canvas.getContext('2d');
 const frames = [];
@@ -1691,14 +1698,42 @@ function handleStart(e) {
   path = [{ x, y }];
 
   if (tool === 'move') {
-    selectedObject = objects.find(obj => obj.type === 'circle' && Math.hypot(obj.x - x, obj.y - y) <= obj.r);
+    selectedObject = objects.find(obj => {
+      if (obj.type === 'circle') {
+        return Math.hypot(obj.x - x, obj.y - y) <= obj.r;
+      } else if (obj.type === 'rectangle') {
+        return x >= obj.x && x <= obj.x + obj.w && y >= obj.y && y <= obj.y + obj.h;
+      }
+      return false;
+    });
+
     if (selectedObject) isDragging = true;
   }
 }
 
 function handleMove(e) {
-  if (!drawing) return;
   const { x, y } = getEventCoords(e);
+
+  if (tool === 'move' && isDragging && selectedObject) {
+    const dx = x - startX;
+    const dy = y - startY;
+
+    if (selectedObject.type === 'circle') {
+      selectedObject.x += dx;
+      selectedObject.y += dy;
+    } else if (selectedObject.type === 'rectangle') {
+      selectedObject.x += dx;
+      selectedObject.y += dy;
+    }
+
+    startX = x;
+    startY = y;
+
+    redrawAll();
+    return;
+  }
+
+  if (!drawing) return;
 
   redrawAll();
   ctx.beginPath();
@@ -1767,6 +1802,7 @@ function handleEnd(e) {
   path = [];
   drawing = false;
   isDragging = false;
+  selectedObject = null;
 }
 
 canvas.addEventListener('mousedown', handleStart);
@@ -1775,7 +1811,8 @@ canvas.addEventListener('mouseup', handleEnd);
 canvas.addEventListener('touchstart', handleStart, { passive: false });
 canvas.addEventListener('touchmove', handleMove, { passive: false });
 canvas.addEventListener('touchend', handleEnd, { passive: false });
-  </script>
+</script>
+
 </section>
 
 
@@ -2042,8 +2079,6 @@ canvas.addEventListener('touchend', handleEnd, { passive: false });
         : "No se encontraron muchas coincidencias, intenta con otra palabra.";
     };
 
-   
-
     // ✅ IMPRIMIR FUNCIONAL
     window.printPoema = function () {
       const contenido = document.getElementById("poemaResultado").innerHTML;
@@ -2211,6 +2246,7 @@ function playAnimation() {
   }, 500);
 }
 </script>
+</section>
 
 
 
