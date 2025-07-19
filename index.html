@@ -258,22 +258,56 @@ h1, h2, h3 {
 
 </style>
 
-<!-- Tus botones con animación -->
-<button onclick="mostrar('emocionario')">Emocionario</button>
-<button onclick="mostrar('juego1')">¿Qué sientes?</button>
-<button onclick="mostrar('juego2')">EmoReto</button>
-<button onclick="mostrar('ruleta')">Gira y Actúa</button>
-<button onclick="mostrar('guion')">EmoGuion</button>
-<button onclick="mostrar('cuento')">Emoji Cuento</button>
-  <button onclick="mostrar('juegoPoema')">Emoji Poema</button>
-   <a href="https://animaconemocion.netlify.app/" target="_blank">
-  <button>EmoAnimación</button>
+<!-- Estilos para los botones 3D -->
+<style>
+  .boton-3d {
+    background: linear-gradient(145deg, #FBC02D, #fff176);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    box-shadow: 0 6px 0 #c49000, 0 8px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .boton-3d:hover {
+    background: linear-gradient(145deg, #fff176, #FBC02D);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #c49000, 0 12px 20px rgba(0,0,0,0.3);
+  }
+
+  .boton-3d:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #c49000;
+  }
+</style>
+
+<!-- Tus botones con estilo 3D -->
+<button class="boton-3d" onclick="mostrar('emocionario')">Emocionario</button>
+<button class="boton-3d" onclick="mostrar('juego1')">¿Qué sientes?</button>
+<button class="boton-3d" onclick="mostrar('juego2')">EmoReto</button>
+<button class="boton-3d" onclick="mostrar('ruleta')">Gira y Actúa</button>
+<button class="boton-3d" onclick="mostrar('guion')">EmoGuion</button>
+<button class="boton-3d" onclick="mostrar('cuento')">Emoji Cuento</button>
+<button class="boton-3d" onclick="mostrar('juegoPoema')">Emoji Poema</button>
+
+<a href="https://animaconemocion.netlify.app/" target="_blank">
+  <button class="boton-3d">EmoAnimación</button>
+</a>
 <a href="https://diariodeemociones.netlify.app/" target="_blank">
-  <button>Diario Emocional</button>
-  <a href="https://termometroemociones.netlify.app/" target="_blank">
-  <button>Emotermómetro</button>
-    <a href="https://test-de-inteligencia-emocional.netlify.app/" target="_blank">
-  <button>Descúbrete</button>
+  <button class="boton-3d">Diario Emocional</button>
+</a>
+<a href="https://termometroemociones.netlify.app/" target="_blank">
+  <button class="boton-3d">Emotermómetro</button>
+</a>
+<a href="https://test-de-inteligencia-emocional.netlify.app/" target="_blank">
+  <button class="boton-3d">Descúbrete</button>
+</a>
+
       
     <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <a href="https://carpetapedagogica20252026arte.netlify.app/" target="_blank">
