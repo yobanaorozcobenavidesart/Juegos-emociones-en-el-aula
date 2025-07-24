@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,6 +26,35 @@
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
+}
+
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.language-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.language-btn:hover {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.language-btn.active {
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
 }
 
 
@@ -150,14 +180,21 @@ h1, h2, h3 {
 </head>
 <body>
  
+<!-- Selector de idioma -->
+<div class="language-selector">
+  <button class="language-btn active" onclick="changeLanguage('es')">ES</button>
+  <button class="language-btn" onclick="changeLanguage('en')">EN</button>
+  <button class="language-btn" onclick="changeLanguage('fr')">FR</button>
+</div>
+
 <header>
   
   <div class="header-content">
    <img src="https://i.postimg.cc/c4VS2CyY/edited-image-6.jpg" alt="Logo Emocionario" class="logo" style="max-width: 200px; width: 100%; height: auto;" />
 
     <div class="title-container">
-    <h1 style="font-size: 2em;">Emociones en el Aula</h1>
-<h2 style="font-size: 1.2em; font-weight: normal;">Cada emoción es una historia y cada juego es una aventura.</h2>
+    <h1 id="main-title" style="font-size: 2em;">Emociones en el Aula</h1>
+<h2 id="subtitle" style="font-size: 1.2em; font-weight: normal;">Cada emoción es una historia y cada juego es una aventura.</h2>
       
       
 
@@ -168,14 +205,14 @@ h1, h2, h3 {
 <!-- Sección: ¿Qué es? -->
 <section style="padding: 30px 20px; background-color: #000; color: #fff; font-family: 'Times New Roman', serif;">
   <div style="max-width: 800px; margin: 0 auto;">
-    <h2 style="color: gold; margin-bottom: 15px; font-size: 1.4em;">¿Qué es?</h2>
-    <p style="font-size: 1em; line-height: 1; text-align: justify;">
+    <h2 style="color: gold; margin-bottom: 15px; font-size: 1.4em;" id="what-is-title">¿Qué es?</h2>
+    <p id="what-is-text" style="font-size: 1em; line-height: 1; text-align: justify;">
       Es una herramienta pedagógica digital diseñada para fortalecer la educación emocional en niños y niñas desde preescolar hasta secundaria. 
       Se basa en actividades lúdicas que permiten identificar, expresar y regular emociones de forma consciente.
     </p>
 
-    <h3 style="color: gold; margin-top: 25px; margin-bottom: 10px;">📘 Fundamentación Legal y Curricular</h3>
-    <p style="font-size: 1em; line-height: 1; text-align: justify;">
+    <h3 style="color: gold; margin-top: 25px; margin-bottom: 10px;" id="legal-title">📘 Fundamentación Legal y Curricular</h3>
+    <p id="legal-text" style="font-size: 1em; line-height: 1; text-align: justify;">
       Está alineada con la <strong>Ley 438 de 2021</strong>, los <strong>lineamientos curriculares</strong> del Ministerio de Educación 
       y los <strong>Objetivos de Desarrollo Sostenible (ODS)</strong> de la Agenda 2030, especialmente los ODS 3 (Salud y Bienestar), 
       4 (Educación de Calidad) y 16 (Paz, Justicia e Instituciones Sólidas).
@@ -184,38 +221,35 @@ h1, h2, h3 {
 <!-- Sección: Instrucciones -->
 <section style="padding: 30px 20px; background-color: #000; color: #fff; font-family: 'Times New Roman', serif;">
   <div style="max-width: 800px; margin: 0 auto;">
-    <h3 style="color: gold; margin-bottom: 15px;">📜 Instrucciones</h3>
+    <h3 style="color: gold; margin-bottom: 15px;" id="instructions-title">📜 Instrucciones</h3>
 
-    <p style="font-size: 1em; line-height: 1; text-align: justify;">
+    <p id="instructions-text1" style="font-size: 1em; line-height: 1; text-align: justify;">
       Este juego está diseñado para que niños, niñas, jóvenes y docentes exploren sus emociones de forma divertida y significativa.  
       Usa el menú principal para acceder a las distintas actividades haciendo clic en cada botón.
     </p>
 
-    <p style="font-size: 1em; line-height: 1; text-align: justify; margin-top: 10px;">
+    <p id="instructions-text2" style="font-size: 1em; line-height: 1; text-align: justify; margin-top: 10px;">
       Puedes repetir las actividades todas las veces que quieras. Elige libremente según tu emoción, curiosidad o necesidad del momento.
     </p>
 
     <div style="font-size: 1em; line-height: 0.9; margin-top: 20px;">
-      <p>🎭 <strong>Gestionar emociones:</strong> Identifica lo que sientes y cómo expresarlo.</p>
-      <p>📖 <strong>Crear tu cuento o guion:</strong> Imagina historias que trabajen emociones.</p>
-      <p>🎨 <strong>Jugar con el arte:</strong> Expresa lo que sientes con color y forma.</p>
-      <p>🧠 <strong>Desafíos creativos:</strong> Reta tu mente y corazón con juegos emocionales.</p>
+      <p id="instruction1">🎭 <strong>Gestionar emociones:</strong> Identifica lo que sientes y cómo expresarlo.</p>
+      <p id="instruction2">📖 <strong>Crear tu cuento o guion:</strong> Imagina historias que trabajen emociones.</p>
+      <p id="instruction3">🎨 <strong>Jugar con el arte:</strong> Expresa lo que sientes con color y forma.</p>
+      <p id="instruction4">🧠 <strong>Desafíos creativos:</strong> Reta tu mente y corazón con juegos emocionales.</p>
     </div>
   </div>
 </section>
 
 <!-- Frase de cierre -->
 <section style="padding: 20px 20px 40px 20px; background-color: #000; color: #ffcc00; font-family: 'Times New Roman', serif;">
-  <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.8em; line-height: 1; font-weight: bold;">
+  <div id="closing-text" style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.8em; line-height: 1; font-weight: bold;">
     ¡Explora, crea, aprende y diviértete en cada rincón de esta emocionante aventura!<br>
     Estos juegos fueron creados integrando el arte, la literatura y la tecnología como herramientas clave en la educación emocional,<br>
     y puede ser transversalizado en todas las asignaturas educativas.
   </div>
 </section>
-
-
-
-<style>
+    <style>
   button {
     background-color: #ffcc00;
     border: none;
@@ -287,44 +321,44 @@ h1, h2, h3 {
 </style>
 
 <!-- Tus botones con estilo 3D -->
-<button class="boton-3d" onclick="mostrar('emocionario')">Emocionario</button>
-<button class="boton-3d" onclick="mostrar('juego1')">¿Qué sientes?</button>
-<button class="boton-3d" onclick="mostrar('juego2')">EmoReto</button>
-<button class="boton-3d" onclick="mostrar('ruleta')">Gira y Actúa</button>
-<button class="boton-3d" onclick="mostrar('guion')">EmoGuion</button>
-<button class="boton-3d" onclick="mostrar('cuento')">Emoji Cuento</button>
-<button class="boton-3d" onclick="mostrar('juegoPoema')">Emoji Poema</button>
+<button class="boton-3d" onclick="mostrar('emocionario')" id="btn-emocionario">Emocionario</button>
+<button class="boton-3d" onclick="mostrar('juego1')" id="btn-juego1">¿Qué sientes?</button>
+<button class="boton-3d" onclick="mostrar('juego2')" id="btn-juego2">EmoReto</button>
+<button class="boton-3d" onclick="mostrar('ruleta')" id="btn-ruleta">Gira y Actúa</button>
+<button class="boton-3d" onclick="mostrar('guion')" id="btn-guion">EmoGuion</button>
+<button class="boton-3d" onclick="mostrar('cuento')" id="btn-cuento">Emoji Cuento</button>
+<button class="boton-3d" onclick="mostrar('juegoPoema')" id="btn-poema">Emoji Poema</button>
 
 <a href="https://animaconemocion.netlify.app/">
-  <button class="boton-3d">EmoAnimación</button>
+  <button class="boton-3d" id="btn-animacion">EmoAnimación</button>
 </a>
 
 <a href="https://diariodeemociones.netlify.app/">
-  <button class="boton-3d">Diario Emocional</button>
+  <button class="boton-3d" id="btn-diario">Diario Emocional</button>
 </a>
 
 <a href="https://termometroemociones.netlify.app/">
-  <button class="boton-3d">Emotermómetro</button>
+  <button class="boton-3d" id="btn-termometro">Emotermómetro</button>
 </a>
 
 <a href="https://cruci-emociones.netlify.app/">
-  <button class="boton-3d">Cruci-Emociones</button>
+  <button class="boton-3d" id="btn-cruciemociones">Cruci-Emociones</button>
 </a>
 
 <a href="https://test-de-inteligencia-emocional.netlify.app/">
-  <button class="boton-3d">Descúbrete</button>
+  <button class="boton-3d" id="btn-descubete">Descúbrete</button>
 </a>
 
 <a href="https://lineadevidapersonal.netlify.app/">
-  <button class="boton-3d">Mi Camino</button>
+  <button class="boton-3d" id="btn-camino">Mi Camino</button>
 </a>
     <a href="https://ruedas-de-valores-y-emociones.netlify.app/">
-  <button class="boton-3d">EmoValores</button>
+  <button class="boton-3d" id="btn-emovalores">EmoValores</button>
       
       <a href="https://emoensayo-soy-unico.netlify.app/">
-  <button class="boton-3d">EmoEnsayos</button>
+  <button class="boton-3d" id="btn-emoensayos">EmoEnsayos</button>
          <a href="https://bitacora-vocacional.netlify.app/">
-  <button class="boton-3d">Bitácora-Vocacional</button>
+  <button class="boton-3d" id="btn-bitacora">Bitácora-Vocacional</button>
       
 </a>
 
@@ -443,91 +477,91 @@ h1, h2, h3 {
 
 <section id="emocionario" style="display: none;">
 
-  <h2>Ilustraciones de emociones</h2>
+  <h2 id="emocionario-title">Ilustraciones de emociones</h2>
   <div class="emocionario">
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Alegría</h3>
-      <p><strong>Símbolo:</strong> ☀️ Sol, ⭐ Estrella</p>
-      <p><strong>Expresión artística:</strong> Pintura brillante y baile libre</p>
-      <p class="mensaje">“Hoy me siento con luz propia”</p>
+      <h3 id="alegria-title">Alegría</h3>
+      <p><strong id="simbolo-text">Símbolo:</strong> ☀️ Sol, ⭐ Estrella</p>
+      <p><strong id="expresion-text">Expresión artística:</strong> Pintura brillante y baile libre</p>
+      <p class="mensaje" id="alegria-message">"Hoy me siento con luz propia"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Tristeza</h3>
+      <h3 id="tristeza-title">Tristeza</h3>
       <p><strong>Símbolo:</strong> 🌧️ Lluvia, 🌫️ Nube</p>
       <p><strong>Expresión artística:</strong> Acuarela azul degradada</p>
-      <p class="mensaje">“Mi alma necesita un abrazo”</p>
+      <p class="mensaje" id="tristeza-message">"Mi alma necesita un abrazo"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Enojo</h3>
+      <h3 id="enojo-title">Enojo</h3>
       <p><strong>Símbolo:</strong> 🔥 Fuego, 🌋 Volcán</p>
       <p><strong>Expresión artística:</strong> Collage rasgado de rojos y negros</p>
-      <p class="mensaje">“Estoy hirviendo, necesito calmarme”</p>
+      <p class="mensaje" id="enojo-message">"Estoy hirviendo, necesito calmarme"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Ansiedad</h3>
+      <h3 id="ansiedad-title">Ansiedad</h3>
       <p><strong>Símbolo:</strong> 🌪️ Torbellino, 🔁 Espiral</p>
       <p><strong>Expresión artística:</strong> Dibujo con líneas cerradas y repetitivas</p>
-      <p class="mensaje">“Tengo un nudo en la panza”</p>
+      <p class="mensaje" id="ansiedad-message">"Tengo un nudo en la panza"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Miedo</h3>
+      <h3 id="miedo-title">Miedo</h3>
       <p><strong>Símbolo:</strong> 👤 Sombra, 👻 Fantasma</p>
       <p><strong>Expresión artística:</strong> Teatro de sombras</p>
-      <p class="mensaje">“Hay cosas que no entiendo y me asustan”</p>
+      <p class="mensaje" id="miedo-message">"Hay cosas que no entiendo y me asustan"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Calma</h3>
+      <h3 id="calma-title">Calma</h3>
       <p><strong>Símbolo:</strong> 🌳 Árbol, 🌊 Río</p>
       <p><strong>Expresión artística:</strong> Pintura de mandalas</p>
-      <p class="mensaje">“Hoy todo fluye con tranquilidad”</p>
+      <p class="mensaje" id="calma-message">"Hoy todo fluye con tranquilidad"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Confusión</h3>
+      <h3 id="confusion-title">Confusión</h3>
       <p><strong>Símbolo:</strong> ❓ Signo de interrogación, 🌫️ Niebla</p>
       <p><strong>Expresión artística:</strong> Garabato libre en técnica mixta</p>
-      <p class="mensaje">“No sé qué siento, pero quiero entenderlo”</p>
+      <p class="mensaje" id="confusion-message">"No sé qué siento, pero quiero entenderlo"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Amor</h3>
+      <h3 id="amor-title">Amor</h3>
       <p><strong>Símbolo:</strong> ❤️ Corazón, 🤝 Manos</p>
       <p><strong>Expresión artística:</strong> Cartas ilustradas de gratitud</p>
-      <p class="mensaje">“Hoy quiero abrazar sin palabras”</p>
+      <p class="mensaje" id="amor-message">"Hoy quiero abrazar sin palabras"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Frustración</h3>
+      <h3 id="frustracion-title">Frustración</h3>
       <p><strong>Símbolo:</strong> ⚡ Rayo roto, ❌ Cruz</p>
       <p><strong>Expresión artística:</strong> Pintura a presión con esponja</p>
-      <p class="mensaje">“Nada me sale como quiero, pero sigo intentando”</p>
+      <p class="mensaje" id="frustracion-message">"Nada me sale como quiero, pero sigo intentando"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Esperanza</h3>
+      <h3 id="esperanza-title">Esperanza</h3>
       <p><strong>Símbolo:</strong> 🌱 Brote, 🪁 Cometa</p>
       <p><strong>Expresión artística:</strong> Origami / collage de sueños</p>
-      <p class="mensaje">“Todo puede mejorar, lo creo y lo siento”</p>
+      <p class="mensaje" id="esperanza-message">"Todo puede mejorar, lo creo y lo siento"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Orgullo</h3>
+      <h3 id="orgullo-title">Orgullo</h3>
       <p><strong>Símbolo:</strong> 🏅 Medalla, 🦁 León</p>
       <p><strong>Expresión artística:</strong> Escultura o dibujo de logros</p>
-      <p class="mensaje">“Me siento bien por lo que logré”</p>
+      <p class="mensaje" id="orgullo-message">"Me siento bien por lo que logré"</p>
     </div>
     <div class="emocion">
       <div class="color-box"></div>
-      <h3>Entusiasmo</h3>
+      <h3 id="entusiasmo-title">Entusiasmo</h3>
       <p><strong>Símbolo:</strong> 🎉 Confeti, 🔆 Chispa</p>
       <p><strong>Expresión artística:</strong> Collage colorido con movimiento</p>
-      <p class="mensaje">“¡Quiero compartir esta emoción con todos!”</p>
+      <p class="mensaje" id="entusiasmo-message">"¡Quiero compartir esta emoción con todos!"</p>
     </div>
   </div>
 </section>
@@ -540,21 +574,21 @@ h1, h2, h3 {
 
   <!-- Canvas de dibujo -->
   <div id="zonaDibujo" style="margin-top: 30px;">
-  <p>🎨 DIBUJA</p>
+  <p id="dibuja-text">🎨 DIBUJA</p>
     <div style="margin-top: 10px;">
  
 
-  <button onclick="modoBorrador()" style="margin-left: 10px; padding: 6px 12px;">
+  <button onclick="modoBorrador()" style="margin-left: 10px; padding: 6px 12px;" id="btn-borrador">
     ✏️ Cambiar a Borrador / Lápiz
   </button>
 
-  <button onclick="limpiarCanvas()" style="margin-left: 10px; padding: 6px 12px;">
+  <button onclick="limpiarCanvas()" style="margin-left: 10px; padding: 6px 12px;" id="btn-limpiar">
     🗑️ Limpiar Dibujo
   </button>
 </div>
 
   <!-- Selector de color -->
-  <label for="colorSeleccionado">Selecciona un color:</label>
+  <label for="colorSeleccionado" id="color-label">Selecciona un color:</label>
   <input type="color" id="colorSeleccionado" value="#000000" style="width: 60px; height: 30px; border: none; margin-bottom: 10px;" />
 
   <!-- Canvas para dibujar -->
@@ -562,20 +596,20 @@ h1, h2, h3 {
   <canvas id="canvas" width="500" height="400" style="border:2px solid #000; background:#fff;"></canvas><br>
 
   <!-- Botón para limpiar -->
-  <button onclick="limpiarCanvas()">🧽 Limpiar</button>
+  <button onclick="limpiarCanvas()" id="btn-limpiar2">🧽 Limpiar</button>
 </div>
 
 </div>
 
 
 <section id="juego2" style="display: none;">
-  <h2>Sube de Nivel</h2>
+  <h2 id="juego2-title">Sube de Nivel</h2>
   <div id="descripcion"></div>
   <div id="opciones2"></div>
   <div class="resultado" id="resultado2"></div>
   <div id="graficaDificultad"></div>
   <div id="termometro" style="margin-top: 20px; font-size: 24px;">
-  Emoción: <span id="emoji">😐</span> <span id="valorEmocion">50</span>/100
+  <span id="emocion-text">Emoción:</span> <span id="emoji">😐</span> <span id="valorEmocion">50</span>/100
 </div>
 
 </section>  
@@ -697,11 +731,285 @@ function mostrarPregunta1() {
   herramienta = herramienta === "pincel" ? "borrador" : "pincel";
   alert("Herramienta actual: " + (herramienta === "pincel" ? "Pincel" : "Borrador"));
 }
+  // Funcionalidad de traducción
+const translations = {
+  es: {
+    // Textos generales
+    "main-title": "Emociones en el Aula",
+    "subtitle": "Cada emoción es una historia y cada juego es una aventura.",
+    "what-is-title": "¿Qué es?",
+    "what-is-text": "Es una herramienta pedagógica digital diseñada para fortalecer la educación emocional en niños y niñas desde preescolar hasta secundaria. Se basa en actividades lúdicas que permiten identificar, expresar y regular emociones de forma consciente.",
+    "legal-title": "📘 Fundamentación Legal y Curricular",
+    "legal-text": "Está alineada con la <strong>Ley 438 de 2021</strong>, los <strong>lineamientos curriculares</strong> del Ministerio de Educación y los <strong>Objetivos de Desarrollo Sostenible (ODS)</strong> de la Agenda 2030, especialmente los ODS 3 (Salud y Bienestar), 4 (Educación de Calidad) y 16 (Paz, Justicia e Instituciones Sólidas).",
+    "instructions-title": "📜 Instrucciones",
+    "instructions-text1": "Este juego está diseñado para que niños, niñas, jóvenes y docentes exploren sus emociones de forma divertida y significativa. Usa el menú principal para acceder a las distintas actividades haciendo clic en cada botón.",
+    "instructions-text2": "Puedes repetir las actividades todas las veces que quieras. Elige libremente según tu emoción, curiosidad o necesidad del momento.",
+    "instruction1": "🎭 <strong>Gestionar emociones:</strong> Identifica lo que sientes y cómo expresarlo.",
+    "instruction2": "📖 <strong>Crear tu cuento o guion:</strong> Imagina historias que trabajen emociones.",
+    "instruction3": "🎨 <strong>Jugar con el arte:</strong> Expresa lo que sientes con color y forma.",
+    "instruction4": "🧠 <strong>Desafíos creativos:</strong> Reta tu mente y corazón con juegos emocionales.",
+    "closing-text": "¡Explora, crea, aprende y diviértete en cada rincón de esta emocionante aventura!<br>Estos juegos fueron creados integrando el arte, la literatura y la tecnología como herramientas clave en la educación emocional,<br>y puede ser transversalizado en todas las asignaturas educativas.",
+    
+    // Botones
+    "btn-emocionario": "Emocionario",
+    "btn-juego1": "¿Qué sientes?",
+    "btn-juego2": "EmoReto",
+    "btn-ruleta": "Gira y Actúa",
+    "btn-guion": "EmoGuion",
+    "btn-cuento": "Emoji Cuento",
+    "btn-poema": "Emoji Poema",
+    "btn-animacion": "EmoAnimación",
+    "btn-diario": "Diario Emocional",
+    "btn-termometro": "Emotermómetro",
+    "btn-cruciemociones": "Cruci-Emociones",
+    "btn-descubete": "Descúbrete",
+    "btn-camino": "Mi Camino",
+    "btn-emovalores": "EmoValores",
+    "btn-emoensayos": "EmoEnsayos",
+    "btn-bitacora": "Bitácora-Vocacional",
+    
+    // Emocionario
+    "emocionario-title": "Ilustraciones de emociones",
+    "simbolo-text": "Símbolo:",
+    "expresion-text": "Expresión artística:",
+    "alegria-title": "Alegría",
+    "alegria-message": "Hoy me siento con luz propia",
+    "tristeza-title": "Tristeza",
+    "tristeza-message": "Mi alma necesita un abrazo",
+    "enojo-title": "Enojo",
+    "enojo-message": "Estoy hirviendo, necesito calmarme",
+    "ansiedad-title": "Ansiedad",
+    "ansiedad-message": "Tengo un nudo en la panza",
+    "miedo-title": "Miedo",
+    "miedo-message": "Hay cosas que no entiendo y me asustan",
+    "calma-title": "Calma",
+    "calma-message": "Hoy todo fluye con tranquilidad",
+    "confusion-title": "Confusión",
+    "confusion-message": "No sé qué siento, pero quiero entenderlo",
+    "amor-title": "Amor",
+    "amor-message": "Hoy quiero abrazar sin palabras",
+    "frustracion-title": "Frustración",
+    "frustracion-message": "Nada me sale como quiero, pero sigo intentando",
+    "esperanza-title": "Esperanza",
+    "esperanza-message": "Todo puede mejorar, lo creo y lo siento",
+    "orgullo-title": "Orgullo",
+    "orgullo-message": "Me siento bien por lo que logré",
+    "entusiasmo-title": "Entusiasmo",
+    "entusiasmo-message": "¡Quiero compartir esta emoción con todos!",
+    
+    // Juego 1
+    "dibuja-text": "🎨 DIBUJA",
+    "btn-borrador": "✏️ Cambiar a Borrador / Lápiz",
+    "btn-limpiar": "🗑️ Limpiar Dibujo",
+    "color-label": "Selecciona un color:",
+    "btn-limpiar2": "🧽 Limpiar",
+    
+    // Juego 2
+    "juego2-title": "Sube de Nivel",
+    "emocion-text": "Emoción:"
+  },
+  en: {
+    // General texts
+    "main-title": "Emotions in the Classroom",
+    "subtitle": "Every emotion is a story and every game is an adventure.",
+    "what-is-title": "What is it?",
+    "what-is-text": "It is a digital pedagogical tool designed to strengthen emotional education in children from preschool to secondary school. It is based on playful activities that allow identifying, expressing and regulating emotions consciously.",
+    "legal-title": "📘 Legal and Curricular Foundation",
+    "legal-text": "It is aligned with <strong>Law 438 of 2021</strong>, the <strong>curricular guidelines</strong> of the Ministry of Education and the <strong>Sustainable Development Goals (SDGs)</strong> of the 2030 Agenda, especially SDG 3 (Health and Well-being), 4 (Quality Education) and 16 (Peace, Justice and Strong Institutions).",
+    "instructions-title": "📜 Instructions",
+    "instructions-text1": "This game is designed for children, youth and teachers to explore their emotions in a fun and meaningful way. Use the main menu to access the different activities by clicking on each button.",
+    "instructions-text2": "You can repeat the activities as many times as you want. Choose freely according to your emotion, curiosity or need of the moment.",
+    "instruction1": "🎭 <strong>Manage emotions:</strong> Identify what you feel and how to express it.",
+    "instruction2": "📖 <strong>Create your story or script:</strong> Imagine stories that work with emotions.",
+    "instruction3": "🎨 <strong>Play with art:</strong> Express what you feel with color and shape.",
+    "instruction4": "🧠 <strong>Creative challenges:</strong> Challenge your mind and heart with emotional games.",
+    "closing-text": "Explore, create, learn and have fun in every corner of this exciting adventure!<br>These games were created integrating art, literature and technology as key tools in emotional education,<br>and can be cross-cutting across all educational subjects.",
+    
+    // Buttons
+    "btn-emocionario": "Emotionary",
+    "btn-juego1": "What do you feel?",
+    "btn-juego2": "EmoChallenge",
+    "btn-ruleta": "Spin and Act",
+    "btn-guion": "EmoScript",
+    "btn-cuento": "Emoji Story",
+    "btn-poema": "Emoji Poem",
+    "btn-animacion": "EmoAnimation",
+    "btn-diario": "Emotional Diary",
+    "btn-termometro": "EmoThermometer",
+    "btn-cruciemociones": "EmoCrossword",
+    "btn-descubete": "Discover Yourself",
+    "btn-camino": "My Path",
+    "btn-emovalores": "EmoValues",
+    "btn-emoensayos": "EmoEssays",
+    "btn-bitacora": "Vocational Logbook",
+    
+    // Emotionary
+    "emocionario-title": "Emotion Illustrations",
+    "simbolo-text": "Symbol:",
+    "expresion-text": "Artistic expression:",
+    "alegria-title": "Joy",
+    "alegria-message": "Today I feel radiant",
+    "tristeza-title": "Sadness",
+    "tristeza-message": "My soul needs a hug",
+    "enojo-title": "Anger",
+    "enojo-message": "I'm boiling, I need to calm down",
+    "ansiedad-title": "Anxiety",
+    "ansiedad-message": "I have a knot in my stomach",
+    "miedo-title": "Fear",
+    "miedo-message": "There are things I don't understand that scare me",
+    "calma-title": "Calm",
+    "calma-message": "Today everything flows peacefully",
+    "confusion-title": "Confusion",
+    "confusion-message": "I don't know what I feel, but I want to understand it",
+    "amor-title": "Love",
+    "amor-message": "Today I want to hug without words",
+    "frustracion-title": "Frustration",
+    "frustracion-message": "Nothing comes out as I want, but I keep trying",
+    "esperanza-title": "Hope",
+    "esperanza-message": "Everything can get better, I believe and feel it",
+    "orgullo-title": "Pride",
+    "orgullo-message": "I feel good about what I achieved",
+    "entusiasmo-title": "Enthusiasm",
+    "entusiasmo-message": "I want to share this emotion with everyone!",
+    
+    // Game 1
+    "dibuja-text": "🎨 DRAW",
+    "btn-borrador": "✏️ Switch to Eraser/Pencil",
+    "btn-limpiar": "🗑️ Clear Drawing",
+    "color-label": "Select a color:",
+    "btn-limpiar2": "🧽 Clean",
+    
+    // Game 2
+    "juego2-title": "Level Up",
+    "emocion-text": "Emotion:"
+  },
+  fr: {
+    // Textes généraux
+    "main-title": "Émotions en Classe",
+    "subtitle": "Chaque émotion est une histoire et chaque jeu est une aventure.",
+    "what-is-title": "Qu'est-ce que c'est?",
+    "what-is-text": "C'est un outil pédagogique numérique conçu pour renforcer l'éducation émotionnelle chez les enfants de la maternelle au secondaire. Il est basé sur des activités ludiques qui permettent d'identifier, d'exprimer et de réguler les émotions de manière consciente.",
+    "legal-title": "📘 Fondement Légal et Curriculaire",
+    "legal-text": "Il est aligné avec la <strong>Loi 438 de 2021</strong>, les <strong>lignes directrices curriculaires</strong> du Ministère de l'Éducation et les <strong>Objectifs de Développement Durable (ODD)</strong> de l'Agenda 2030, en particulier les ODD 3 (Santé et Bien-être), 4 (Éducation de Qualité) et 16 (Paix, Justice et Institutions Fortes).",
+    "instructions-title": "📜 Instructions",
+    "instructions-text1": "Ce jeu est conçu pour que les enfants, les jeunes et les enseignants explorent leurs émotions de manière amusante et significative. Utilisez le menu principal pour accéder aux différentes activités en cliquant sur chaque bouton.",
+    "instructions-text2": "Vous pouvez répéter les activités autant de fois que vous le souhaitez. Choisissez librement selon votre émotion, curiosité ou besoin du moment.",
+    "instruction1": "🎭 <strong>Gérer les émotions:</strong> Identifiez ce que vous ressentez et comment l'exprimer.",
+    "instruction2": "📖 <strong>Créez votre histoire ou scénario:</strong> Imaginez des histoires qui travaillent les émotions.",
+    "instruction3": "🎨 <strong>Jouez avec l'art:</strong> Exprimez ce que vous ressentez avec la couleur et la forme.",
+    "instruction4": "🧠 <strong>Défis créatifs:</strong> Défiez votre esprit et votre cœur avec des jeux émotionnels.",
+    "closing-text": "Explorez, créez, apprenez et amusez-vous dans chaque coin de cette aventure passionnante!<br>Ces jeux ont été créés en intégrant l'art, la littérature et la technologie comme outils clés dans l'éducation émotionnelle,<br>et peuvent être transversaux à toutes les matières éducatives.",
+    
+    // Boutons
+    "btn-emocionario": "Émotionnaire",
+    "btn-juego1": "Que ressentez-vous?",
+    "btn-juego2": "Défi Émo",
+    "btn-ruleta": "Tournez et Agissez",
+    "btn-guion": "Scénario Émo",
+    "btn-cuento": "Histoire Emoji",
+    "btn-poema": "Poème Emoji",
+    "btn-animacion": "Animation Émo",
+    "btn-diario": "Journal Émotionnel",
+    "btn-termometro": "Thermomètre Émo",
+    "btn-cruciemociones": "Mots Croisés Émo",
+    "btn-descubete": "Découvrez-vous",
+    "btn-camino": "Mon Chemin",
+    "btn-emovalores": "Valeurs Émo",
+    "btn-emoensayos": "Essais Émo",
+    "btn-bitacora": "Carnet de Bord",
+    
+    // Émotionnaire
+    "emocionario-title": "Illustrations d'Émotions",
+    "simbolo-text": "Symbole:",
+    "expresion-text": "Expression artistique:",
+    "alegria-title": "Joie",
+    "alegria-message": "Aujourd'hui je me sens rayonnant",
+    "tristeza-title": "Tristesse",
+    "tristeza-message": "Mon âme a besoin d'un câlin",
+    "enojo-title": "Colère",
+    "enojo-message": "Je bouillonne, j'ai besoin de me calmer",
+    "ansiedad-title": "Anxiété",
+    "ansiedad-message": "J'ai un nœud dans l'estomac",
+    "miedo-title": "Peur",
+    "miedo-message": "Il y a des choses que je ne comprends pas et qui me font peur",
+    "calma-title": "Calme",
+    "calma-message": "Aujourd'hui tout coule paisiblement",
+    "confusion-title": "Confusion",
+    "confusion-message": "Je ne sais pas ce que je ressens, mais je veux le comprendre",
+    "amor-title": "Amour",
+    "amor-message": "Aujourd'hui je veux étreindre sans mots",
+    "frustracion-title": "Frustration",
+    "frustracion-message": "Rien ne sort comme je veux, mais je continue d'essayer",
+    "esperanza-title": "Espoir",
+    "esperanza-message": "Tout peut s'améliorer, je le crois et le sens",
+    "orgullo-title": "Fierté",
+    "orgullo-message": "Je me sens bien pour ce que j'ai accompli",
+    "entusiasmo-title": "Enthousiasme",
+    "entusiasmo-message": "Je veux partager cette émotion avec tout le monde!",
+    
+    // Jeu 1
+    "dibuja-text": "🎨 DESSINER",
+    "btn-borrador": "✏️ Changer en Gomme/Crayon",
+    "btn-limpiar": "🗑️ Effacer le Dessin",
+    "color-label": "Sélectionnez une couleur:",
+    "btn-limpiar2": "🧽 Nettoyer",
+    
+    // Jeu 2
+    "juego2-title": "Montez de Niveau",
+    "emocion-text": "Émotion:"
+  }
+};
 
+let currentLanguage = 'es';
 
+function changeLanguage(lang) {
+  currentLanguage = lang;
+  
+  // Actualizar botones de idioma
+  document.querySelectorAll('.language-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.textContent === lang.toUpperCase()) {
+      btn.classList.add('active');
+    }
+  });
+  
+  // Traducir todos los elementos con atributo data-translate
+  document.querySelectorAll('[id]').forEach(element => {
+    const key = element.id;
+    if (translations[lang][key]) {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.placeholder = translations[lang][key];
+      } else {
+        element.innerHTML = translations[lang][key];
+      }
+    }
+  });
+  
+  // Actualizar preguntas del juego 1
+  if (lang === 'es') {
+    preguntasJuego1[0].pregunta = "Elige tu emoción y dibuja el porqué";
+  } else if (lang === 'en') {
+    preguntasJuego1[0].pregunta = "Choose your emotion and draw why";
+  } else if (lang === 'fr') {
+    preguntasJuego1[0].pregunta = "Choisissez votre émotion et dessinez pourquoi";
+  }
+  
+  // Si el juego 1 está visible, actualizar la pregunta
+  if (document.getElementById('juego1').style.display !== 'none') {
+    mostrarPregunta1();
+  }
+  
+  // Si el juego 2 está visible, actualizar el título
+  if (document.getElementById('juego2').style.display !== 'none') {
+    document.getElementById('juego2-title').textContent = translations[lang]['juego2-title'];
+  }
+}
 
-  // Juego 2: sube de nivel
- const preguntasJuego2 = [
+// Inicializar con español
+changeLanguage('es');
+
+// Juego 2: sube de nivel
+const preguntasJuego2 = [
    { descripcion: "Siento una energía luminosa dentro de mí, como si todo fuera posible.", opciones: ["Alegría", "Tristeza", "Enojo"], correcta: "Alegría", dificultad: 1 },
     { descripcion: "Tengo ganas de llorar, siento un vacío y mucha nostalgia.", opciones: ["Enojo", "Tristeza", "Amor"], correcta: "Tristeza", dificultad: 1 },
     { descripcion: "Todo me molesta, siento que estoy a punto de explotar.", opciones: ["Ansiedad", "Alegría", "Enojo"], correcta: "Enojo", dificultad: 1 },
@@ -981,7 +1289,7 @@ function mostrarPregunta1() {
 <body>
   
   <section id="ruleta" style="display: none;">
-  <h2>🎡 Ruleta de las Emociones y Expresión Corporal 🎭</h2>
+  <h2 id="ruleta-title">🎡 Ruleta de las Emociones y Expresión Corporal 🎭</h2>
 
   <div class="ruleta-container">
     <div class="flecha"></div>
@@ -1054,10 +1362,7 @@ btnGirar.addEventListener('click', () => {
   }, 2900);
 });
 </script>
-
-
-
-<section id="guion" style="display: none;">
+  <section id="guion" style="display: none;">
   <style>
     #guion {
       background-color: #000;
@@ -1136,47 +1441,45 @@ btnGirar.addEventListener('click', () => {
       margin-top: 20px;
       white-space: pre-wrap;
     }
-    
-    
   </style>
 
-  <h2>Escribe tu propio guion y actua</h2>
+  <h2 id="guion-title">Escribe tu propio guion y actua</h2>
   <form id="guionForm">
     
-    <label for="autor">Autor (es):</label>
+    <label for="autor" id="autor-label">Autor (es):</label>
     <input type="text" id="autor" placeholder="Tu nombre" required />
 
-    <label for="titulo">Título del Guion:</label>
+    <label for="titulo" id="titulo-guion-label">Título del Guion:</label>
     <input type="text" id="titulo" placeholder="Nombre de la obra" required />
 
-    <label for="numActos">Número de actos:</label>
+    <label for="numActos" id="actos-label">Número de actos:</label>
     <input type="number" id="numActos" min="1" max="10" value="1" required />
 
-    <label for="numEscenas">Número de escenas por acto:</label>
+    <label for="numEscenas" id="escenas-label">Número de escenas por acto:</label>
     <input type="number" id="numEscenas" min="1" max="20" value="1" required />
 
-    <label for="materiales">Materiales necesarios para la escena:</label>
+    <label for="materiales" id="materiales-label">Materiales necesarios para la escena:</label>
     <textarea id="materiales" rows="2" placeholder="Describe materiales..."></textarea>
 
-    <label for="imagenes">Sube hasta 5 imágenes de materiales reciclados:</label>
+    <label for="imagenes" id="imagenes-label">Sube hasta 5 imágenes de materiales reciclados:</label>
     <input type="file" id="imagenes" accept="image/*" multiple />
 
     <div id="previewImgs"></div>
 
-    <label for="acotaciones">Acotaciones / Paréntesis:</label>
+    <label for="acotaciones" id="acotaciones-label">Acotaciones / Paréntesis:</label>
     <textarea id="acotaciones" rows="2" placeholder="Ejemplo: (nervioso, susurrando)"></textarea>
 
-    <h2>Personajes</h2>
+    <h2 id="personajes-title">Personajes</h2>
     <div id="personajesContainer">
       <div class="personaje-block">
         <div class="personaje-header">
-          <label>Nombre del personaje:</label>
-          <button type="button" onclick="eliminarPersonaje(this)">Eliminar</button>
+          <label id="nombre-personaje-label">Nombre del personaje:</label>
+          <button type="button" onclick="eliminarPersonaje(this)" id="btn-eliminar">Eliminar</button>
         </div>
         <input type="text" class="nombrePersonaje" required />
         <div class="flex-row">
           <div class="flex-column">
-            <label>Emoción:</label>
+            <label id="emocion-label">Emoción:</label>
             <select class="emojiPersonaje" required>
               <option value="">Selecciona emoción</option>
               <option value="😀">Feliz 😀</option>
@@ -1190,23 +1493,23 @@ btnGirar.addEventListener('click', () => {
             </select>
           </div>
           <div class="flex-column">
-            <label>Color:</label>
+            <label id="color-label-guion">Color:</label>
             <input type="color" class="colorPersonaje" value="#00cc66" />
           </div>
         </div>
-        <label>Descripción de la escena y diálogo:</label>
+        <label id="dialogo-label">Descripción de la escena y diálogo:</label>
         <textarea class="dialogoPersonaje" rows="3" required></textarea>
       </div>
     </div>
 
-    <button type="button" onclick="agregarPersonaje()">+ Agregar personaje</button>
-    <button type="button" onclick="generarGuion()">🎭 Generar Guion</button>
+    <button type="button" onclick="agregarPersonaje()" id="btn-agregar-personaje">+ Agregar personaje</button>
+    <button type="button" onclick="generarGuion()" id="btn-generar-guion">🎭 Generar Guion</button>
    
-    <button type="button" onclick="imprimirGuion()">🖨️ Imprimir</button>
-    <button type="button" onclick="descargarGuionPDF()">📑 PDF</button>
+    <button type="button" onclick="imprimirGuion()" id="btn-imprimir">🖨️ Imprimir</button>
+    <button type="button" onclick="descargarGuionPDF()" id="btn-pdf">📑 PDF</button>
   </form>
 
-  <h2>Guion generado:</h2>
+  <h2 id="guion-generado-title">Guion generado:</h2>
   <pre id="guionOutput"></pre>
   <div id="guionImgs" style="display: flex; flex-wrap: wrap;"></div>
 
@@ -1237,31 +1540,31 @@ btnGirar.addEventListener('click', () => {
       div.className = 'personaje-block';
       div.innerHTML = `
         <div class="personaje-header">
-          <label>Nombre del personaje:</label>
-          <button type="button" onclick="eliminarPersonaje(this)">Eliminar</button>
+          <label>${translations[currentLanguage]['nombre-personaje-label']}</label>
+          <button type="button" onclick="eliminarPersonaje(this)">${translations[currentLanguage]['btn-eliminar']}</button>
         </div>
         <input type="text" class="nombrePersonaje" required />
         <div class="flex-row">
           <div class="flex-column">
-            <label>Emoción:</label>
+            <label>${translations[currentLanguage]['emocion-label']}</label>
             <select class="emojiPersonaje" required>
-              <option value="">Selecciona emoción</option>
-              <option value="😀">Feliz 😀</option>
-              <option value="😢">Triste 😢</option>
-              <option value="😠">Enojado 😠</option>
-              <option value="😨">Asustado 😨</option>
-              <option value="😮">Sorprendido 😮</option>
-              <option value="😐">Neutral 😐</option>
-              <option value="🤔">Pensativo 🤔</option>
-              <option value="😌">Calmado 😌</option>
+              <option value="">${translations[currentLanguage]['selecciona-emocion']}</option>
+              <option value="😀">${translations[currentLanguage]['feliz']} 😀</option>
+              <option value="😢">${translations[currentLanguage]['triste']} 😢</option>
+              <option value="😠">${translations[currentLanguage]['enojado']} 😠</option>
+              <option value="😨">${translations[currentLanguage]['asustado']} 😨</option>
+              <option value="😮">${translations[currentLanguage]['sorprendido']} 😮</option>
+              <option value="😐">${translations[currentLanguage]['neutral']} 😐</option>
+              <option value="🤔">${translations[currentLanguage]['pensativo']} 🤔</option>
+              <option value="😌">${translations[currentLanguage]['calmado']} 😌</option>
             </select>
           </div>
           <div class="flex-column">
-            <label>Color:</label>
+            <label>${translations[currentLanguage]['color-label-guion']}</label>
             <input type="color" class="colorPersonaje" value="#00cc66" />
           </div>
         </div>
-        <label>Descripción de la escena y diálogo:</label>
+        <label>${translations[currentLanguage]['dialogo-label']}</label>
         <textarea class="dialogoPersonaje" rows="3" required></textarea>
       `;
       container.appendChild(div);
@@ -1284,12 +1587,12 @@ btnGirar.addEventListener('click', () => {
       const colores = document.querySelectorAll('.colorPersonaje');
       const dialogos = document.querySelectorAll('.dialogoPersonaje');
 
-      let texto = `Autor: ${autor}\nTítulo: ${titulo}\nNúmero de actos: ${actos}\nNúmero de escenas por acto: ${escenas}\n\nMateriales: ${materiales}\n\nAcotaciones: ${acotaciones}\n\n`;
+      let texto = `${translations[currentLanguage]['autor']}: ${autor}\n${translations[currentLanguage]['titulo']}: ${titulo}\n${translations[currentLanguage]['num-actos']}: ${actos}\n${translations[currentLanguage]['num-escenas']}: ${escenas}\n\n${translations[currentLanguage]['materiales']}: ${materiales}\n\n${translations[currentLanguage]['acotaciones']}: ${acotaciones}\n\n`;
 
       for (let a = 1; a <= actos; a++) {
-        texto += `--- Acto ${a} ---\n`;
+        texto += `--- ${translations[currentLanguage]['acto']} ${a} ---\n`;
         for (let e = 1; e <= escenas; e++) {
-          texto += `  Escena ${e}:\n`;
+          texto += `  ${translations[currentLanguage]['escena']} ${e}:\n`;
           for (let i = 0; i < nombres.length; i++) {
             texto += `    [${nombres[i].value} ${emociones[i].value} - ${colores[i].value}]: ${dialogos[i].value}\n`;
           }
@@ -1306,11 +1609,6 @@ btnGirar.addEventListener('click', () => {
         img.src = src;
         imgContainer.appendChild(img);
       });
-    }
-
-    function compartirWhatsApp() {
-      const texto = encodeURIComponent(document.getElementById('guionOutput').textContent);
-      window.open(`https://wa.me/?text=${texto}`, '_blank');
     }
 
     function imprimirGuion() {
@@ -1439,20 +1737,20 @@ btnGirar.addEventListener('click', () => {
     }
   </style>
 
-  <h2>EmojiCuento: ¡Juega, Dibuja y Escribe!</h2>
+  <h2 id="cuento-title">EmojiCuento: ¡Juega, Dibuja y Escribe!</h2>
 
-  <label for="title">Título del cuento:</label>
+  <label for="title" id="titulo-cuento-label">Título del cuento:</label>
   <input type="text" id="title" placeholder="Escribe el título aquí" />
 
-  <label for="author">Autor:</label>
+  <label for="author" id="autor-cuento-label">Autor:</label>
   <input type="text" id="author" placeholder="Tu nombre" />
 
-  <label for="imageInput">¡Dibuja tu imagen favorita para el cuento y súbela aquí!</label>
+  <label for="imageInput" id="imagen-cuento-label">¡Dibuja tu imagen favorita para el cuento y súbela aquí!</label>
   <input type="file" id="imageInput" accept="image/*" />
   <img id="previewUploadImage" src="" style="display:none; max-width: 150px; margin: 10px 0; border-radius: 8px;" />
 
   <!-- INICIO -->
-  <label for="startStory">Inicio</label>
+  <label for="startStory" id="inicio-label">Inicio</label>
   <div class="emoji-section">
     <button id="emojiStartBtn">Emoji para escribir el inicio (clic aquí)</button>
     <div id="emojiStart" class="emoji-box">✨</div>
@@ -1460,7 +1758,7 @@ btnGirar.addEventListener('click', () => {
   <textarea id="startStory" placeholder="Escribe el inicio del cuento la primera parte de la historia donde se introducen los personajes, el lugar y el tiempo en que ocurre la acción"></textarea>
 
   <!-- NUDO -->
-  <label for="middleStory">Nudo </label>
+  <label for="middleStory" id="nudo-label">Nudo </label>
   <div class="emoji-section">
     <button id="emojiMiddleBtn">Emoji del nudo (clic aquí)</button>
     <div id="emojiMiddle" class="emoji-box">⚔️</div>
@@ -1468,16 +1766,18 @@ btnGirar.addEventListener('click', () => {
   <textarea id="middleStory" placeholder="Escribe el nudo del cuento (parte central de la historia donde se presenta el conflicto o problema principal que los personajes deben resolver)"></textarea>
 
   <!-- FINAL -->
-  <label for="endStory">Desenlace (final):</label>
+  <label for="endStory" id="final-label">Desenlace (final):</label>
   <div class="emoji-section">
     <button id="emojiEndBtn">Emoji del final </button>
     <div id="emojiEnd" class="emoji-box">🏆</div>
   </div>
   <textarea id="endStory" placeholder="Escribe el desenlace del cuento donde se resuelven los conflictos y se da un cierre a la historia"></textarea>
 
-  <button id="generateStory">Generar Cuento</button>
-  <button id="printStory">Imprimir</button>
+  <button id="generateStory" id="btn-generar-cuento">Generar Cuento</button>
+  <button id="printStory" id="btn-imprimir-cuento">Imprimir</button>
+  
 
+  
   <div id="preview" style="display:none;">
     <div id="previewEmoji"></div>
     <h2 id="previewTitle"></h2>
@@ -1529,18 +1829,18 @@ btnGirar.addEventListener('click', () => {
       const emojiEnd = document.getElementById('emojiEnd').textContent;
 
       if (!title || !author || !start || !middle || !end) {
-        alert('Por favor completa todas las partes del cuento antes de generar.');
+        alert(translations[currentLanguage]['completa-cuento']);
         return;
       }
 
       document.getElementById('previewEmoji').innerHTML = `
-        <div><strong>Inicio:</strong> ${emojiStart}</div>
-        <div><strong>Nudo:</strong> ${emojiMiddle}</div>
-        <div><strong>Final:</strong> ${emojiEnd}</div>
+        <div><strong>${translations[currentLanguage]['inicio']}:</strong> ${emojiStart}</div>
+        <div><strong>${translations[currentLanguage]['nudo']}:</strong> ${emojiMiddle}</div>
+        <div><strong>${translations[currentLanguage]['final']}:</strong> ${emojiEnd}</div>
       `;
       document.getElementById('previewTitle').textContent = title;
-      document.getElementById('previewAuthor').textContent = "Por: " + author;
-      document.getElementById('previewStory').innerHTML = `<strong>Inicio:</strong> ${start}<br><br><strong>Nudo:</strong> ${middle}<br><br><strong>Desenlace:</strong> ${end}`;
+      document.getElementById('previewAuthor').textContent = translations[currentLanguage]['por'] + " " + author;
+      document.getElementById('previewStory').innerHTML = `<strong>${translations[currentLanguage]['inicio']}:</strong> ${start}<br><br><strong>${translations[currentLanguage]['nudo']}:</strong> ${middle}<br><br><strong>${translations[currentLanguage]['desenlace']}:</strong> ${end}`;
 
       if (selectedImageDataUrl) {
         document.getElementById('previewImage').style.display = 'block';
@@ -1555,7 +1855,7 @@ btnGirar.addEventListener('click', () => {
     document.getElementById('printStory').addEventListener('click', () => {
       const preview = document.getElementById('preview');
       if (preview.style.display === 'none') {
-        alert('Primero genera el cuento para imprimirlo.');
+        alert(translations[currentLanguage]['genera-primero']);
         return;
       }
 
@@ -1563,7 +1863,7 @@ btnGirar.addEventListener('click', () => {
       const htmlContent = `
         <html>
           <head>
-            <title>Imprimir Cuento</title>
+            <title>${translations[currentLanguage]['imprimir-cuento']}</title>
             <style>
               body { font-family: 'Comic Sans MS', cursive, sans-serif; color: #000; padding: 20px; }
               img { max-width: 150px; display: block; margin: 0 auto 10px auto; }
@@ -1584,64 +1884,236 @@ btnGirar.addEventListener('click', () => {
   </script>
 </section>
 
+<!-- Actualizar las traducciones para incluir los nuevos textos -->
+<script>
+  // Agregar nuevas traducciones a los objetos existentes
+  translations.es = {
+    ...translations.es,
+    // Guion
+    "guion-title": "Escribe tu propio guion y actua",
+    "autor-label": "Autor (es):",
+    "titulo-guion-label": "Título del Guion:",
+    "actos-label": "Número de actos:",
+    "escenas-label": "Número de escenas por acto:",
+    "materiales-label": "Materiales necesarios para la escena:",
+    "imagenes-label": "Sube hasta 5 imágenes de materiales reciclados:",
+    "acotaciones-label": "Acotaciones / Paréntesis:",
+    "personajes-title": "Personajes",
+    "nombre-personaje-label": "Nombre del personaje:",
+    "btn-eliminar": "Eliminar",
+    "emocion-label": "Emoción:",
+    "selecciona-emocion": "Selecciona emoción",
+    "feliz": "Feliz",
+    "triste": "Triste",
+    "enojado": "Enojado",
+    "asustado": "Asustado",
+    "sorprendido": "Sorprendido",
+    "neutral": "Neutral",
+    "pensativo": "Pensativo",
+    "calmado": "Calmado",
+    "color-label-guion": "Color:",
+    "dialogo-label": "Descripción de la escena y diálogo:",
+    "btn-agregar-personaje": "+ Agregar personaje",
+    "btn-generar-guion": "🎭 Generar Guion",
+    "btn-imprimir": "🖨️ Imprimir",
+    "btn-pdf": "📑 PDF",
+    "guion-generado-title": "Guion generado:",
+    "autor": "Autor",
+    "titulo": "Título",
+    "num-actos": "Número de actos",
+    "num-escenas": "Número de escenas",
+    "materiales": "Materiales",
+    "acotaciones": "Acotaciones",
+    "acto": "Acto",
+    "escena": "Escena",
+    
+    // Cuento
+    "cuento-title": "EmojiCuento: ¡Juega, Dibuja y Escribe!",
+    "titulo-cuento-label": "Título del cuento:",
+    "autor-cuento-label": "Autor:",
+    "imagen-cuento-label": "¡Dibuja tu imagen favorita para el cuento y súbela aquí!",
+    "inicio-label": "Inicio",
+    "nudo-label": "Nudo",
+    "final-label": "Desenlace (final):",
+    "btn-generar-cuento": "Generar Cuento",
+    "btn-imprimir-cuento": "Imprimir",
+    "por": "Por",
+    "desenlace": "Desenlace",
+    "completa-cuento": "Por favor completa todas las partes del cuento antes de generarlo.",
+    "genera-primero": "Primero genera tu cuento antes de imprimirlo.",
+    "imprimir-cuento": "Imprimir Cuento"
+  };
+
+  translations.en = {
+    ...translations.en,
+    // Script
+    "guion-title": "Write your own script and act",
+    "autor-label": "Author(s):",
+    "titulo-guion-label": "Script Title:",
+    "actos-label": "Number of acts:",
+    "escenas-label": "Number of scenes per act:",
+    "materiales-label": "Materials needed for the scene:",
+    "imagenes-label": "Upload up to 5 images of recycled materials:",
+    "acotaciones-label": "Stage directions / Parentheses:",
+    "personajes-title": "Characters",
+    "nombre-personaje-label": "Character name:",
+    "btn-eliminar": "Delete",
+    "emocion-label": "Emotion:",
+    "selecciona-emocion": "Select emotion",
+    "feliz": "Happy",
+    "triste": "Sad",
+    "enojado": "Angry",
+    "asustado": "Scared",
+    "sorprendido": "Surprised",
+    "neutral": "Neutral",
+    "pensativo": "Thoughtful",
+    "calmado": "Calm",
+    "color-label-guion": "Color:",
+    "dialogo-label": "Scene description and dialogue:",
+    "btn-agregar-personaje": "+ Add character",
+    "btn-generar-guion": "🎭 Generate Script",
+    "btn-imprimir": "🖨️ Print",
+    "btn-pdf": "📑 PDF",
+    "guion-generado-title": "Generated script:",
+    "autor": "Author",
+    "titulo": "Title",
+    "num-actos": "Number of acts",
+    "num-escenas": "Number of scenes",
+    "materiales": "Materials",
+    "acotaciones": "Stage directions",
+    "acto": "Act",
+    "escena": "Scene",
+    
+    // Story
+    "cuento-title": "EmojiStory: Play, Draw and Write!",
+    "titulo-cuento-label": "Story title:",
+    "autor-cuento-label": "Author:",
+    "imagen-cuento-label": "Draw your favorite image for the story and upload it here!",
+    "inicio-label": "Beginning",
+    "nudo-label": "Middle",
+    "final-label": "Ending (final):",
+    "btn-generar-cuento": "Generate Story",
+    "btn-imprimir-cuento": "Print",
+    "por": "By",
+    "desenlace": "Ending",
+    "completa-cuento": "Please complete all parts of the story before generating it.",
+    "genera-primero": "First generate your story before printing it.",
+    "imprimir-cuento": "Print Story"
+  };
+
+  translations.fr = {
+    ...translations.fr,
+    // Scénario
+    "guion-title": "Écrivez votre propre scénario et jouez",
+    "autor-label": "Auteur(s):",
+    "titulo-guion-label": "Titre du scénario:",
+    "actos-label": "Nombre d'actes:",
+    "escenas-label": "Nombre de scènes par acte:",
+    "materiales-label": "Matériel nécessaire pour la scène:",
+    "imagenes-label": "Téléchargez jusqu'à 5 images de matériaux recyclés:",
+    "acotaciones-label": "Didascalies / Parenthèses:",
+    "personajes-title": "Personnages",
+    "nombre-personaje-label": "Nom du personnage:",
+    "btn-eliminar": "Supprimer",
+    "emocion-label": "Émotion:",
+    "selecciona-emocion": "Sélectionnez une émotion",
+    "feliz": "Heureux",
+    "triste": "Triste",
+    "enojado": "En colère",
+    "asustado": "Effrayé",
+    "sorprendido": "Surpris",
+    "neutral": "Neutre",
+    "pensativo": "Pensif",
+    "calmado": "Calme",
+    "color-label-guion": "Couleur:",
+    "dialogo-label": "Description de la scène et dialogue:",
+    "btn-agregar-personaje": "+ Ajouter un personnage",
+    "btn-generar-guion": "🎭 Générer Scénario",
+    "btn-imprimir": "🖨️ Imprimer",
+    "btn-pdf": "📑 PDF",
+    "guion-generado-title": "Scénario généré:",
+    "autor": "Auteur",
+    "titulo": "Titre",
+    "num-actos": "Nombre d'actes",
+    "num-escenas": "Nombre de scènes",
+    "materiales": "Matériel",
+    "acotaciones": "Didascalies",
+    "acto": "Acte",
+    "escena": "Scène",
+    
+    // Histoire
+    "cuento-title": "Histoire Emoji: Jouez, Dessinez et Écrivez!",
+    "titulo-cuento-label": "Titre de l'histoire:",
+    "autor-cuento-label": "Auteur:",
+    "imagen-cuento-label": "Dessinez votre image préférée pour l'histoire et téléchargez-la ici!",
+    "inicio-label": "Début",
+    "nudo-label": "Milieu",
+    "final-label": "Fin (finale):",
+    "btn-generar-cuento": "Générer l'Histoire",
+    "btn-imprimir-cuento": "Imprimer",
+    "por": "Par",
+    "desenlace": "Dénouement",
+    "completa-cuento": "Veuillez compléter toutes les parties de l'histoire avant de la générer.",
+    "genera-primero": "Générez d'abord votre histoire avant de l'imprimer.",
+    "imprimir-cuento": "Imprimer l'Histoire"
+  };
+</script>
+  <section id="juegoPoema" style="display: none; padding: 20px; color: #fff;">
+  <h2 style="text-align: center; color: #ffffff;" id="poema-title">Crea Tu Emoji Poema</h2>
   
-  
-<section id="juegoPoema" style="display: none; padding: 20px; color: #fff;">
-  <h2 style="text-align: center; color: #ffffff;">Crea Tu Emoji Poema </h2>
-  
-   <!-- Emoji aleatorio -->
-<div style="text-align: center; margin: 20px 0;">
-  <button onclick="generarEmoji()">Elegir Emoji</button>
-  <div id="emojiResultado" style="font-size: 4em; margin-top: 10px;"></div>
+  <!-- Emoji aleatorio -->
+  <div style="text-align: center; margin: 20px 0;">
+    <button onclick="generarEmoji()" id="btn-elegir-emoji">Elegir Emoji</button>
+    <div id="emojiResultado" style="font-size: 4em; margin-top: 10px;"></div>
 
-  <div style="margin-bottom: 15px;">
-    <label for="tituloPoema"><strong>Título:</strong></label><br>
-    <input type="text" id="tituloPoema" placeholder="Título del poema" style="width: 100%; padding: 8px; border-radius: 8px; margin-top: 5px;">
+    <div style="margin-bottom: 15px;">
+      <label for="tituloPoema" id="titulo-poema-label"><strong>Título:</strong></label><br>
+      <input type="text" id="tituloPoema" placeholder="Título del poema" style="width: 100%; padding: 8px; border-radius: 8px; margin-top: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="autorPoema" id="autor-poema-label"><strong>Autor:</strong></label><br>
+      <input type="text" id="autorPoema" placeholder="Tu nombre o seudónimo" style="width: 100%; padding: 8px; border-radius: 8px; margin-top: 5px;">
+    </div>
+
+    <!-- Estrofas -->
+    <div id="estrofas">
+      <h3 id="estrofa1-title">Estrofa 1</h3>
+      <textarea placeholder="Verso 1" class="verso" id="verso1"></textarea>
+      <textarea placeholder="Verso 2" class="verso" id="verso2"></textarea>
+      <textarea placeholder="Verso 3" class="verso" id="verso3"></textarea>
+      <textarea placeholder="Verso 4" class="verso" id="verso4"></textarea>
+
+      <h3 id="estrofa2-title">Estrofa 2</h3>
+      <textarea placeholder="Verso 1" class="verso" id="verso5"></textarea>
+      <textarea placeholder="Verso 2" class="verso" id="verso6"></textarea>
+      <textarea placeholder="Verso 3" class="verso" id="verso7"></textarea>
+      <textarea placeholder="Verso 4" class="verso" id="verso8"></textarea>
+
+      <h3 id="estrofa3-title">Estrofa 3</h3>
+      <textarea placeholder="Verso 1" class="verso" id="verso9"></textarea>
+      <textarea placeholder="Verso 2" class="verso" id="verso10"></textarea>
+      <textarea placeholder="Verso 3" class="verso" id="verso11"></textarea>
+      <textarea placeholder="Verso 4" class="verso" id="verso12"></textarea>
+    </div>
+
+    <!-- Ayudador de rimas -->
+    <div style="margin-top: 20px;">
+      <h3 id="buscar-rimas-title">🔍 Buscar palabras que rimen</h3>
+      <input type="text" id="palabraRima" placeholder="Escribe una palabra" style="padding: 8px; border-radius: 6px; width: 60%;">
+      <button onclick="buscarRimas()" id="btn-buscar-rimas">Buscar Rimas</button>
+      <p id="resultadoRima" style="margin-top: 10px; font-style: italic;"></p>
+    </div>
+
+    <!-- Botones de acción -->
+    <div style="text-align: center; margin-top: 30px;">
+      <button onclick="verPoema()" id="btn-ver-poema">📜 Ver Poema</button>
+      <button onclick="printPoema()" id="btn-imprimir-poema">🖨️ Imprimir</button>
+    </div>
+
+    <!-- Resultado -->
+    <div id="poemaResultado" style="margin-top: 30px; background: #111; padding: 20px; border-radius: 12px; display: none;"></div>
   </div>
-
-  <div style="margin-bottom: 15px;">
-    <label for="autorPoema"><strong>Autor:</strong></label><br>
-    <input type="text" id="autorPoema" placeholder="Tu nombre o seudónimo" style="width: 100%; padding: 8px; border-radius: 8px; margin-top: 5px;">
-  </div>
-
-
-  <!-- Estrofas -->
-  <div id="estrofas">
-    <h3>Estrofa 1</h3>
-    <textarea placeholder="Verso 1" class="verso"></textarea>
-    <textarea placeholder="Verso 2" class="verso"></textarea>
-    <textarea placeholder="Verso 3" class="verso"></textarea>
-    <textarea placeholder="Verso 4" class="verso"></textarea>
-
-    <h3>Estrofa 2</h3>
-    <textarea placeholder="Verso 1" class="verso"></textarea>
-    <textarea placeholder="Verso 2" class="verso"></textarea>
-    <textarea placeholder="Verso 3" class="verso"></textarea>
-    <textarea placeholder="Verso 4" class="verso"></textarea>
-
-    <h3>Estrofa 3</h3>
-    <textarea placeholder="Verso 1" class="verso"></textarea>
-    <textarea placeholder="Verso 2" class="verso"></textarea>
-    <textarea placeholder="Verso 3" class="verso"></textarea>
-    <textarea placeholder="Verso 4" class="verso"></textarea>
-  </div>
-
-  <!-- Ayudador de rimas -->
-  <div style="margin-top: 20px;">
-    <h3>🔍 Buscar palabras que rimen</h3>
-    <input type="text" id="palabraRima" placeholder="Escribe una palabra" style="padding: 8px; border-radius: 6px; width: 60%;">
-    <button onclick="buscarRimas()">Buscar Rimas</button>
-    <p id="resultadoRima" style="margin-top: 10px; font-style: italic;"></p>
-  </div>
-
-  <!-- Botones de acción -->
-<div style="text-align: center; margin-top: 30px;">
-  <button onclick="verPoema()">📜 Ver Poema</button>
-  <button onclick="printPoema()">🖨️ Imprimir</button>
-</div>
-
-<!-- Resultado -->
-<div id="poemaResultado" style="margin-top: 30px; background: #111; padding: 20px; border-radius: 12px; display: none;"></div>
 </section>
 
 <style>
@@ -1658,364 +2130,187 @@ btnGirar.addEventListener('click', () => {
     color: #fff;
     border: 1px solid #555;
   }
-  
-  
 </style>
 
 <!-- LIBRERÍA PARA PDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-  window.onload = function () {
-    const emojis = ["🌟", "🔥", "❄️", "💧", "🌈", "🌻", "🌙", "🎵", "🦋", "🧠", "❤️", "💫"];
-
-    function generarEmoji() {
-      const emojiElemento = document.getElementById("emojiResultado");
-      if (!emojiElemento) {
-        alert("No se encontró el contenedor del emoji 😢");
-        return;
-      }
-
-      let vueltas = 0;
-      const intervalo = setInterval(() => {
-        const aleatorio = emojis[Math.floor(Math.random() * emojis.length)];
-        emojiElemento.textContent = aleatorio;
-        vueltas++;
-        if (vueltas > 20) clearInterval(intervalo);
-      }, 100);
-    }
-
-    window.generarEmoji = generarEmoji;
-
-    window.verPoema = function () {
-      const titulo = document.getElementById("tituloPoema").value;
-      const autor = document.getElementById("autorPoema").value;
-      const versos = document.querySelectorAll("#estrofas .verso");
-      const emoji = document.getElementById("emojiResultado").textContent;
-
-      let html = `<h2>${titulo} ${emoji}</h2><p><em>Por ${autor}</em></p>`;
-      for (let i = 0; i < versos.length; i += 4) {
-        html += "<p>";
-        for (let j = 0; j < 4; j++) {
-          const verso = versos[i + j].value;
-          if (verso.trim()) {
-            html += `${verso}<br>`;
-          }
-        }
-        html += "</p>";
-      }
-
-      const resultado = document.getElementById("poemaResultado");
-      resultado.innerHTML = html;
-      resultado.style.display = "block";
-    };
-
-    window.buscarRimas = function () {
-      const palabra = document.getElementById("palabraRima").value.trim();
-      if (!palabra) return;
-
-     const posiblesRimas = [
-  "amor", "valor", "calor", "dolor", "sabor", "honor", "temor",
-  "animal", "cristal", "corral", "final", "señal", "canal",
-  "canción", "pasión", "razón", "corazón", "emoción", "función",
-  "andar", "luchar", "cantar", "mirar", "jugar", "bailar",
-  "papel", "nivel", "hotel", "anhelo",
-  "fácil", "difícil", "útil", "frágil",
-  "vez", "niñez", "validez", "lucidez", "altivez",
-  "jardín", "berlín", "festín",
-  "poder", "mujer", "correr", "leer", "beber",
-  "vivir", "decidir", "subir", "escribir", "sentir",
-  "amistad", "bondad", "verdad", "lealtad",
-  "juventud", "actitud", "gratitud", "virtud",
-  "beber", "leer", "andar", "razón", "pasión",
-  "función", "nivel", "papel", "mujer", "jardín",
-  "bailar", "andar", "andar", "andar", "andar",
-  "subir", "vivir", "poder", "sentir", "decidir",
-  "temor", "dolor", "valor", "calor", "sabor",
-  "cantar", "mirar", "luchar", "jugar", "final",
-  "animal", "cristal", "canal", "corral",  "navidad", "soledad", "seguridad", "claridad", "oscuridad",
-  "universidad", "felicidad", "realidad", "necesidad", "capacidad",
-  "amistades", "lealtades", "voluntad", "autoridad", "ciudad",
-  "libertad", "actividad", "curiosidad", "tranquilidad", "electricidad",
-  "igualdad", "comunidad", "habilidad", "fragilidad", "intensidad",
-  "sensualidad", "eternidad", "modalidad", "originalidad", "popularidad",
-  "humanidad", "divinidad", "nacionalidad", "localidad", "temporalidad",
-  "personalidad", "civilidad", "movilidad", "hostilidad", "neutralidad",
-  "electricidad", "visibilidad", "sencillez", "altivez", "rigidez",
-  "madurez", "ligereza", "belleza", "tristeza", "naturaleza", "aula", "rosa", "casa", "vida", "risa",
-"magia", "lluvia", "calma", "fuerza", "brisa",
-"montaña", "luzca", "esperanza", "niña", "poesía",
-"alma", "cultura", "energía", "naturaleza", "espera", "nube", "arte", "verde", "cante", "gente",
-"noche", "leche", "puente", "mente", "fuente",
-"saludable", "alegre", "valiente", "presente", "inteligente",
-"triste", "corte", "frente", "suerte", "fuerte", "aquí", "así", "para ti", "sí", "allí",
-"frenesí", "país", "bambú", "ají", "jardí",
-"colibrí", "desistí", "viví", "percibí", "recibí",
-"decidí", "sonreí", "intuí", "sentí", "subí", "cielo", "verso", "abrazo", "tesoro", "rayo",
-"camino", "cuento", "pensamiento", "reto", "lento",
-"viento", "canto", "hermano", "horizonte", "universo",
-"deseo", "grito", "sueño", "silencio", "versículo", "tatu", "bambú", "menú", "tribú", "igú",
-"baúl", "gurú", "mamut", "ñandú", "coñacú",
-"atrapu", "kulu", "hamu", "inú", "tupacú",
-"tutú", "tabú", "kanú", "corruptú", "mapu", "puma", "león",  "águila", "abeja", "alce", "antílope", "araña",
-  "ardilla", "armadillo", "avestruz", "ballena", "búfalo",
-  "burro", "caballo", "cabra", "camaleón", "cangrejo",
-  "canguro", "caracol", "castor", "cebra", "chimpancé",
-  "cisne", "cocodrilo", "colibrí", "conejo", "cuervo",
-  "delfín", "dragón de komodo", "elefante", "erizo", "escorpión",
-  "faisán", "flamenco", "foca", "galápago", "gallo",
-  "gamba", "gato", "gaviota", "gavilán", "gecko",
-  "gorila", "grillo", "halcón", "hiena", "hipopótamo",
-  "hurón", "iguana", "jabirú", "jabalí", "jirafa",
-  "koala", "lagarto", "langosta", "lechuza", "león",
-  "lemur", "liebre", "lince", "lobo", "loro",
-  "macaco", "mamut", "mariposa", "medusa", "meerkat",
-  "mofeta", "mono", "mosca", "murciélago", "nutria",
-  "ocelote", "orangután", "orca", "ornitorrinco", "oso",
-  "ostión", "ostra", "oveja", "panda", "pantera",
-  "pájaro", "pato", "pavo", "pelícano", "perico",
-  "perro", "pez", "pingüino", "pulga", "pulpo",
-  "quetzal", "rana", "ratón", "reno", "rinoceronte",
-  "salamandra", "sapo", "serpiente", "tigre", "topo",
-  "tortuga", "tucán", "urraca", "vaca", "zorro", "aburrimiento", "admiración", "aflicción", "agradecimiento", "agitación",
-  "alivio", "ambivalencia", "angustia", "ansia", "apatía",
-  "aprecio", "arrepentimiento", "asco", "asombro", "autocompasión",
-  "autorrealización", "benevolencia", "bienestar", "bloqueo", "bochorno",
-  "celos", "compasión", "complacencia", "compromiso", "confusión",
-  "consternación", "contento", "culpa", "curiosidad", "decepción",
-  "deleite", "dependencia", "desaliento", "desasosiego", "desazón",
-  "desconfianza", "desesperanza", "desilusión", "desinterés", "desmotivación",
-  "desolación", "deseo", "desprecio", "dignidad", "duda",
-  "euforia", "éxtasis", "extrañeza", "exuberancia", "fastidio",
-  "felicidad", "fervor", "fidelidad", "firmeza", "fluidez",
-  "fobia", "fortaleza", "fracaso", "frialdad", "gozo",
-  "gratitud", "hastío", "honestidad", "humildad", "impaciencia",
-  "impotencia", "incomodidad", "incomprensión", "indecisión", "indignación",
-  "indiferencia", "injusticia", "inseguridad", "inspiración", "intimidad",
-  "intranquilidad", "ira", "júbilo", "liviandad", "melancolía",
-  "misericordia", "motivación", "nerviosismo", "nostalgia", "orgullo",
-  "osadía", "pánico", "pena", "perplejidad", "placer",
-  "preocupación", "rencor", "remordimiento", "reproche", "resignación",
-  "respeto", "resquemor", "satisfacción", "serenidad", "shock",
-  "soledad", "sorpresa", "sosiego", "templanza", "ternura",
-  "tensión", "timidez", "tranquilidad", "vulnerabilidad", "zozobra",  "Ágata", "Ámbar", "Ametrina", "Amatista", "Amazonita",
-  "Andalucita", "Apatita", "Aventurina", "Azurita", "Berilo",
-  "Calcedonia", "Cianita", "Crisocola", "Crisoprasa", "Cuarzo",
-  "Coral", "Cornalina", "Diamante", "Dumortierita", "Esmeralda",
-  "Espinela", "Fluorita", "Granate", "Hematita", "Howlita",
-  "Iolita", "Jade", "Jaspe", "Kunzita", "Labradorita",
-  "Lapislazuli", "Larimar", "Magnetita", "Malaquita", "Marcasita",
-  "Moldavita", "Moonstone", "Morganita", "Nefrita", "Obsidiana",
-  "Peridoto", "Perla", "Pirita", "Prehnita", "Rodonita",
-  "Rodocrosita", "Rubí", "Rutilo", "Selenita", "Serafinita",
-  "Sodalita", "Sugilita", "Tanzanita", "Topacio", "Torbernite",
-  "Turmalina", "Turquesa", "Unakita", "Zafiro", "Zircón",
-  "Zoisita", "Calcita", "Espodumena", "Clinohumita", "Heliodoro",
-  "Variscita", "Verdelita", "Sunstone", "Spinela", "Actinolita",
-  "Charoíta", "Epidota", "Danburita", "Axinita", "Ulexita",
-  "Thulita", "Axinita", "Olivino", "Anhidrita", "Jet",
-  "Idocrasa", "Bixbita", "Almandino", "Cristalita", "Crocoíta",
-  "Covellina", "Dioptasa", "Enstatita", "Flogopita", "Goshenita",
-  "Hauynita", "Lazulita", "Melanita", "Petalita", "Tugtupita", "Argentina", "Brasil", "Canadá", "Chile", "China",
-  "Colombia", "Cuba", "Ecuador", "Egipto", "España",
-  "Francia", "Grecia", "Guatemala", "Honduras", "India",
-  "Indonesia", "Irlanda", "Israel", "Italia", "Jamaica",
-  "Japón", "Kenia", "Líbano", "Malasia", "Marruecos",
-  "México", "Nigeria", "Noruega", "Panamá", "Paraguay",
-  "Perú", "Polonia", "Portugal", "Qatar", "Rumania",
-  "Rusia", "Senegal", "Singapur", "Somalia", "Suecia",
-  "Suiza", "Surinam", "Tailandia", "Túnez", "Turquía",
-  "Ucrania", "Uganda", "Uruguay", "Venezuela", "Vietnam",
-  "Yemen", "Zambia", "Zimbabue", "Bélgica", "Alemania",
-  "Corea", "Dinamarca", "Eslovaquia", "Eslovenia", "Finlandia",
-  "Gambia", "Ghana", "Islandia", "Kazajistán", "Lesoto",
-  "Letonia", "Liberia", "Lituania", "Malawi", "Malí",
-  "Malta", "Moldavia", "Mónaco", "Mongolia", "Mozambique",
-  "Nepal", "Nicaragua", "Omán", "Pakistán", "Ruanda",
-  "Serbia", "Siria", "Togo", "Tonga", "Yibuti",
-  "Brunéi", "Croacia", "Estonia", "Georgia", "Hungría",
-  "Kirguistán", "Laos", "Liechtenstein", "Luxemburgo", "Mauricio"
-];
-
-      const resultado = posiblesRimas.filter(p =>
-        p.endsWith(palabra.slice(-2)) || p.endsWith(palabra.slice(-3))
-      );
-
-      document.getElementById("resultadoRima").textContent = resultado.length > 0
-        ? "Palabras que riman: " + resultado.join(", ")
-        : "No se encontraron muchas coincidencias, intenta con otra palabra.";
-    };
-
-    // ✅ IMPRIMIR FUNCIONAL
-    window.printPoema = function () {
-      const contenido = document.getElementById("poemaResultado").innerHTML;
-      if (!contenido.trim()) {
-        alert("Primero genera tu poema antes de imprimirlo.");
-        return;
-      }
-
-      const ventana = window.open('', '_blank');
-      ventana.document.write(`
-        <html>
-          <head>
-            <title>Imprimir Poema</title>
-            <style>
-              body { font-family: Arial, sans-serif; padding: 30px; color: #000; }
-              h2 { text-align: center; }
-              p { font-size: 16px; }
-            </style>
-          </head>
-          <body>${contenido}</body>
-        </html>
-      `);
-      ventana.document.close();
-      ventana.focus();
-      ventana.print();
-    };
+  // Agregar traducciones para la sección de poema
+  translations.es.poema = {
+    "poema-title": "Crea Tu Emoji Poema",
+    "btn-elegir-emoji": "Elegir Emoji",
+    "titulo-poema-label": "Título:",
+    "titulo-poema-placeholder": "Título del poema",
+    "autor-poema-label": "Autor:",
+    "autor-poema-placeholder": "Tu nombre o seudónimo",
+    "estrofa1-title": "Estrofa 1",
+    "estrofa2-title": "Estrofa 2", 
+    "estrofa3-title": "Estrofa 3",
+    "verso-placeholder": "Verso",
+    "buscar-rimas-title": "🔍 Buscar palabras que rimen",
+    "palabra-rima-placeholder": "Escribe una palabra",
+    "btn-buscar-rimas": "Buscar Rimas",
+    "btn-ver-poema": "📜 Ver Poema",
+    "btn-imprimir-poema": "🖨️ Imprimir",
+    "rimas-encontradas": "Palabras que riman:",
+    "sin-rimas": "No se encontraron muchas coincidencias, intenta con otra palabra.",
+    "completa-poema": "Por favor completa todas las partes del poema antes de generarlo."
   };
-  
-  function toggleGameSection() {
-    const section = document.getElementById('animacon-emocion');
-    section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
-    window.scrollTo({ top: section.offsetTop - 20, behavior: 'smooth' });
+
+  translations.en.poema = {
+    "poema-title": "Create Your Emoji Poem",
+    "btn-elegir-emoji": "Choose Emoji",
+    "titulo-poema-label": "Title:",
+    "titulo-poema-placeholder": "Poem title",
+    "autor-poema-label": "Author:",
+    "autor-poema-placeholder": "Your name or pseudonym",
+    "estrofa1-title": "Stanza 1",
+    "estrofa2-title": "Stanza 2",
+    "estrofa3-title": "Stanza 3",
+    "verso-placeholder": "Line",
+    "buscar-rimas-title": "🔍 Find rhyming words",
+    "palabra-rima-placeholder": "Write a word",
+    "btn-buscar-rimas": "Find Rhymes",
+    "btn-ver-poema": "📜 View Poem",
+    "btn-imprimir-poema": "🖨️ Print",
+    "rimas-encontradas": "Words that rhyme:",
+    "sin-rimas": "No matches found, try another word.",
+    "completa-poema": "Please complete all parts of the poem before generating it."
+  };
+
+  translations.fr.poema = {
+    "poema-title": "Créez Votre Poème Emoji",
+    "btn-elegir-emoji": "Choisir Emoji",
+    "titulo-poema-label": "Titre:",
+    "titulo-poema-placeholder": "Titre du poème",
+    "autor-poema-label": "Auteur:",
+    "autor-poema-placeholder": "Votre nom ou pseudonyme",
+    "estrofa1-title": "Strophe 1",
+    "estrofa2-title": "Strophe 2",
+    "estrofa3-title": "Strophe 3",
+    "verso-placeholder": "Vers",
+    "buscar-rimas-title": "🔍 Trouver des mots qui riment",
+    "palabra-rima-placeholder": "Écrivez un mot",
+    "btn-buscar-rimas": "Trouver des Rimes",
+    "btn-ver-poema": "📜 Voir le Poème",
+    "btn-imprimir-poema": "🖨️ Imprimer",
+    "rimas-encontradas": "Mots qui riment:",
+    "sin-rimas": "Aucune correspondance trouvée, essayez un autre mot.",
+    "completa-poema": "Veuillez compléter toutes les parties du poème avant de le générer."
+  };
+
+  // Actualizar elementos al cambiar idioma
+  function updatePoemElements() {
+    const lang = currentLanguage;
+    document.getElementById('poema-title').textContent = translations[lang].poema['poema-title'];
+    document.getElementById('btn-elegir-emoji').textContent = translations[lang].poema['btn-elegir-emoji'];
+    document.getElementById('titulo-poema-label').innerHTML = `<strong>${translations[lang].poema['titulo-poema-label']}</strong>`;
+    document.getElementById('tituloPoema').placeholder = translations[lang].poema['titulo-poema-placeholder'];
+    document.getElementById('autor-poema-label').innerHTML = `<strong>${translations[lang].poema['autor-poema-label']}</strong>`;
+    document.getElementById('autorPoema').placeholder = translations[lang].poema['autor-poema-placeholder'];
+    document.getElementById('estrofa1-title').textContent = translations[lang].poema['estrofa1-title'];
+    document.getElementById('estrofa2-title').textContent = translations[lang].poema['estrofa2-title'];
+    document.getElementById('estrofa3-title').textContent = translations[lang].poema['estrofa3-title'];
+    document.querySelectorAll('.verso').forEach((el, i) => {
+      el.placeholder = `${translations[lang].poema['verso-placeholder']} ${i+1}`;
+    });
+    document.getElementById('buscar-rimas-title').textContent = translations[lang].poema['buscar-rimas-title'];
+    document.getElementById('palabraRima').placeholder = translations[lang].poema['palabra-rima-placeholder'];
+    document.getElementById('btn-buscar-rimas').textContent = translations[lang].poema['btn-buscar-rimas'];
+    document.getElementById('btn-ver-poema').textContent = translations[lang].poema['btn-ver-poema'];
+    document.getElementById('btn-imprimir-poema').textContent = translations[lang].poema['btn-imprimir-poema'];
   }
-</script>
-  
-  <script>
-let canvas = document.getElementById("animCanvas");
-let ctx = canvas.getContext("2d");
 
-let currentTool = 'drawLine';
-let isDrawing = false;
-let startX, startY;
-let objects = [];
-let selectedObject = null;
-let frames = [];
+  // Funcionalidad del juego de poesía
+  const emojisPoesia = ["🌟", "✨", "🌹", "🔥", "🌊", "🌙", "☀️", "🌈", "⚡", "💧", "🍃", "❄️"];
 
-canvas.addEventListener("mousedown", (e) => {
-  const x = e.offsetX;
-  const y = e.offsetY;
-  startX = x;
-  startY = y;
-
-  if (currentTool === 'select') {
-    selectedObject = objects.find(obj => isInside(obj, x, y));
-  } else {
-    isDrawing = true;
+  function generarEmoji() {
+    const emojiElemento = document.getElementById("emojiResultado");
+    let vueltas = 0;
+    const intervalo = setInterval(() => {
+      const aleatorio = emojisPoesia[Math.floor(Math.random() * emojisPoesia.length)];
+      emojiElemento.textContent = aleatorio;
+      vueltas++;
+      if (vueltas > 15) clearInterval(intervalo);
+    }, 100);
   }
-});
 
-canvas.addEventListener("mouseup", (e) => {
-  if (!isDrawing) return;
-  isDrawing = false;
-  const endX = e.offsetX;
-  const endY = e.offsetY;
+  function buscarRimas() {
+    const palabra = document.getElementById("palabraRima").value.trim();
+    if (!palabra) return;
 
-  switch (currentTool) {
-    case 'drawLine':
-      objects.push({ type: 'line', x1: startX, y1: startY, x2: endX, y2: endY, color: '#000' });
-      break;
-    case 'drawCircle':
-      const radius = Math.hypot(endX - startX, endY - startY);
-      objects.push({ type: 'circle', x: startX, y: startY, r: radius, color: '#000' });
-      break;
-    case 'erase':
-      objects = objects.filter(obj => !isInside(obj, endX, endY));
-      break;
-    case 'paint':
-      const obj = objects.find(o => isInside(o, endX, endY));
-      if (obj) obj.color = getRandomColor();
-      break;
+    const posiblesRimas = [
+      "amor", "flor", "dolor", "color", "sabor", "calor",
+      "cielo", "suelo", "vuelo", "consuelo", "desvelo",
+      "mar", "pasear", "soñar", "volar", "cantar",
+      "risa", "sonrisa", "premisa", "camisa", "brisa",
+      "esperanza", "bonanza", "mudanza", "confianza", "alianza",
+      "corazón", "canción", "emoción", "ilusión", "pasión"
+    ];
+
+    const resultado = posiblesRimas.filter(p => 
+      p.endsWith(palabra.slice(-2)) || p.endsWith(palabra.slice(-3))
+    );
+
+    document.getElementById("resultadoRima").textContent = resultado.length > 0
+      ? `${translations[currentLanguage].poema['rimas-encontradas']} ${resultado.join(", ")}`
+      : translations[currentLanguage].poema['sin-rimas'];
   }
-  redraw();
-});
 
-canvas.addEventListener("mousemove", (e) => {
-  if (currentTool === 'select' && selectedObject && e.buttons === 1) {
-    const dx = e.offsetX - startX;
-    const dy = e.offsetY - startY;
-    moveObject(selectedObject, dx, dy);
-    startX = e.offsetX;
-    startY = e.offsetY;
-    redraw();
-  }
-});
+  function verPoema() {
+    const titulo = document.getElementById("tituloPoema").value;
+    const autor = document.getElementById("autorPoema").value;
+    const emoji = document.getElementById("emojiResultado").textContent;
+    const versos = document.querySelectorAll("#estrofas .verso");
 
-function setTool(tool) {
-  currentTool = tool;
-}
-
-function isInside(obj, x, y) {
-  if (obj.type === 'line') {
-    const dist = Math.abs((obj.y2 - obj.y1) * x - (obj.x2 - obj.x1) * y + obj.x2 * obj.y1 - obj.y2 * obj.x1) /
-                 Math.hypot(obj.x2 - obj.x1, obj.y2 - obj.y1);
-    return dist < 10;
-  } else if (obj.type === 'circle') {
-    const dx = x - obj.x;
-    const dy = y - obj.y;
-    return dx * dx + dy * dy <= obj.r * obj.r;
-  }
-  return false;
-}
-
-function moveObject(obj, dx, dy) {
-  if (obj.type === 'line') {
-    obj.x1 += dx; obj.y1 += dy;
-    obj.x2 += dx; obj.y2 += dy;
-  } else if (obj.type === 'circle') {
-    obj.x += dx; obj.y += dy;
-  }
-}
-
-function redraw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let obj of objects) {
-    ctx.strokeStyle = obj.color || "#000";
-    ctx.fillStyle = obj.color || "#000";
-    if (obj.type === 'line') {
-      ctx.beginPath();
-      ctx.moveTo(obj.x1, obj.y1);
-      ctx.lineTo(obj.x2, obj.y2);
-      ctx.stroke();
-    } else if (obj.type === 'circle') {
-      ctx.beginPath();
-      ctx.arc(obj.x, obj.y, obj.r, 0, Math.PI * 2);
-      ctx.fill();
+    let html = `<h2>${titulo} ${emoji}</h2><p><em>${translations[currentLanguage].poema['por']} ${autor}</em></p>`;
+    
+    for (let i = 0; i < versos.length; i += 4) {
+      html += "<p>";
+      for (let j = 0; j < 4; j++) {
+        const verso = versos[i + j].value;
+        if (verso.trim()) {
+          html += `${verso}<br>`;
+        }
+      }
+      html += "</p>";
     }
+
+    const resultado = document.getElementById("poemaResultado");
+    resultado.innerHTML = html;
+    resultado.style.display = "block";
   }
-}
 
-function getRandomColor() {
-  return '#' + Math.floor(Math.random()*16777215).toString(16);
-}
-
-function clearCanvas() {
-  objects = [];
-  frames = [];
-  redraw();
-}
-
-function addFrame() {
-  frames.push(JSON.parse(JSON.stringify(objects)));
-  alert(`Fotograma ${frames.length} guardado.`);
-}
-
-function playAnimation() {
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i >= frames.length) {
-      clearInterval(interval);
+  function printPoema() {
+    const contenido = document.getElementById("poemaResultado").innerHTML;
+    if (!contenido.trim()) {
+      alert(translations[currentLanguage].poema['completa-poema']);
       return;
     }
-    objects = JSON.parse(JSON.stringify(frames[i]));
-    redraw();
-    i++;
-  }, 500);
-}
+
+    const ventana = window.open('', '_blank');
+    ventana.document.write(`
+      <html>
+        <head>
+          <title>${translations[currentLanguage].poema['imprimir-poema']}</title>
+          <style>
+            body { font-family: Arial, sans-serif; padding: 30px; color: #000; }
+            h2 { text-align: center; }
+            p { font-size: 16px; }
+          </style>
+        </head>
+        <body>${contenido}</body>
+      </html>
+    `);
+    ventana.document.close();
+    ventana.focus();
+    ventana.print();
+  }
+
+  // Inicializar elementos del poema
+  updatePoemElements();
 </script>
-</section>
-
-
 
 <!-- Asegúrate de incluir esta línea en tu <head> -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
