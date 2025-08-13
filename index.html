@@ -203,43 +203,46 @@ h1, h2, h3 {
 </header>
   
 <!-- Sección: ¿Qué es? -->
-<section style="padding: 30px 20px; background-color: #000; color: #fff; font-family: 'Times New Roman', serif;">
+<section style="padding: 10px 20px; background-color: #000; color: #fff; font-family: 'Times New Roman', serif; font-size: 14px; line-height: 1; text-align: justify;">
   <div style="max-width: 800px; margin: 0 auto;">
-    <h2 style="color: gold; margin-bottom: 15px; font-size: 1.4em;" id="what-is-title">¿Qué es?</h2>
-    <p id="what-is-text" style="font-size: 1em; line-height: 1; text-align: justify;">
+    <h2 style="color: gold; margin: 0 0 5px 0; font-size: 15px;" id="what-is-title">¿Qué es?</h2>
+    <p id="what-is-text" style="margin: 0 0 5px 0;">
       Es una herramienta pedagógica digital diseñada para fortalecer la educación emocional en niños y niñas desde preescolar hasta secundaria y media. 
       Se basa en actividades lúdicas que permiten identificar, expresar y regular emociones de forma consciente.
     </p>
 
-    <h3 style="color: gold; margin-top: 25px; margin-bottom: 10px;" id="legal-title">📘 Fundamentación Legal y Curricular</h3>
-    <p id="legal-text" style="font-size: 1em; line-height: 1; text-align: justify;">
+    <h3 style="color: gold; margin: 0 0 2px 0; font-size: 15px;" id="legal-title">📘 Fundamentación Legal y Curricular</h3>
+    <p id="legal-text" style="margin: 0 0 2px 0;">
       Está alineada con la <strong>Ley 438 de 2021</strong>, los <strong>lineamientos curriculares</strong> del Ministerio de Educación 
       y los <strong>Objetivos de Desarrollo Sostenible (ODS)</strong> de la Agenda 2030, especialmente los ODS 3 (Salud y Bienestar), 
       4 (Educación de Calidad) y 16 (Paz, Justicia e Instituciones Sólidas).
     </p>
+  </div>
+</section>
 
 <!-- Sección: Instrucciones -->
-<section style="padding: 30px 20px; background-color: #000; color: #fff; font-family: 'Times New Roman', serif;">
+<section style="padding: 10px 20px; background-color: #000; color: #fff; font-family: 'Times New Roman', serif; font-size: 14px; line-height: 1; text-align: justify;">
   <div style="max-width: 800px; margin: 0 auto;">
-    <h3 style="color: gold; margin-bottom: 15px;" id="instructions-title">📜 Instrucciones</h3>
+    <h3 style="color: gold; margin: 0 0 5px 0; font-size: 15px;" id="instructions-title">📜 Instrucciones</h3>
 
-    <p id="instructions-text1" style="font-size: 1em; line-height: 1; text-align: justify;">
-      Estos juegos estan diseñados para que niños, niñas, jóvenes y docentes exploren sus emociones de forma divertida y significativa.  
+    <p id="instructions-text1" style="margin: 0 0 2px 0;">
+      Estos juegos están diseñados para que niños, niñas, jóvenes y docentes exploren sus emociones de forma divertida y significativa.  
       Usa el menú principal para acceder a las distintas actividades haciendo clic en cada botón.
     </p>
 
-    <p id="instructions-text2" style="font-size: 1em; line-height: 1; text-align: justify; margin-top: 10px;">
+    <p id="instructions-text2" style="margin: 0 0 2px 0;">
       Puedes repetir las actividades todas las veces que quieras. Elige libremente según tu emoción, curiosidad o necesidad del momento.
     </p>
 
-    <div style="font-size: 1em; line-height: 0.9; margin-top: 20px;">
-      <p id="instruction1">🎭 <strong>Gestionar emociones:</strong> Identifica lo que sientes y cómo expresarlo.</p>
-      <p id="instruction2">📖 <strong>Crear tu cuento o guion:</strong> Imagina historias que trabajen emociones.</p>
-      <p id="instruction3">🎨 <strong>Jugar con el arte:</strong> Expresa lo que sientes con color y forma.</p>
-      <p id="instruction4">🧠 <strong>Desafíos creativos:</strong> Reta tu mente y corazón con juegos emocionales.</p>
+    <div style="margin: 0;">
+      <p id="instruction1" style="margin: 0;">🎭 <strong>Gestionar emociones:</strong> Identifica lo que sientes y cómo expresarlo.</p>
+      <p id="instruction2" style="margin: 0;">📖 <strong>Crear tu cuento o guion:</strong> Imagina historias que trabajen emociones.</p>
+      <p id="instruction3" style="margin: 0;">🎨 <strong>Jugar con el arte:</strong> Expresa lo que sientes con color y forma.</p>
+      <p id="instruction4" style="margin: 0;">🧠 <strong>Desafíos creativos:</strong> Reta tu mente y corazón con juegos emocionales.</p>
     </div>
   </div>
 </section>
+
 
 <!-- Frase de cierre -->
 <section style="padding: 20px 20px 40px 20px; background-color: #000; color: #ffcc00; font-family: 'Times New Roman', serif;">
@@ -259,7 +262,7 @@ h1, h2, h3 {
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
-    font-size: 1.1em;
+    font-size: 1em;
     transition: transform 0.2s ease, background-color 0.3s ease;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
   }
@@ -294,30 +297,32 @@ h1, h2, h3 {
 
 <!-- Estilos para los botones 3D -->
 <style>
-  .boton-3d {
+ .boton-3d {
     background: linear-gradient(145deg, #FBC02D, #fff176);
     border: none;
-    border-radius: 12px;
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 16px;
+    border-radius: 8px; /* más pequeño */
+    padding: 6px 12px;  /* menos espacio interno */
+    margin: 8px;
+    font-size: 12px;    /* fuente más pequeña */
     font-weight: bold;
+    font-family: 'Times New Roman', serif; /* fuente deseada */
     color: #222;
-    box-shadow: 0 6px 0 #c49000, 0 8px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 0 #c49000, 0 6px 10px rgba(0,0,0,0.3);
     transition: all 0.2s ease;
     cursor: pointer;
-  }
+}
 
-  .boton-3d:hover {
+.boton-3d:hover {
     background: linear-gradient(145deg, #fff176, #FBC02D);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 0 #c49000, 0 12px 20px rgba(0,0,0,0.3);
-  }
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #c49000, 0 8px 15px rgba(0,0,0,0.3);
+}
 
-  .boton-3d:active {
-    transform: translateY(2px);
-    box-shadow: 0 3px 0 #c49000;
-  }
+.boton-3d:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 0 #c49000;
+}
+
 </style>
 
 <!-- Tus botones con estilo 3D -->
@@ -377,57 +382,35 @@ h1, h2, h3 {
   
  <a href="https://construye-tu-escuela-ideal.netlify.app/">
   <button class="boton-3d" id="Mi Escuela Ideal">Mi Escuela Ideal</button>
+   
+   <a href="https://emosudoku.netlify.app/">
+  <button class="boton-3d" id="EmoSudoku">EmoSudoku</button>
       
              
 </a>
-
-
-      
-    <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+     
+ <div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
   <a href="https://carpetapedagogica20252026arte.netlify.app/" target="_blank">
     <img src="https://i.postimg.cc/0NPk8pNK/edited-image-7.png"
          alt="Carpeta Pedagógica Arte Integral 2025-2026"
-         style="width: 180px; border-radius: 12px; box-shadow: 0 8px 0 #444; transition: all 0.3s ease; cursor: pointer;"
-         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'; this.style.filter='brightness(1.1)'"
-         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 0 #444'; this.style.filter='brightness(1)'"
+         style="width: 120px; border-radius: 12px; box-shadow: 0 6px 0 #444; transition: all 0.3s ease; cursor: pointer;"
+         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 3px 0 #222'; this.style.filter='brightness(1.1)'"
+         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 0 #444'; this.style.filter='brightness(1)'"
          onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 2px 0 #111'"
-         onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'">
+         onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 3px 0 #222'">
   </a>
 
   <a href="https://carpetapedagogicaeducacionemocional.netlify.app/" target="_blank">
     <img src="https://i.postimg.cc/bvtBFMPQ/edited-image-7-1.png"
          alt="Carpeta Pedagógica Educación Emocional 2026-2027"
-         style="width: 180px; border-radius: 12px; box-shadow: 0 8px 0 #444; transition: all 0.3s ease; cursor: pointer;"
-         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'; this.style.filter='brightness(1.1)'"
-         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 0 #444'; this.style.filter='brightness(1)'"
+         style="width: 120px; border-radius: 12px; box-shadow: 0 6px 0 #444; transition: all 0.3s ease; cursor: pointer;"
+         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 3px 0 #222'; this.style.filter='brightness(1.1)'"
+         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 0 #444'; this.style.filter='brightness(1)'"
          onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 2px 0 #111'"
-         onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'">
+         onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 3px 0 #222'">
   </a>
-      <img src="https://i.postimg.cc/jSJy4M71/ert.jpg"
-     alt="Depósito Digital DD-034367"
-     style="width: 140px; border-radius: 12px; box-shadow: 0 8px 0 #444; transition: all 0.3s ease; cursor: pointer;"
-     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'; this.style.filter='brightness(1.1)'"
-     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 0 #444'; this.style.filter='brightness(1)'"
-     onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 2px 0 #111'"
-     onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'">
-      
-      <img src="https://i.postimg.cc/WbRdhhDh/Captura-de-pantalla-2025-08-08-074913.png"
-     alt="Depósito Digital DD-034367"
-     style="height: 60px; width: auto; border-radius: 12px; 
-            box-shadow: 0 8px 0 #444; 
-            transition: all 0.3s ease; 
-            cursor: pointer; display: block; margin: 0 auto;"
-     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'; this.style.filter='brightness(1.1)'"
-     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 0 #444'; this.style.filter='brightness(1)'"
-     onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 2px 0 #111'"
-     onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'">
-
-
 </div>
 
-       
-
-</a>
 
 
 </div>
@@ -2355,66 +2338,67 @@ btnGirar.addEventListener('click', () => {
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  footer {
+footer {
     background-color: #000;
     color: #ccc;
     padding: 30px 20px;
-    font-size: 0.8rem;
+    font-size: 11px; /* tamaño de letra */
+    font-family: 'Times New Roman', serif; /* fuente */
+    line-height: 1; /* interlineado mínimo */
     text-align: center;
-    line-height: 1.5;
     border-top: 2px solid #ff6f00;
     margin-top: 40px;
-    font-family: 'Playfair Display', serif;
-  }
+}
 
-  footer strong {
+footer strong {
     color: #fff;
     font-weight: 700;
-  }
+}
 
-  footer em {
+footer em {
     color: #ffa726;
     font-style: normal;
     font-weight: 400;
-  }
+}
 
-  footer a {
+footer a {
     color: #F6BE00;
     text-decoration: none;
     font-weight: 500;
-  }
+}
 
-  footer a:hover {
+footer a:hover {
     text-decoration: underline;
-  }
+}
 
-  .enlaces-footer {
+.enlaces-footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
-  }
+}
 
-  .enlaces-footer a {
+.enlaces-footer a {
     white-space: nowrap;
-  }
+}
 
-  .contador-visitas {
+.contador-visitas {
     margin-top: 25px;
-  }
+}
 
-  .contador-visitas img {
+.contador-visitas img {
     max-width: 100px;
     opacity: 0.9;
-  }
+}
 
-  .doi-badge img,
-  .cc-logo img {
+.doi-badge img,
+.cc-logo img {
     vertical-align: middle;
     height: 20px;
     margin: 0 5px;
-  }
+}
+
 </style>
 
 <footer>
@@ -2461,6 +2445,28 @@ btnGirar.addEventListener('click', () => {
     Consulta oficial en: 
     <a href="https://siise.bibliotecanacional.gov.co/" target="_blank" rel="noopener">SIISE</a>
   </div>
+  
+ <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px 0;">
+  <img src="https://i.postimg.cc/jSJy4M71/ert.jpg"
+       alt="Depósito Digital DD-034367"
+       style="width: 70px; border-radius: 12px; box-shadow: 0 4px 0 #444; transition: all 0.3s ease; cursor: pointer;"
+       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 2px 0 #222'; this.style.filter='brightness(1.1)'"
+       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 0 #444'; this.style.filter='brightness(1)'"
+       onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 1px 0 #111'"
+       onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 2px 0 #222'">
+
+  <img src="https://i.postimg.cc/WbRdhhDh/Captura-de-pantalla-2025-08-08-074913.png"
+       alt="Depósito Digital DD-034367"
+       style="height: 40px; width: auto; border-radius: 12px; box-shadow: 0 4px 0 #444; transition: all 0.3s ease; cursor: pointer;"
+       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 2px 0 #222'; this.style.filter='brightness(1.1)'"
+       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 0 #444'; this.style.filter='brightness(1)'"
+       onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 1px 0 #111'"
+       onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 2px 0 #222'">
+</div>
+
+
+       
+
   
  
 
